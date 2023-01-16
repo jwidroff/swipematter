@@ -16,6 +16,16 @@
 		BAC694342975980D003BDCC9 /* swipematterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC694332975980D003BDCC9 /* swipematterTests.swift */; };
 		BAC6943E2975980D003BDCC9 /* swipematterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6943D2975980D003BDCC9 /* swipematterUITests.swift */; };
 		BAC694402975980D003BDCC9 /* swipematterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6943F2975980D003BDCC9 /* swipematterUITestsLaunchTests.swift */; };
+		BAC6944D29759881003BDCC9 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6944C29759881003BDCC9 /* ShapeView.swift */; };
+		BAC6944F2975989D003BDCC9 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6944E2975989D003BDCC9 /* MenuView.swift */; };
+		BAC69451297598B5003BDCC9 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC69450297598B5003BDCC9 /* ColorTheme.swift */; };
+		BAC69453297598C2003BDCC9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC69452297598C2003BDCC9 /* Model.swift */; };
+		BAC69455297598D4003BDCC9 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC69454297598D4003BDCC9 /* Level.swift */; };
+		BAC69457297598E7003BDCC9 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC69456297598E7003BDCC9 /* Instructions.swift */; };
+		BAC69459297598F8003BDCC9 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC69458297598F8003BDCC9 /* Piece.swift */; };
+		BAC6945B29759903003BDCC9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6945A29759903003BDCC9 /* Board.swift */; };
+		BAC6945D29759917003BDCC9 /* NextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6945C29759917003BDCC9 /* NextView.swift */; };
+		BAC6945F29759926003BDCC9 /* GridPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6945E29759926003BDCC9 /* GridPoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		BAC694392975980D003BDCC9 /* swipematterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swipematterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC6943D2975980D003BDCC9 /* swipematterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swipematterUITests.swift; sourceTree = "<group>"; };
 		BAC6943F2975980D003BDCC9 /* swipematterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swipematterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BAC6944C29759881003BDCC9 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
+		BAC6944E2975989D003BDCC9 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		BAC69450297598B5003BDCC9 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		BAC69452297598C2003BDCC9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		BAC69454297598D4003BDCC9 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		BAC69456297598E7003BDCC9 /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
+		BAC69458297598F8003BDCC9 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		BAC6945A29759903003BDCC9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		BAC6945C29759917003BDCC9 /* NextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextView.swift; sourceTree = "<group>"; };
+		BAC6945E29759926003BDCC9 /* GridPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +122,16 @@
 				BAC6941C2975980C003BDCC9 /* AppDelegate.swift */,
 				BAC6941E2975980C003BDCC9 /* SceneDelegate.swift */,
 				BAC694202975980C003BDCC9 /* ViewController.swift */,
+				BAC6944C29759881003BDCC9 /* ShapeView.swift */,
+				BAC6944E2975989D003BDCC9 /* MenuView.swift */,
+				BAC69450297598B5003BDCC9 /* ColorTheme.swift */,
+				BAC69452297598C2003BDCC9 /* Model.swift */,
+				BAC69454297598D4003BDCC9 /* Level.swift */,
+				BAC69456297598E7003BDCC9 /* Instructions.swift */,
+				BAC69458297598F8003BDCC9 /* Piece.swift */,
+				BAC6945A29759903003BDCC9 /* Board.swift */,
+				BAC6945C29759917003BDCC9 /* NextView.swift */,
+				BAC6945E29759926003BDCC9 /* GridPoints.swift */,
 				BAC694222975980C003BDCC9 /* Main.storyboard */,
 				BAC694252975980D003BDCC9 /* Assets.xcassets */,
 				BAC694272975980D003BDCC9 /* LaunchScreen.storyboard */,
@@ -258,9 +288,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC69453297598C2003BDCC9 /* Model.swift in Sources */,
+				BAC69457297598E7003BDCC9 /* Instructions.swift in Sources */,
+				BAC69459297598F8003BDCC9 /* Piece.swift in Sources */,
+				BAC6944F2975989D003BDCC9 /* MenuView.swift in Sources */,
+				BAC6945B29759903003BDCC9 /* Board.swift in Sources */,
 				BAC694212975980C003BDCC9 /* ViewController.swift in Sources */,
 				BAC6941D2975980C003BDCC9 /* AppDelegate.swift in Sources */,
+				BAC69451297598B5003BDCC9 /* ColorTheme.swift in Sources */,
+				BAC6944D29759881003BDCC9 /* ShapeView.swift in Sources */,
+				BAC69455297598D4003BDCC9 /* Level.swift in Sources */,
 				BAC6941F2975980C003BDCC9 /* SceneDelegate.swift in Sources */,
+				BAC6945D29759917003BDCC9 /* NextView.swift in Sources */,
+				BAC6945F29759926003BDCC9 /* GridPoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
