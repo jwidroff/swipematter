@@ -272,7 +272,7 @@ class ViewController: UIViewController {
         setupMenuButton()
 //        setupMovesLeftLabel()
 //        setupLevelNameLabel()
-        self.setUpNextView()
+//        self.setUpNextView()
     }
     
     func setupTopBar() {
@@ -1625,7 +1625,7 @@ extension ViewController: ModelDelegate {
         
     }
     
-    func setUpNextView() {
+    func setUpNextView(nextPiece: NextPiece) {
         
         
 //        let controlHeight = retryButton.frame.height
@@ -1657,6 +1657,16 @@ extension ViewController: ModelDelegate {
 //        nextView.center = CGPoint(x: view.center.x, y: y)
         view.addSubview(nextView)
         
+        
+        
+        for piece in nextPiece.pieces {
+            
+            
+            setNextPieceView(nextView: nextView, nextPiece: piece)
+        }
+        
+        
+        
 //
 //        var constraints = [NSLayoutConstraint]()
 //
@@ -1671,8 +1681,44 @@ extension ViewController: ModelDelegate {
         
         
         
+    }
+    
+    func setNextPieceView(nextView: NextView, nextPiece: Piece) {
+        
+        
+        let grid = nextView.grid.dictionary
+        
+        
+        
+        
+        let x = (grid[nextPiece.indexes]!.x) - (nextView.frame.width / 8)
+        let y = (grid[nextPiece.indexes]!.y) - (nextView.frame.height / 8)
+        let width = nextView.frame.width / 4
+        let height = width
+        
+        let frame = CGRect(x: x, y: y, width: width, height: height)
+        
+        
+        
+        
+        
+        let viewX = ShapeView(frame: frame, piece: nextPiece, groups: nil)
+                
+        nextView.addSubview(viewX)
+       
+        
+        
+        viewX.subviews[0].layer.backgroundColor = UIColor.white.cgColor
+        viewX.subviews[0].backgroundColor = UIColor.blue
+        
+        
+        
+//        viewX.layer.sublayers![1].backgroundColor = UIColor.white.cgColor
+//        viewX.layer.sublayers![0].backgroundColor = UIColor.white.cgColor
+        
         
     }
+    
     
     func setUpControlViews() {
         self.setupControls()

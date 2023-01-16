@@ -111,3 +111,18 @@ class NextView: UIView {
     
 
 }
+
+
+
+class NextPiece {
+    
+    var pieces = [Piece]()
+    
+    init(pieces: [Piece] = [Piece]()) {
+        self.pieces = pieces
+    }
+    
+    
+    
+    
+}

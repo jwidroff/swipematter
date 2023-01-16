@@ -121,6 +121,7 @@ protocol ModelDelegate {
     func enlargePiece(view: UIView)
     func disableSwipes()
     func setupInstructionsView(instructions: Instructions)
+    func setUpNextView(nextPiece: NextPiece)
 }
 
 class Model {
@@ -136,6 +137,7 @@ class Model {
     var moveStarted = false
     var infiniteMoves = Bool()
     var gameIsLoading = true
+    var nextPiece = NextPiece()
     
     init(){
         
@@ -160,6 +162,7 @@ class Model {
         delegate?.setUpControlViews()
         updateLevelInfo()
         setupInstructions()
+        setupNextView()
         
     }
     
@@ -236,9 +239,40 @@ class Model {
         
         
         
+        
 //        delegate?.setUpControlViews()
 //        updateLevelInfo()
 //        setupInstructions()
+    }
+    
+    
+    func setupNextView() {
+        
+        
+        print("setupNextView called")
+        
+        var pieces = [Piece]()
+        let piece1 = Piece(indexes: Indexes(x: 1, y: 2), shape: .blank, colors: [UIColor.red, UIColor.cyan], version: 1, isLocked: false, doesPivot: false)
+        
+        let piece2 = Piece(indexes: Indexes(x: 0, y: 1), shape: .blank, colors: [UIColor.red, UIColor.cyan], version: 1, isLocked: false, doesPivot: false)
+        
+        let piece3 = Piece(indexes: Indexes(x: 0, y: 2), shape: .blank, colors: [UIColor.red, UIColor.cyan], version: 1, isLocked: false, doesPivot: false)
+        
+        let piece4 = Piece(indexes: Indexes(x: 0, y: 3), shape: .blank, colors: [UIColor.red, UIColor.cyan], version: 1, isLocked: false, doesPivot: false)
+        
+        pieces.append(piece1)
+        pieces.append(piece2)
+        pieces.append(piece3)
+        pieces.append(piece4)
+        
+        nextPiece.pieces.append(contentsOf: pieces)
+        
+        
+        delegate?.setUpNextView(nextPiece: nextPiece)
+        //DELEGATE - SETUPNEXTVIEW
+        
+        
+        
     }
     
 
