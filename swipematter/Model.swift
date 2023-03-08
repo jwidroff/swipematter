@@ -2685,42 +2685,42 @@ class Model {
 //        check4AutoBallMove()
 //    }
 
-    func check4CrossCrash(piece: Piece, ball: Ball, startSide: String) -> Bool {
-                
-        var bool = false
-        
-        switch startSide {
-        
-        case "top":
-            if piece.side.top.closing.isOpen == false {
-
-                delegate?.crashBallViewIntoCross(piece: piece, ball: ball)
-                bool = true
-            }
-        case "bottom":
-            if piece.side.bottom.closing.isOpen == false {
-
-                delegate?.crashBallViewIntoCross(piece: piece, ball: ball)
-                bool = true
-            }
-        case "left":
-            if piece.side.left.closing.isOpen == false {
-
-                delegate?.crashBallViewIntoCross(piece: piece, ball: ball)
-                bool = true
-            }
-        case "right":
-            if piece.side.right.closing.isOpen == false {
-
-                delegate?.crashBallViewIntoCross(piece: piece, ball: ball)
-                bool = true
-            }
-        default:
-            break
-            
-        }
-        return bool
-    }
+//    func check4CrossCrash(piece: Piece, ball: Ball, startSide: String) -> Bool {
+//                
+//        var bool = false
+//        
+//        switch startSide {
+//        
+//        case "top":
+//            if piece.side.top.closing.isOpen == false {
+//
+//                delegate?.crashBallViewIntoCross(piece: piece, ball: ball)
+//                bool = true
+//            }
+//        case "bottom":
+//            if piece.side.bottom.closing.isOpen == false {
+//
+//                delegate?.crashBallViewIntoCross(piece: piece, ball: ball)
+//                bool = true
+//            }
+//        case "left":
+//            if piece.side.left.closing.isOpen == false {
+//
+//                delegate?.crashBallViewIntoCross(piece: piece, ball: ball)
+//                bool = true
+//            }
+//        case "right":
+//            if piece.side.right.closing.isOpen == false {
+//
+//                delegate?.crashBallViewIntoCross(piece: piece, ball: ball)
+//                bool = true
+//            }
+//        default:
+//            break
+//            
+//        }
+//        return bool
+//    }
     
 //    func switchPieceAfterBall(piece: Piece, ball: Ball) {
 //

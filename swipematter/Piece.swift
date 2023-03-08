@@ -16,7 +16,7 @@ class Piece {
 //    var shape: Shape = .blank
     var view = ShapeView()
     var color = UIColor()
-    var side = Side()
+//    var side = Side()
 //    var version = Int()
 //    var isLocked = false
 //    var nextPiece: Piece?
@@ -79,633 +79,633 @@ class Piece {
 //        }
 //    }
     
-    func setPieceSides(shape: Shape, version: Int, colors: [UIColor]) {
-        
-        switch shape {
-            
-        case .blank:
-            
-            side.left.color = nil
-            side.right.color = nil
-            side.top.color = nil
-            side.bottom.color = nil
-            
-            side.left.exitSide = nil
-            side.right.exitSide = nil
-            side.top.exitSide = nil
-            side.bottom.exitSide = nil
-            
-            side.left.opening.isOpen = false
-            side.right.opening.isOpen = false
-            side.top.opening.isOpen = false
-            side.bottom.opening.isOpen = false
-            
-        case .stick:
-            
-            switch version {
-            case 1:
-                
-                side.left.color = colors[0]
-                side.right.color = colors[1]
-                side.top.color = nil
-                side.bottom.color = nil
-                
-                side.left.exitSide = "right"
-                side.right.exitSide = "left"
-                side.top.exitSide = nil
-                side.bottom.exitSide = nil
-                
-                side.left.opening.isOpen = true
-                side.right.opening.isOpen = true
-                side.top.opening.isOpen = false
-                side.bottom.opening.isOpen = false
-
-            case 2:
-                    
-                side.top.color = colors[0]
-                side.bottom.color = colors[1]
-                side.left.color = nil
-                side.right.color = nil
-                
-                side.top.exitSide = "bottom"
-                side.bottom.exitSide = "top"
-                side.left.exitSide = nil
-                side.right.exitSide = nil
-                
-                side.top.opening.isOpen = true
-                side.bottom.opening.isOpen = true
-                side.left.opening.isOpen = false
-                side.right.opening.isOpen = false
-                    
-            case 3:
-                
-                side.left.color = colors[1]
-                side.right.color = colors[0]
-                side.top.color = nil
-                side.bottom.color = nil
-                
-                side.left.exitSide = "right"
-                side.right.exitSide = "left"
-                side.top.exitSide = nil
-                side.bottom.exitSide = nil
-                
-                side.left.opening.isOpen = true
-                side.right.opening.isOpen = true
-                side.top.opening.isOpen = false
-                side.bottom.opening.isOpen = false
-                
-            case 4:
-                
-                side.top.color = colors[1]
-                side.bottom.color = colors[0]
-                side.left.color = nil
-                side.right.color = nil
-                
-                side.top.exitSide = "bottom"
-                side.bottom.exitSide = "top"
-                side.left.exitSide = nil
-                side.right.exitSide = nil
-                
-                side.top.opening.isOpen = true
-                side.bottom.opening.isOpen = true
-                side.left.opening.isOpen = false
-                side.right.opening.isOpen = false
-                
-            default:
-                break
-            }
-            
-        case .entrance:
-            
-            switch version {
-            
-            case 1:
-                
-                side.top.color = colors[0]
-                side.left.color = nil
-                side.bottom.color = nil
-                side.right.color = nil
-                
-                side.top.exitSide = "center"
-                side.left.exitSide = nil
-                side.bottom.exitSide = nil
-                side.right.exitSide = nil
-                
-                side.top.opening.isOpen = true
-                side.left.opening.isOpen = false
-                side.bottom.opening.isOpen = false
-                side.right.opening.isOpen = false
-
-            case 2:
-                
-                side.right.color = colors[0]
-                side.left.color = nil
-                side.bottom.color = nil
-                side.top.color = nil
-                
-                side.right.exitSide = "center"
-                side.left.exitSide = nil
-                side.bottom.exitSide = nil
-                side.top.exitSide = nil
-                
-                side.right.opening.isOpen = true
-                side.left.opening.isOpen = false
-                side.bottom.opening.isOpen = false
-                side.top.opening.isOpen = false
-               
-            case 3:
-                
-                side.bottom.color = colors[0]
-                side.left.color = nil
-                side.top.color = nil
-                side.right.color = nil
-                
-                side.bottom.exitSide = "center"
-                side.left.exitSide = nil
-                side.top.exitSide = nil
-                side.right.exitSide = nil
-                
-                side.bottom.opening.isOpen = true
-                side.left.opening.isOpen = false
-                side.top.opening.isOpen = false
-                side.right.opening.isOpen = false
-
-            case 4:
-                
-                side.left.color = colors[0]
-                side.top.color = nil
-                side.bottom.color = nil
-                side.right.color = nil
-                
-                side.left.exitSide = "center"
-                side.top.exitSide = nil
-                side.bottom.exitSide = nil
-                side.right.exitSide = nil
-                
-                side.left.opening.isOpen = true
-                side.top.opening.isOpen = false
-                side.bottom.opening.isOpen = false
-                side.right.opening.isOpen = false
-
-            default:
-                break
-            }
-        
-        case .exit:
-            
-            switch version {
-            
-            case 1:
-                
-                side.top.color = colors[0]
-                side.left.color = nil
-                side.bottom.color = nil
-                side.right.color = nil
-                
-                side.top.exitSide = "center"
-                side.left.exitSide = nil
-                side.bottom.exitSide = nil
-                side.right.exitSide = nil
-                
-                side.top.opening.isOpen = true
-                side.left.opening.isOpen = false
-                side.bottom.opening.isOpen = false
-                side.right.opening.isOpen = false
-
-            case 2:
-                
-                side.right.color = colors[0]
-                side.left.color = nil
-                side.bottom.color = nil
-                side.top.color = nil
-                
-                side.right.exitSide = "center"
-                side.left.exitSide = nil
-                side.bottom.exitSide = nil
-                side.top.exitSide = nil
-                
-                side.right.opening.isOpen = true
-                side.left.opening.isOpen = false
-                side.bottom.opening.isOpen = false
-                side.top.opening.isOpen = false
-
-            case 3:
-                
-                side.bottom.color = colors[0]
-                side.left.color = nil
-                side.top.color = nil
-                side.right.color = nil
-                
-                side.bottom.exitSide = "center"
-                side.left.exitSide = nil
-                side.top.exitSide = nil
-                side.right.exitSide = nil
-                
-                side.bottom.opening.isOpen = true
-                side.left.opening.isOpen = false
-                side.top.opening.isOpen = false
-                side.right.opening.isOpen = false
-
-            case 4:
-                
-                side.left.color = colors[0]
-                side.top.color = nil
-                side.bottom.color = nil
-                side.right.color = nil
-                
-                side.left.exitSide = "center"
-                side.top.exitSide = nil
-                side.bottom.exitSide = nil
-                side.right.exitSide = nil
-                
-                side.left.opening.isOpen = true
-                side.top.opening.isOpen = false
-                side.bottom.opening.isOpen = false
-                side.right.opening.isOpen = false
-
-            default:
-                break
-            }
-            
-            
-        case .elbow:
-            
-            switch version {
-
-            case 1:
-                
-                side.top.opening.isOpen = true
-                side.left.opening.isOpen = true
-                side.bottom.opening.isOpen = false
-                side.right.opening.isOpen = false
-                
-                side.top.color = colors[0]
-                side.left.color = colors[1]
-                side.bottom.color = nil
-                side.right.color = nil
-                
-                side.top.exitSide = "left"
-                side.left.exitSide = "top"
-                side.right.exitSide = nil
-                side.bottom.exitSide = nil
-                    
-            case 2:
-                
-                side.top.opening.isOpen = true
-                side.right.opening.isOpen = true
-                side.bottom.opening.isOpen = false
-                side.left.opening.isOpen = false
-                
-                side.top.exitSide = "right"
-                side.right.exitSide = "top"
-                side.bottom.exitSide = nil
-                side.left.exitSide = nil
-                
-                side.top.color = colors[1]
-                side.right.color = colors[0]
-                side.bottom.color = nil
-                side.left.color = nil
-                
-            case 3:
-                
-                side.bottom.opening.isOpen = true
-                side.right.opening.isOpen = true
-                side.top.opening.isOpen = false
-                side.left.opening.isOpen = false
-                
-                side.bottom.exitSide = "right"
-                side.right.exitSide = "bottom"
-                side.top.exitSide = nil
-                side.left.exitSide = nil
-                
-                side.bottom.color = colors[0]
-                side.right.color = colors[1]
-                side.top.color = nil
-                side.left.color = nil
-                
-            case 4:
-                
-                side.bottom.opening.isOpen = true
-                side.left.opening.isOpen = true
-                side.top.opening.isOpen = false
-                side.right.opening.isOpen = false
-                
-                side.bottom.exitSide = "left"
-                side.left.exitSide = "bottom"
-                side.right.exitSide = nil
-                side.top.exitSide = nil
-                
-                side.bottom.color = colors[1]
-                side.left.color = colors[0]
-                side.top.color = nil
-                side.right.color = nil
-
-            default:
-                break
-            }
-            
-        case .cross:
-            
-            side.right.exitSide = "left"
-            side.left.exitSide = "right"
-            side.top.exitSide = "bottom"
-            side.bottom.exitSide = "top"
-            
-            side.top.opening.isOpen = true
-            side.bottom.opening.isOpen = true
-            side.left.opening.isOpen = true
-            side.right.opening.isOpen = true
-            
-            switch version {
-            
-            case 1:
-                
-                side.left.closing.isOpen = true
-                side.right.closing.isOpen = true
-                side.top.closing.isOpen = false
-                side.bottom.closing.isOpen = false
-                
-                side.right.color = colors[1]
-                side.left.color = colors[1]
-                side.top.color = colors[0]
-                side.bottom.color = colors[0]
-
-            case 2:
-                
-                side.right.color = colors[0]
-                side.left.color = colors[0]
-                side.top.color = colors[1]
-                side.bottom.color = colors[1]
-                    
-                side.left.closing.isOpen = false
-                side.right.closing.isOpen = false
-                side.top.closing.isOpen = true
-                side.bottom.closing.isOpen = true
-
-            case 3:
-
-                side.right.color = colors[1]
-                side.left.color = colors[1]
-                side.top.color = colors[0]
-                side.bottom.color = colors[0]
-                
-                side.left.closing.isOpen = false
-                side.right.closing.isOpen = false
-                side.top.closing.isOpen = true
-                side.bottom.closing.isOpen = true
-
-            case 4:
-
-                side.right.color = colors[0]
-                side.left.color = colors[0]
-                side.top.color = colors[1]
-                side.bottom.color = colors[1]
-                
-                side.left.closing.isOpen = true
-                side.right.closing.isOpen = true
-                side.top.closing.isOpen = false
-                side.bottom.closing.isOpen = false
-                
-            default:
-                break
-            }
-
-        case .doubleElbow:
-                        
-            switch version {
-                
-            case 1:
-                
-                side.top.opening.isOpen = true
-                side.bottom.opening.isOpen = false
-                side.left.opening.isOpen = true
-                side.right.opening.isOpen = true
-                
-                side.right.exitSide = "top"
-                side.left.exitSide = "top"
-                side.top.exitSide = "left"
-                side.bottom.exitSide = nil
-                
-                side.right.color = colors[1]
-                side.top.color = colors[0]
-                side.left.color = colors[0]
-                side.bottom.color = nil
-
-            case 2:
-
-                side.top.opening.isOpen = true
-                side.bottom.opening.isOpen = true
-                side.left.opening.isOpen = false
-                side.right.opening.isOpen = true
-                
-                side.right.exitSide = "top"
-                side.left.exitSide = nil
-                side.top.exitSide = "right"
-                side.bottom.exitSide = "right"
-                
-                side.right.color = colors[0]
-                side.top.color = colors[0]
-                side.bottom.color = colors[1]
-                side.left.color = nil
-                
-            case 3:
-                
-                side.top.opening.isOpen = false
-                side.bottom.opening.isOpen = true
-                side.left.opening.isOpen = true
-                side.right.opening.isOpen = true
-                
-                side.right.exitSide = "bottom"
-                side.left.exitSide = "bottom"
-                side.top.exitSide = nil
-                side.bottom.exitSide = "right"
-                
-                side.right.color = colors[0]
-                side.left.color = colors[1]
-                side.bottom.color = colors[0]
-                side.top.color = nil
-                         
-            case 4:
-                
-                side.top.opening.isOpen = true
-                side.bottom.opening.isOpen = true
-                side.left.opening.isOpen = true
-                side.right.opening.isOpen = false
-                
-                side.right.exitSide = nil
-                side.left.exitSide = "bottom"
-                side.top.exitSide = "left"
-                side.bottom.exitSide = "left"
-                
-                side.top.color = colors[1]
-                side.left.color = colors[0]
-                side.bottom.color = colors[0]
-                side.right.color = nil
-
-            case 5:
-                
-                side.top.opening.isOpen = true
-                side.bottom.opening.isOpen = false
-                side.left.opening.isOpen = true
-                side.right.opening.isOpen = true
-                
-                side.right.exitSide = "top"
-                side.left.exitSide = "top"
-                side.top.exitSide = "right"
-                side.bottom.exitSide = nil
-                
-                side.right.color = colors[1]
-                side.top.color = colors[1]
-                side.left.color = colors[0]
-                side.bottom.color = nil
-
-            case 6:
-
-                side.top.opening.isOpen = true
-                side.bottom.opening.isOpen = true
-                side.left.opening.isOpen = false
-                side.right.opening.isOpen = true
-                
-                side.right.exitSide = "bottom"
-                side.left.exitSide = nil
-                side.top.exitSide = "right"
-                side.bottom.exitSide = "right"
-                
-                side.right.color = colors[1]
-                side.top.color = colors[0]
-                side.bottom.color = colors[1]
-                side.left.color = nil
-                
-            case 7:
-
-                side.top.opening.isOpen = false
-                side.bottom.opening.isOpen = true
-                side.left.opening.isOpen = true
-                side.right.opening.isOpen = true
-                
-                side.right.exitSide = "bottom"
-                side.left.exitSide = "bottom"
-                side.top.exitSide = nil
-                side.bottom.exitSide = "left"
-                
-                side.right.color = colors[0]
-                side.left.color = colors[1]
-                side.bottom.color = colors[1]
-                side.top.color = nil
-                
-            case 8:
-                
-                side.top.opening.isOpen = true
-                side.bottom.opening.isOpen = true
-                side.left.opening.isOpen = true
-                side.right.opening.isOpen = false
-                
-                side.right.exitSide = nil
-                side.left.exitSide = "top"
-                side.top.exitSide = "left"
-                side.bottom.exitSide = "left"
-                
-                side.top.color = colors[1]
-                side.left.color = colors[1]
-                side.bottom.color = colors[0]
-                side.right.color = nil
-
-            default:
-                break
-            }
-        case .wall:
-            
-            print()
-            
-//        case .pieceMaker:
+//    func setPieceSides(shape: Shape, version: Int, colors: [UIColor]) {
+//        
+//        switch shape {
+//            
+//        case .blank:
+//            
+//            side.left.color = nil
+//            side.right.color = nil
+//            side.top.color = nil
+//            side.bottom.color = nil
+//            
+//            side.left.exitSide = nil
+//            side.right.exitSide = nil
+//            side.top.exitSide = nil
+//            side.bottom.exitSide = nil
+//            
+//            side.left.opening.isOpen = false
+//            side.right.opening.isOpen = false
+//            side.top.opening.isOpen = false
+//            side.bottom.opening.isOpen = false
+//            
+//        case .stick:
+//            
+//            switch version {
+//            case 1:
+//                
+//                side.left.color = colors[0]
+//                side.right.color = colors[1]
+//                side.top.color = nil
+//                side.bottom.color = nil
+//                
+//                side.left.exitSide = "right"
+//                side.right.exitSide = "left"
+//                side.top.exitSide = nil
+//                side.bottom.exitSide = nil
+//                
+//                side.left.opening.isOpen = true
+//                side.right.opening.isOpen = true
+//                side.top.opening.isOpen = false
+//                side.bottom.opening.isOpen = false
 //
+//            case 2:
+//                    
+//                side.top.color = colors[0]
+//                side.bottom.color = colors[1]
+//                side.left.color = nil
+//                side.right.color = nil
+//                
+//                side.top.exitSide = "bottom"
+//                side.bottom.exitSide = "top"
+//                side.left.exitSide = nil
+//                side.right.exitSide = nil
+//                
+//                side.top.opening.isOpen = true
+//                side.bottom.opening.isOpen = true
+//                side.left.opening.isOpen = false
+//                side.right.opening.isOpen = false
+//                    
+//            case 3:
+//                
+//                side.left.color = colors[1]
+//                side.right.color = colors[0]
+//                side.top.color = nil
+//                side.bottom.color = nil
+//                
+//                side.left.exitSide = "right"
+//                side.right.exitSide = "left"
+//                side.top.exitSide = nil
+//                side.bottom.exitSide = nil
+//                
+//                side.left.opening.isOpen = true
+//                side.right.opening.isOpen = true
+//                side.top.opening.isOpen = false
+//                side.bottom.opening.isOpen = false
+//                
+//            case 4:
+//                
+//                side.top.color = colors[1]
+//                side.bottom.color = colors[0]
+//                side.left.color = nil
+//                side.right.color = nil
+//                
+//                side.top.exitSide = "bottom"
+//                side.bottom.exitSide = "top"
+//                side.left.exitSide = nil
+//                side.right.exitSide = nil
+//                
+//                side.top.opening.isOpen = true
+//                side.bottom.opening.isOpen = true
+//                side.left.opening.isOpen = false
+//                side.right.opening.isOpen = false
+//                
+//            default:
+//                break
+//            }
+//            
+//        case .entrance:
+//            
+//            switch version {
+//            
+//            case 1:
+//                
+//                side.top.color = colors[0]
+//                side.left.color = nil
+//                side.bottom.color = nil
+//                side.right.color = nil
+//                
+//                side.top.exitSide = "center"
+//                side.left.exitSide = nil
+//                side.bottom.exitSide = nil
+//                side.right.exitSide = nil
+//                
+//                side.top.opening.isOpen = true
+//                side.left.opening.isOpen = false
+//                side.bottom.opening.isOpen = false
+//                side.right.opening.isOpen = false
 //
+//            case 2:
+//                
+//                side.right.color = colors[0]
+//                side.left.color = nil
+//                side.bottom.color = nil
+//                side.top.color = nil
+//                
+//                side.right.exitSide = "center"
+//                side.left.exitSide = nil
+//                side.bottom.exitSide = nil
+//                side.top.exitSide = nil
+//                
+//                side.right.opening.isOpen = true
+//                side.left.opening.isOpen = false
+//                side.bottom.opening.isOpen = false
+//                side.top.opening.isOpen = false
+//               
+//            case 3:
+//                
+//                side.bottom.color = colors[0]
+//                side.left.color = nil
+//                side.top.color = nil
+//                side.right.color = nil
+//                
+//                side.bottom.exitSide = "center"
+//                side.left.exitSide = nil
+//                side.top.exitSide = nil
+//                side.right.exitSide = nil
+//                
+//                side.bottom.opening.isOpen = true
+//                side.left.opening.isOpen = false
+//                side.top.opening.isOpen = false
+//                side.right.opening.isOpen = false
+//
+//            case 4:
+//                
+//                side.left.color = colors[0]
+//                side.top.color = nil
+//                side.bottom.color = nil
+//                side.right.color = nil
+//                
+//                side.left.exitSide = "center"
+//                side.top.exitSide = nil
+//                side.bottom.exitSide = nil
+//                side.right.exitSide = nil
+//                
+//                side.left.opening.isOpen = true
+//                side.top.opening.isOpen = false
+//                side.bottom.opening.isOpen = false
+//                side.right.opening.isOpen = false
+//
+//            default:
+//                break
+//            }
+//        
+//        case .exit:
+//            
+//            switch version {
+//            
+//            case 1:
+//                
+//                side.top.color = colors[0]
+//                side.left.color = nil
+//                side.bottom.color = nil
+//                side.right.color = nil
+//                
+//                side.top.exitSide = "center"
+//                side.left.exitSide = nil
+//                side.bottom.exitSide = nil
+//                side.right.exitSide = nil
+//                
+//                side.top.opening.isOpen = true
+//                side.left.opening.isOpen = false
+//                side.bottom.opening.isOpen = false
+//                side.right.opening.isOpen = false
+//
+//            case 2:
+//                
+//                side.right.color = colors[0]
+//                side.left.color = nil
+//                side.bottom.color = nil
+//                side.top.color = nil
+//                
+//                side.right.exitSide = "center"
+//                side.left.exitSide = nil
+//                side.bottom.exitSide = nil
+//                side.top.exitSide = nil
+//                
+//                side.right.opening.isOpen = true
+//                side.left.opening.isOpen = false
+//                side.bottom.opening.isOpen = false
+//                side.top.opening.isOpen = false
+//
+//            case 3:
+//                
+//                side.bottom.color = colors[0]
+//                side.left.color = nil
+//                side.top.color = nil
+//                side.right.color = nil
+//                
+//                side.bottom.exitSide = "center"
+//                side.left.exitSide = nil
+//                side.top.exitSide = nil
+//                side.right.exitSide = nil
+//                
+//                side.bottom.opening.isOpen = true
+//                side.left.opening.isOpen = false
+//                side.top.opening.isOpen = false
+//                side.right.opening.isOpen = false
+//
+//            case 4:
+//                
+//                side.left.color = colors[0]
+//                side.top.color = nil
+//                side.bottom.color = nil
+//                side.right.color = nil
+//                
+//                side.left.exitSide = "center"
+//                side.top.exitSide = nil
+//                side.bottom.exitSide = nil
+//                side.right.exitSide = nil
+//                
+//                side.left.opening.isOpen = true
+//                side.top.opening.isOpen = false
+//                side.bottom.opening.isOpen = false
+//                side.right.opening.isOpen = false
+//
+//            default:
+//                break
+//            }
+//            
+//            
+//        case .elbow:
+//            
 //            switch version {
 //
 //            case 1:
-//                //Bottom
-//
+//                
+//                side.top.opening.isOpen = true
+//                side.left.opening.isOpen = true
+//                side.bottom.opening.isOpen = false
+//                side.right.opening.isOpen = false
+//                
+//                side.top.color = colors[0]
+//                side.left.color = colors[1]
+//                side.bottom.color = nil
+//                side.right.color = nil
+//                
+//                side.top.exitSide = "left"
+//                side.left.exitSide = "top"
+//                side.right.exitSide = nil
+//                side.bottom.exitSide = nil
+//                    
 //            case 2:
-//                //Left
-//
+//                
+//                side.top.opening.isOpen = true
+//                side.right.opening.isOpen = true
+//                side.bottom.opening.isOpen = false
+//                side.left.opening.isOpen = false
+//                
+//                side.top.exitSide = "right"
+//                side.right.exitSide = "top"
+//                side.bottom.exitSide = nil
+//                side.left.exitSide = nil
+//                
+//                side.top.color = colors[1]
+//                side.right.color = colors[0]
+//                side.bottom.color = nil
+//                side.left.color = nil
+//                
 //            case 3:
-//                //top
-//
+//                
+//                side.bottom.opening.isOpen = true
+//                side.right.opening.isOpen = true
+//                side.top.opening.isOpen = false
+//                side.left.opening.isOpen = false
+//                
+//                side.bottom.exitSide = "right"
+//                side.right.exitSide = "bottom"
+//                side.top.exitSide = nil
+//                side.left.exitSide = nil
+//                
+//                side.bottom.color = colors[0]
+//                side.right.color = colors[1]
+//                side.top.color = nil
+//                side.left.color = nil
+//                
 //            case 4:
-//                //right
+//                
+//                side.bottom.opening.isOpen = true
+//                side.left.opening.isOpen = true
+//                side.top.opening.isOpen = false
+//                side.right.opening.isOpen = false
+//                
+//                side.bottom.exitSide = "left"
+//                side.left.exitSide = "bottom"
+//                side.right.exitSide = nil
+//                side.top.exitSide = nil
+//                
+//                side.bottom.color = colors[1]
+//                side.left.color = colors[0]
+//                side.top.color = nil
+//                side.right.color = nil
 //
 //            default:
-//
 //                break
-//
-//
-//
-//
 //            }
-            
-            
-            
-        case .diagElbow:
-            
-            side.top.opening.isOpen = true
-            side.bottom.opening.isOpen = true
-            side.left.opening.isOpen = true
-            side.right.opening.isOpen = true
-            
-            switch version {
-            
-            case 1:
-                
-                side.right.exitSide = "top"
-                side.left.exitSide = "bottom"
-                side.top.exitSide = "right"
-                side.bottom.exitSide = "left"
-                side.right.color = colors[0]
-                side.top.color = colors[0]
-                side.left.color = colors[1]
-                side.bottom.color = colors[1]
-                
-            case 2:
-                    
-                side.left.exitSide = "top"
-                side.right.exitSide = "bottom"
-                side.bottom.exitSide = "right"
-                side.top.exitSide = "left"
-                side.right.color = colors[0]
-                side.top.color = colors[1]
-                side.left.color = colors[1]
-                side.bottom.color = colors[0]
-
-            case 3:
-                
-                side.left.exitSide = "bottom"
-                side.right.exitSide = "top"
-                side.bottom.exitSide = "left"
-                side.top.exitSide = "right"
-                side.right.color = colors[1]
-                side.top.color = colors[1]
-                side.left.color = colors[0]
-                side.bottom.color = colors[0]
-                
-            case 4:
-                
-                side.right.exitSide = "bottom"
-                side.left.exitSide = "top"
-                side.top.exitSide = "left"
-                side.bottom.exitSide = "right"
-                side.right.color = colors[1]
-                side.top.color = colors[0]
-                side.left.color = colors[0]
-                side.bottom.color = colors[1]
-                
-            default:
-                break
-            }
-        default:
-            print("DEFAULT")
-            break
-        }
-    }
+//            
+//        case .cross:
+//            
+//            side.right.exitSide = "left"
+//            side.left.exitSide = "right"
+//            side.top.exitSide = "bottom"
+//            side.bottom.exitSide = "top"
+//            
+//            side.top.opening.isOpen = true
+//            side.bottom.opening.isOpen = true
+//            side.left.opening.isOpen = true
+//            side.right.opening.isOpen = true
+//            
+//            switch version {
+//            
+//            case 1:
+//                
+//                side.left.closing.isOpen = true
+//                side.right.closing.isOpen = true
+//                side.top.closing.isOpen = false
+//                side.bottom.closing.isOpen = false
+//                
+//                side.right.color = colors[1]
+//                side.left.color = colors[1]
+//                side.top.color = colors[0]
+//                side.bottom.color = colors[0]
+//
+//            case 2:
+//                
+//                side.right.color = colors[0]
+//                side.left.color = colors[0]
+//                side.top.color = colors[1]
+//                side.bottom.color = colors[1]
+//                    
+//                side.left.closing.isOpen = false
+//                side.right.closing.isOpen = false
+//                side.top.closing.isOpen = true
+//                side.bottom.closing.isOpen = true
+//
+//            case 3:
+//
+//                side.right.color = colors[1]
+//                side.left.color = colors[1]
+//                side.top.color = colors[0]
+//                side.bottom.color = colors[0]
+//                
+//                side.left.closing.isOpen = false
+//                side.right.closing.isOpen = false
+//                side.top.closing.isOpen = true
+//                side.bottom.closing.isOpen = true
+//
+//            case 4:
+//
+//                side.right.color = colors[0]
+//                side.left.color = colors[0]
+//                side.top.color = colors[1]
+//                side.bottom.color = colors[1]
+//                
+//                side.left.closing.isOpen = true
+//                side.right.closing.isOpen = true
+//                side.top.closing.isOpen = false
+//                side.bottom.closing.isOpen = false
+//                
+//            default:
+//                break
+//            }
+//
+//        case .doubleElbow:
+//                        
+//            switch version {
+//                
+//            case 1:
+//                
+//                side.top.opening.isOpen = true
+//                side.bottom.opening.isOpen = false
+//                side.left.opening.isOpen = true
+//                side.right.opening.isOpen = true
+//                
+//                side.right.exitSide = "top"
+//                side.left.exitSide = "top"
+//                side.top.exitSide = "left"
+//                side.bottom.exitSide = nil
+//                
+//                side.right.color = colors[1]
+//                side.top.color = colors[0]
+//                side.left.color = colors[0]
+//                side.bottom.color = nil
+//
+//            case 2:
+//
+//                side.top.opening.isOpen = true
+//                side.bottom.opening.isOpen = true
+//                side.left.opening.isOpen = false
+//                side.right.opening.isOpen = true
+//                
+//                side.right.exitSide = "top"
+//                side.left.exitSide = nil
+//                side.top.exitSide = "right"
+//                side.bottom.exitSide = "right"
+//                
+//                side.right.color = colors[0]
+//                side.top.color = colors[0]
+//                side.bottom.color = colors[1]
+//                side.left.color = nil
+//                
+//            case 3:
+//                
+//                side.top.opening.isOpen = false
+//                side.bottom.opening.isOpen = true
+//                side.left.opening.isOpen = true
+//                side.right.opening.isOpen = true
+//                
+//                side.right.exitSide = "bottom"
+//                side.left.exitSide = "bottom"
+//                side.top.exitSide = nil
+//                side.bottom.exitSide = "right"
+//                
+//                side.right.color = colors[0]
+//                side.left.color = colors[1]
+//                side.bottom.color = colors[0]
+//                side.top.color = nil
+//                         
+//            case 4:
+//                
+//                side.top.opening.isOpen = true
+//                side.bottom.opening.isOpen = true
+//                side.left.opening.isOpen = true
+//                side.right.opening.isOpen = false
+//                
+//                side.right.exitSide = nil
+//                side.left.exitSide = "bottom"
+//                side.top.exitSide = "left"
+//                side.bottom.exitSide = "left"
+//                
+//                side.top.color = colors[1]
+//                side.left.color = colors[0]
+//                side.bottom.color = colors[0]
+//                side.right.color = nil
+//
+//            case 5:
+//                
+//                side.top.opening.isOpen = true
+//                side.bottom.opening.isOpen = false
+//                side.left.opening.isOpen = true
+//                side.right.opening.isOpen = true
+//                
+//                side.right.exitSide = "top"
+//                side.left.exitSide = "top"
+//                side.top.exitSide = "right"
+//                side.bottom.exitSide = nil
+//                
+//                side.right.color = colors[1]
+//                side.top.color = colors[1]
+//                side.left.color = colors[0]
+//                side.bottom.color = nil
+//
+//            case 6:
+//
+//                side.top.opening.isOpen = true
+//                side.bottom.opening.isOpen = true
+//                side.left.opening.isOpen = false
+//                side.right.opening.isOpen = true
+//                
+//                side.right.exitSide = "bottom"
+//                side.left.exitSide = nil
+//                side.top.exitSide = "right"
+//                side.bottom.exitSide = "right"
+//                
+//                side.right.color = colors[1]
+//                side.top.color = colors[0]
+//                side.bottom.color = colors[1]
+//                side.left.color = nil
+//                
+//            case 7:
+//
+//                side.top.opening.isOpen = false
+//                side.bottom.opening.isOpen = true
+//                side.left.opening.isOpen = true
+//                side.right.opening.isOpen = true
+//                
+//                side.right.exitSide = "bottom"
+//                side.left.exitSide = "bottom"
+//                side.top.exitSide = nil
+//                side.bottom.exitSide = "left"
+//                
+//                side.right.color = colors[0]
+//                side.left.color = colors[1]
+//                side.bottom.color = colors[1]
+//                side.top.color = nil
+//                
+//            case 8:
+//                
+//                side.top.opening.isOpen = true
+//                side.bottom.opening.isOpen = true
+//                side.left.opening.isOpen = true
+//                side.right.opening.isOpen = false
+//                
+//                side.right.exitSide = nil
+//                side.left.exitSide = "top"
+//                side.top.exitSide = "left"
+//                side.bottom.exitSide = "left"
+//                
+//                side.top.color = colors[1]
+//                side.left.color = colors[1]
+//                side.bottom.color = colors[0]
+//                side.right.color = nil
+//
+//            default:
+//                break
+//            }
+//        case .wall:
+//            
+//            print()
+//            
+////        case .pieceMaker:
+////
+////
+////            switch version {
+////
+////            case 1:
+////                //Bottom
+////
+////            case 2:
+////                //Left
+////
+////            case 3:
+////                //top
+////
+////            case 4:
+////                //right
+////
+////            default:
+////
+////                break
+////
+////
+////
+////
+////            }
+//            
+//            
+//            
+//        case .diagElbow:
+//            
+//            side.top.opening.isOpen = true
+//            side.bottom.opening.isOpen = true
+//            side.left.opening.isOpen = true
+//            side.right.opening.isOpen = true
+//            
+//            switch version {
+//            
+//            case 1:
+//                
+//                side.right.exitSide = "top"
+//                side.left.exitSide = "bottom"
+//                side.top.exitSide = "right"
+//                side.bottom.exitSide = "left"
+//                side.right.color = colors[0]
+//                side.top.color = colors[0]
+//                side.left.color = colors[1]
+//                side.bottom.color = colors[1]
+//                
+//            case 2:
+//                    
+//                side.left.exitSide = "top"
+//                side.right.exitSide = "bottom"
+//                side.bottom.exitSide = "right"
+//                side.top.exitSide = "left"
+//                side.right.color = colors[0]
+//                side.top.color = colors[1]
+//                side.left.color = colors[1]
+//                side.bottom.color = colors[0]
+//
+//            case 3:
+//                
+//                side.left.exitSide = "bottom"
+//                side.right.exitSide = "top"
+//                side.bottom.exitSide = "left"
+//                side.top.exitSide = "right"
+//                side.right.color = colors[1]
+//                side.top.color = colors[1]
+//                side.left.color = colors[0]
+//                side.bottom.color = colors[0]
+//                
+//            case 4:
+//                
+//                side.right.exitSide = "bottom"
+//                side.left.exitSide = "top"
+//                side.top.exitSide = "left"
+//                side.bottom.exitSide = "right"
+//                side.right.color = colors[1]
+//                side.top.color = colors[0]
+//                side.left.color = colors[0]
+//                side.bottom.color = colors[1]
+//                
+//            default:
+//                break
+//            }
+//        default:
+//            print("DEFAULT")
+//            break
+//        }
+//    }
 }
 
 class Group {
