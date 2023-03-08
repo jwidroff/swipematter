@@ -24,7 +24,6 @@
 		BAC69457297598E7003BDCC9 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC69456297598E7003BDCC9 /* Instructions.swift */; };
 		BAC69459297598F8003BDCC9 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC69458297598F8003BDCC9 /* Piece.swift */; };
 		BAC6945B29759903003BDCC9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6945A29759903003BDCC9 /* Board.swift */; };
-		BAC6945D29759917003BDCC9 /* NextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6945C29759917003BDCC9 /* NextView.swift */; };
 		BAC6945F29759926003BDCC9 /* GridPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6945E29759926003BDCC9 /* GridPoints.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +66,6 @@
 		BAC69456297598E7003BDCC9 /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
 		BAC69458297598F8003BDCC9 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		BAC6945A29759903003BDCC9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
-		BAC6945C29759917003BDCC9 /* NextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextView.swift; sourceTree = "<group>"; };
 		BAC6945E29759926003BDCC9 /* GridPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +128,6 @@
 				BAC69456297598E7003BDCC9 /* Instructions.swift */,
 				BAC69458297598F8003BDCC9 /* Piece.swift */,
 				BAC6945A29759903003BDCC9 /* Board.swift */,
-				BAC6945C29759917003BDCC9 /* NextView.swift */,
 				BAC6945E29759926003BDCC9 /* GridPoints.swift */,
 				BAC694222975980C003BDCC9 /* Main.storyboard */,
 				BAC694252975980D003BDCC9 /* Assets.xcassets */,
@@ -299,7 +296,6 @@
 				BAC6944D29759881003BDCC9 /* ShapeView.swift in Sources */,
 				BAC69455297598D4003BDCC9 /* Level.swift in Sources */,
 				BAC6941F2975980C003BDCC9 /* SceneDelegate.swift in Sources */,
-				BAC6945D29759917003BDCC9 /* NextView.swift in Sources */,
 				BAC6945F29759926003BDCC9 /* GridPoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

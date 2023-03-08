@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     var pieceHeight = CGFloat()
     var boardWidth = CGFloat()
     var boardHeight = CGFloat()
-    var piecesWereEnlarged = false
     var distanceFromPieceCenter = CGFloat()
     var deviceIsNarrow = Bool()
     var retryButton = UIButton()
@@ -25,13 +24,8 @@ class ViewController: UIViewController {
     var colorTheme = ColorTheme()
     var boardView = UIView()
     var duration4Animation = 0.10
-    var movesLeftNumberLabel = UILabel()
-    var movesLeftTextLabel = UILabel()
-    var levelNameLabel = UILabel()
-    var levelObjectiveLabel = UILabel()
     var topBarView = UIView()
     var instructionsShown = false
-    var nextPiece = NextPiece()
     
     override func viewDidLoad() {
         
@@ -427,14 +421,7 @@ extension ViewController: ModelDelegate {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default) { (action) in
                 alert.dismiss(animated: true) {
-                    
-                    if title == "YOU WIN" {
-                        self.model.level.number += 1
-                        self.model.updateUserDefaults()
-                    }
-                    
-                    self.movesLeftNumberLabel.textColor = UIColor.black
-                    
+                                        
                     self.model.resetGame()
                     
                     let delayedTime = DispatchTime.now() + .milliseconds(Int(25))
