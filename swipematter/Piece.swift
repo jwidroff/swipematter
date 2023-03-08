@@ -22,7 +22,7 @@ class Piece {
 //    var nextPiece: Piece?
 //    var doesPivot = true
     var center = CGPoint()
-    var totalVersions = Int()
+//    var totalVersions = Int()
     var pieceMakerPieces: [Piece]?
     
     
@@ -46,38 +46,38 @@ class Piece {
 //        setPieceSides(shape: shape, version: version, colors: self.colors)
     }
     
-    func setPieceTotalVersions(shape: Shape) {
-        
-        switch shape {
-            
-        case .doubleElbow:
-            totalVersions = 8
-            
-        case .stick:
-            totalVersions = 4
-            
-        case .elbow:
-            totalVersions = 4
-            
-        case .cross:
-            totalVersions = 4
-            
-        case .diagElbow:
-            totalVersions = 4
-            
-        case .entrance:
-            totalVersions = 4
-            
-        case .exit:
-            totalVersions = 4
-            
-        case .pieceMaker:
-            totalVersions = 4
-            
-        default:
-            break
-        }
-    }
+//    func setPieceTotalVersions(shape: Shape) {
+//        
+//        switch shape {
+//            
+//        case .doubleElbow:
+//            totalVersions = 8
+//            
+//        case .stick:
+//            totalVersions = 4
+//            
+//        case .elbow:
+//            totalVersions = 4
+//            
+//        case .cross:
+//            totalVersions = 4
+//            
+//        case .diagElbow:
+//            totalVersions = 4
+//            
+//        case .entrance:
+//            totalVersions = 4
+//            
+//        case .exit:
+//            totalVersions = 4
+//            
+//        case .pieceMaker:
+//            totalVersions = 4
+//            
+//        default:
+//            break
+//        }
+//    }
     
     func setPieceSides(shape: Shape, version: Int, colors: [UIColor]) {
         

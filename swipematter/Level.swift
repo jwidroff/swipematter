@@ -1608,24 +1608,24 @@ class LevelModel {
 //        }
 //    }
     
-    private func returnRandomVersion(piece: Piece) -> Int {
-        
-//        var int = 1
-        
-//        var maxVersions = 4
-
-        
-//        if pieceShape == .doubleElbow {
-//            maxVersions = 8
-//        }
-        let int = Int(arc4random_uniform(UInt32(piece.totalVersions))) + 1
-        
-        
-        
-        
-        return int
-        
-    }
+//    private func returnRandomVersion(piece: Piece) -> Int {
+//        
+////        var int = 1
+//        
+////        var maxVersions = 4
+//
+//        
+////        if pieceShape == .doubleElbow {
+////            maxVersions = 8
+////        }
+//        let int = Int(arc4random_uniform(UInt32(piece.totalVersions))) + 1
+//        
+//        
+//        
+//        
+//        return int
+//        
+//    }
     
     
     
