@@ -1561,13 +1561,13 @@ class LevelModel {
             setPieceIndex(piece: piece)
         } else {
             // This is to make sure that the pieces dont start on a hole
-            if board.holeLocations.contains(where: { (holeIndex) -> Bool in
-                holeIndex == index
-            }) {
-                setPieceIndex(piece: piece)
-            } else {
+//            if board.holeLocations.contains(where: { (holeIndex) -> Bool in
+//                holeIndex == index
+//            }) {
+//                setPieceIndex(piece: piece)
+//            } else {
                 piece.indexes = index
-            }
+//            }
         }
     }
     
@@ -2445,25 +2445,25 @@ class LevelModel {
 //        }
 //    }
     
-    private func setupRandomPieces() {
-        
-        for _ in 0..<board.amountOfRandomPieces {
-            
-            let piece = Piece()
-            setPieceIndex(piece: piece)
-
-//            setPieceShape(piece: piece)
-//            setPieceColor(piece: piece)
-            
-//            setPieceSwitches(piece: piece)
-//            piece.setPieceTotalVersions(shape: piece.shape)
-//            piece.version = returnRandomVersion(piece: piece)
-//            piece.setPieceSides(shape: piece.shape, version: piece.version, colors: piece.colors)
-//            setPieceSides(piece: piece)
-            board.pieces.append(piece)
-            
-            
-        }
-    }
+//    private func setupRandomPieces() {
+//        
+//        for _ in 0..<board.amountOfRandomPieces {
+//            
+//            let piece = Piece()
+//            setPieceIndex(piece: piece)
+//
+////            setPieceShape(piece: piece)
+////            setPieceColor(piece: piece)
+//            
+////            setPieceSwitches(piece: piece)
+////            piece.setPieceTotalVersions(shape: piece.shape)
+////            piece.version = returnRandomVersion(piece: piece)
+////            piece.setPieceSides(shape: piece.shape, version: piece.version, colors: piece.colors)
+////            setPieceSides(piece: piece)
+//            board.pieces.append(piece)
+//            
+//            
+//        }
+//    }
 }
 

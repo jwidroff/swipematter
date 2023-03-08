@@ -146,14 +146,14 @@ class Model {
         
         levelModel = LevelModel()
         self.board = levelModel.returnBoard(levelNumber: level.number)
-        setUpLevelDefaults()
+//        setUpLevelDefaults()
     }
     
-    func setUpLevelDefaults() {
-        setUpRandomPieces()
-//        setupNextPieces()
-//        setupBalls()
-    }
+//    func setUpLevelDefaults() {
+////        setUpRandomPieces()
+////        setupNextPieces()
+////        setupBalls()
+//    }
     
     func setBoard() {
         
@@ -178,15 +178,15 @@ class Model {
         }
     }
     
-    func setUpRandomPieces() {
-        
-        for _ in 0..<board.amountOfRandomPieces {
-            
-            let piece = Piece()
-            setPieceIndex(piece: piece)
-            board.pieces.append(piece)
-        }
-    }
+//    func setUpRandomPieces() {
+//
+//        for _ in 0..<board.amountOfRandomPieces {
+//
+//            let piece = Piece()
+//            setPieceIndex(piece: piece)
+//            board.pieces.append(piece)
+//        }
+//    }
     
     private func setPieceIndex(piece: Piece) {
 
@@ -199,13 +199,13 @@ class Model {
             setPieceIndex(piece: piece)
         } else {
             // This is to make sure that the pieces dont start on a hole
-            if board.holeLocations.contains(where: { (holeIndex) -> Bool in
-                holeIndex == index
-            }) {
-                setPieceIndex(piece: piece)
-            } else {
+//            if board.holeLocations.contains(where: { (holeIndex) -> Bool in
+//                holeIndex == index
+//            }) {
+//                setPieceIndex(piece: piece)
+//            } else {
                 piece.indexes = index
-            }
+//            }
         }
     }
     
@@ -261,17 +261,17 @@ class Model {
         return piece
     }
     
-    func checkForIce(piece: Piece) -> Bool {
-
-        var bool = false
-
-        if board.iceLocations.contains(where: { (index) -> Bool in
-            index == piece.indexes
-        }) {
-            bool = true
-        }
-        return bool
-    }
+//    func checkForIce(piece: Piece) -> Bool {
+//
+//        var bool = false
+//
+//        if board.iceLocations.contains(where: { (index) -> Bool in
+//            index == piece.indexes
+//        }) {
+//            bool = true
+//        }
+//        return bool
+//    }
 
     func movePiecesHelper(piece: Piece, direction: Direction) {
         

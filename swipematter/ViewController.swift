@@ -112,7 +112,7 @@ class ViewController: UIViewController {
             }
         }
         
-        boardView = BoardView(frame: CGRect(), xArray: xArray, yArray: yArray, iceLocations: model.board.iceLocations, holeLocations: model.board.holeLocations, colorTheme: board.colorTheme)
+        boardView = BoardView(frame: CGRect(), xArray: xArray, yArray: yArray, colorTheme: board.colorTheme)
         self.model.board.view = boardView
         self.addSwipeGestureRecognizer(view: model.board.view)
         view.addSubview(self.model.board.view)
