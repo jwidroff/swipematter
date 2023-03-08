@@ -473,7 +473,7 @@ class ShapeViewTopView: UIView {
         }
         
         super.init(frame: frame)
-        self.shape = piece.shape
+//        self.shape = piece.shape
         self.version = piece.version
         self.isLocked = piece.isLocked
         self.doesPivot = piece.doesPivot

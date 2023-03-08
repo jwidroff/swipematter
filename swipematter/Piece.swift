@@ -13,7 +13,7 @@ import UIKit
 class Piece {
     
     var indexes: Indexes?
-    var shape: Shape = .blank
+//    var shape: Shape = .blank
     var view = ShapeView()
     var colors = [UIColor()]
     var side = Side()
@@ -30,10 +30,10 @@ class Piece {
         
     }
     
-    init(indexes: Indexes?, shape: Shape, colors: [UIColor], version: Int, isLocked: Bool, doesPivot: Bool) {
+    init(indexes: Indexes?, colors: [UIColor], version: Int, isLocked: Bool, doesPivot: Bool) {
         
         self.indexes = indexes
-        self.shape = shape
+//        self.shape = shape
         self.colors = colors
         self.version = version
         self.isLocked = isLocked
@@ -42,8 +42,8 @@ class Piece {
             
             self.colors.append(colors[0])
         }
-        setPieceTotalVersions(shape: shape)
-        setPieceSides(shape: shape, version: version, colors: self.colors)
+//        setPieceTotalVersions(shape: shape)
+//        setPieceSides(shape: shape, version: version, colors: self.colors)
     }
     
     func setPieceTotalVersions(shape: Shape) {

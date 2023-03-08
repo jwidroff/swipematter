@@ -529,7 +529,7 @@ class ViewController: UIViewController {
                 DispatchQueue.main.asyncAfter(deadline: delayedTime) {
                     
 //                    self.model.check4AutoBallMove()
-                    self.model.check4GameOver()
+//                    self.model.check4GameOver()
                 }
             }
 //        }
@@ -682,6 +682,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: ModelDelegate {
+    
     
     func setupInstructionsView(instructions: Instructions) {
         
@@ -873,139 +874,139 @@ extension ViewController: ModelDelegate {
                 break
             }
             
-            rotateView(piece: piece, rotationDegrees: radianDegrees)
+//            rotateView(piece: piece, rotationDegrees: radianDegrees)
         }
     }
     
-    func rotateView(piece: Piece, rotationDegrees: CGFloat) {
-        
-        let rotationAngle = CGFloat(rotationDegrees * Double.pi / 180.0)
-        let cornerRadius: CGFloat = piece.view.frame.width / 2
-        let shadowRadius: CGFloat = 1
-        
-        UIView.animate(withDuration: 0.10, delay: 0.0, options: .curveEaseIn) {
-            
-            piece.view.transform = CGAffineTransform.init(rotationAngle: rotationAngle)
-            
-            if piece.shape == .pieceMaker {
-
-                self.view.bringSubviewToFront(piece.nextPiece!.view.subviews[0])
+//    func rotateView(piece: Piece, rotationDegrees: CGFloat) {
 //
-//                var t = CGAffineTransform.identity
-//                t.rotated(by: -rotationDegrees * Double.pi / 180.0)
-//                t.scaledBy(x: 0.5, y: 0.5)
+//        let rotationAngle = CGFloat(rotationDegrees * Double.pi / 180.0)
+//        let cornerRadius: CGFloat = piece.view.frame.width / 2
+//        let shadowRadius: CGFloat = 1
 //
-//                piece.view.subviews[0].subviews[0].transform = t
-                
-//                piece.view.subviews[0].subviews[0].transform = CGAffineTransform(scaleX: 0.5, y: 0.5).rotated(by: -rotationDegrees * Double.pi / 180.0)
-                
-                
-                
-//                piece.view.subviews[0].subviews[0].transform = CGAffineTransform.init(rotationAngle: -rotationDegrees * Double.pi / 180.0)
-
-               
-
-            }
-            
-            switch rotationDegrees {
-                
-            case 90:
-                
-                if let sublayers = piece.view.layer.sublayers {
-                    
-                    sublayers[0].frame = piece.view.layer.bounds
-                    sublayers[0].backgroundColor = ColorTheme.boardBackground.cgColor
-                    sublayers[0].shadowColor = UIColor.black.cgColor
-                    sublayers[0].cornerRadius = cornerRadius
-                    sublayers[0].shadowOffset = CGSize(width: shadowRadius, height: -shadowRadius)
-                    sublayers[0].shadowOpacity = 1
-                    sublayers[0].shadowRadius = shadowRadius
-                    
-                    sublayers[1].frame = piece.view.layer.bounds
-                    sublayers[1].backgroundColor = ColorTheme.boardBackground.cgColor
-                    sublayers[1].shadowColor = UIColor.white.cgColor
-                    sublayers[1].cornerRadius = cornerRadius
-                    sublayers[1].shadowOffset = CGSize(width: -shadowRadius, height: shadowRadius)
-                    sublayers[1].shadowOpacity = 1
-                    sublayers[1].shadowRadius = shadowRadius
-                }
-                
-            case 180:
-                
-                if let sublayers = piece.view.layer.sublayers {
-                    
-                    sublayers[0].frame = piece.view.layer.bounds
-                    sublayers[0].backgroundColor = ColorTheme.boardBackground.cgColor
-                    sublayers[0].shadowColor = UIColor.black.cgColor
-                    sublayers[0].cornerRadius = cornerRadius
-                    sublayers[0].shadowOffset = CGSize(width: -shadowRadius, height: -shadowRadius)
-                    sublayers[0].shadowOpacity = 1
-                    sublayers[0].shadowRadius = shadowRadius
-                    
-                    sublayers[1].frame = piece.view.layer.bounds
-                    sublayers[1].backgroundColor = ColorTheme.boardBackground.cgColor
-                    sublayers[1].shadowColor = UIColor.white.cgColor
-                    sublayers[1].cornerRadius = cornerRadius
-                    sublayers[1].shadowOffset = CGSize(width: shadowRadius, height: shadowRadius)
-                    sublayers[1].shadowOpacity = 1
-                    sublayers[1].shadowRadius = shadowRadius
-                }
-                
-            case 270:
-                
-                if let sublayers = piece.view.layer.sublayers {
-                    
-                    sublayers[0].frame = piece.view.layer.bounds
-                    sublayers[0].backgroundColor = ColorTheme.boardBackground.cgColor
-                    sublayers[0].shadowColor = UIColor.black.cgColor
-                    sublayers[0].cornerRadius = cornerRadius
-                    sublayers[0].shadowOffset = CGSize(width: -shadowRadius, height: shadowRadius)
-                    sublayers[0].shadowOpacity = 1
-                    sublayers[0].shadowRadius = shadowRadius
-                    
-                    sublayers[1].frame = piece.view.layer.bounds
-                    sublayers[1].backgroundColor = ColorTheme.boardBackground.cgColor
-                    sublayers[1].shadowColor = UIColor.white.cgColor
-                    sublayers[1].cornerRadius = cornerRadius
-                    sublayers[1].shadowOffset = CGSize(width: shadowRadius, height: -shadowRadius)
-                    sublayers[1].shadowOpacity = 1
-                    sublayers[1].shadowRadius = shadowRadius
-                }
-                
-            case 360:
-                
-                if let sublayers = piece.view.layer.sublayers {
-                    
-                    sublayers[0].frame = piece.view.layer.bounds
-                    sublayers[0].backgroundColor = ColorTheme.boardBackground.cgColor
-                    sublayers[0].shadowColor = UIColor.black.cgColor
-                    sublayers[0].cornerRadius = cornerRadius
-                    sublayers[0].shadowOffset = CGSize(width: shadowRadius, height: shadowRadius)
-                    sublayers[0].shadowOpacity = 1
-                    sublayers[0].shadowRadius = shadowRadius
-                    
-                    sublayers[1].frame = piece.view.layer.bounds
-                    sublayers[1].backgroundColor = ColorTheme.boardBackground.cgColor
-                    sublayers[1].shadowColor = UIColor.white.cgColor
-                    sublayers[1].cornerRadius = cornerRadius
-                    sublayers[1].shadowOffset = CGSize(width: -shadowRadius, height: -shadowRadius)
-                    sublayers[1].shadowOpacity = 1
-                    sublayers[1].shadowRadius = shadowRadius
-                }
-                
-            default:
-                
-                break
-            }
-            
-        } completion: { (true) in
-            
-            if (piece.shape == .cross && (piece.version == 1 || piece.version == 3)) || (piece.shape == .doubleElbow && (piece.version == 1 || piece.version == 5))  {
-
-                self.switchCrissCross(piece: piece)
-            }
-        }
-    }
+//        UIView.animate(withDuration: 0.10, delay: 0.0, options: .curveEaseIn) {
+//
+//            piece.view.transform = CGAffineTransform.init(rotationAngle: rotationAngle)
+//
+//            if piece.shape == .pieceMaker {
+//
+//                self.view.bringSubviewToFront(piece.nextPiece!.view.subviews[0])
+////
+////                var t = CGAffineTransform.identity
+////                t.rotated(by: -rotationDegrees * Double.pi / 180.0)
+////                t.scaledBy(x: 0.5, y: 0.5)
+////
+////                piece.view.subviews[0].subviews[0].transform = t
+//
+////                piece.view.subviews[0].subviews[0].transform = CGAffineTransform(scaleX: 0.5, y: 0.5).rotated(by: -rotationDegrees * Double.pi / 180.0)
+//
+//
+//
+////                piece.view.subviews[0].subviews[0].transform = CGAffineTransform.init(rotationAngle: -rotationDegrees * Double.pi / 180.0)
+//
+//
+//
+//            }
+//
+//            switch rotationDegrees {
+//
+//            case 90:
+//
+//                if let sublayers = piece.view.layer.sublayers {
+//
+//                    sublayers[0].frame = piece.view.layer.bounds
+//                    sublayers[0].backgroundColor = ColorTheme.boardBackground.cgColor
+//                    sublayers[0].shadowColor = UIColor.black.cgColor
+//                    sublayers[0].cornerRadius = cornerRadius
+//                    sublayers[0].shadowOffset = CGSize(width: shadowRadius, height: -shadowRadius)
+//                    sublayers[0].shadowOpacity = 1
+//                    sublayers[0].shadowRadius = shadowRadius
+//
+//                    sublayers[1].frame = piece.view.layer.bounds
+//                    sublayers[1].backgroundColor = ColorTheme.boardBackground.cgColor
+//                    sublayers[1].shadowColor = UIColor.white.cgColor
+//                    sublayers[1].cornerRadius = cornerRadius
+//                    sublayers[1].shadowOffset = CGSize(width: -shadowRadius, height: shadowRadius)
+//                    sublayers[1].shadowOpacity = 1
+//                    sublayers[1].shadowRadius = shadowRadius
+//                }
+//
+//            case 180:
+//
+//                if let sublayers = piece.view.layer.sublayers {
+//
+//                    sublayers[0].frame = piece.view.layer.bounds
+//                    sublayers[0].backgroundColor = ColorTheme.boardBackground.cgColor
+//                    sublayers[0].shadowColor = UIColor.black.cgColor
+//                    sublayers[0].cornerRadius = cornerRadius
+//                    sublayers[0].shadowOffset = CGSize(width: -shadowRadius, height: -shadowRadius)
+//                    sublayers[0].shadowOpacity = 1
+//                    sublayers[0].shadowRadius = shadowRadius
+//
+//                    sublayers[1].frame = piece.view.layer.bounds
+//                    sublayers[1].backgroundColor = ColorTheme.boardBackground.cgColor
+//                    sublayers[1].shadowColor = UIColor.white.cgColor
+//                    sublayers[1].cornerRadius = cornerRadius
+//                    sublayers[1].shadowOffset = CGSize(width: shadowRadius, height: shadowRadius)
+//                    sublayers[1].shadowOpacity = 1
+//                    sublayers[1].shadowRadius = shadowRadius
+//                }
+//
+//            case 270:
+//
+//                if let sublayers = piece.view.layer.sublayers {
+//
+//                    sublayers[0].frame = piece.view.layer.bounds
+//                    sublayers[0].backgroundColor = ColorTheme.boardBackground.cgColor
+//                    sublayers[0].shadowColor = UIColor.black.cgColor
+//                    sublayers[0].cornerRadius = cornerRadius
+//                    sublayers[0].shadowOffset = CGSize(width: -shadowRadius, height: shadowRadius)
+//                    sublayers[0].shadowOpacity = 1
+//                    sublayers[0].shadowRadius = shadowRadius
+//
+//                    sublayers[1].frame = piece.view.layer.bounds
+//                    sublayers[1].backgroundColor = ColorTheme.boardBackground.cgColor
+//                    sublayers[1].shadowColor = UIColor.white.cgColor
+//                    sublayers[1].cornerRadius = cornerRadius
+//                    sublayers[1].shadowOffset = CGSize(width: shadowRadius, height: -shadowRadius)
+//                    sublayers[1].shadowOpacity = 1
+//                    sublayers[1].shadowRadius = shadowRadius
+//                }
+//
+//            case 360:
+//
+//                if let sublayers = piece.view.layer.sublayers {
+//
+//                    sublayers[0].frame = piece.view.layer.bounds
+//                    sublayers[0].backgroundColor = ColorTheme.boardBackground.cgColor
+//                    sublayers[0].shadowColor = UIColor.black.cgColor
+//                    sublayers[0].cornerRadius = cornerRadius
+//                    sublayers[0].shadowOffset = CGSize(width: shadowRadius, height: shadowRadius)
+//                    sublayers[0].shadowOpacity = 1
+//                    sublayers[0].shadowRadius = shadowRadius
+//
+//                    sublayers[1].frame = piece.view.layer.bounds
+//                    sublayers[1].backgroundColor = ColorTheme.boardBackground.cgColor
+//                    sublayers[1].shadowColor = UIColor.white.cgColor
+//                    sublayers[1].cornerRadius = cornerRadius
+//                    sublayers[1].shadowOffset = CGSize(width: -shadowRadius, height: -shadowRadius)
+//                    sublayers[1].shadowOpacity = 1
+//                    sublayers[1].shadowRadius = shadowRadius
+//                }
+//
+//            default:
+//
+//                break
+//            }
+//
+//        } completion: { (true) in
+//
+//            if (piece.shape == .cross && (piece.version == 1 || piece.version == 3)) || (piece.shape == .doubleElbow && (piece.version == 1 || piece.version == 5))  {
+//
+//                self.switchCrissCross(piece: piece)
+//            }
+//        }
+//    }
     
     func switchCrissCross(piece: Piece) {
         
@@ -1214,10 +1215,10 @@ extension ViewController: ModelDelegate {
             piece.center = self.model.board.grid[indexes]!
             piece.view.center = piece.center
             
-            if piece.shape != .pieceMaker {
+//            if piece.shape != .pieceMaker {
                 
                 addTapGestureRecognizer(view: piece.view)
-            }
+//            }
             
             UIView.animate(withDuration: 0.25) {
     //            let rect = CGRect(x: piece.view.frame.minX, y: piece.view.frame.minY, width: self.pieceWidth, height: self.pieceHeight)
@@ -1440,25 +1441,25 @@ extension ViewController: ModelDelegate {
                 }
             }
             
-            if piece.shape == .entrance {
-                
-                for ball in model.board.balls {
-                    
-                    if ball.indexes == piece.indexes {
-                        
-                        UIView.animate(withDuration: 0.25) {
-                            
-                            ball.center = piece.center
-                            ball.view.center = ball.center
-
-                            self.model.deleteBall(ball: ball)
-                            
-                        } completion: { (true) in
-                            print()
-                        }
-                    }
-                }
-            }
+//            if piece.shape == .entrance {
+//
+//                for ball in model.board.balls {
+//
+//                    if ball.indexes == piece.indexes {
+//
+//                        UIView.animate(withDuration: 0.25) {
+//
+//                            ball.center = piece.center
+//                            ball.view.center = ball.center
+//
+//                            self.model.deleteBall(ball: ball)
+//
+//                        } completion: { (true) in
+//                            print()
+//                        }
+//                    }
+//                }
+//            }
             
         }
         
@@ -1508,13 +1509,13 @@ extension ViewController: ModelDelegate {
                 
             } completion: { (true) in
                 
-                if piece.shape == .entrance {
-                    self.setUpBallView(piece: piece)
-                    
-                }
-                if piece.shape == .pieceMaker {
-                    self.resetPieceMakerView(piece: piece)
-                }
+//                if piece.shape == .entrance {
+//                    self.setUpBallView(piece: piece)
+//
+//                }
+//                if piece.shape == .pieceMaker {
+//                    self.resetPieceMakerView(piece: piece)
+//                }
             }
         }
     }

@@ -116,7 +116,7 @@ protocol ModelDelegate {
     func updateMovesLeftLabel(moves: String)
     func addSwipeGestureRecognizer(view: UIView)
 //    func removeHole(piece: Piece)
-    func rotateView(piece: Piece, rotationDegrees: CGFloat)
+//    func rotateView(piece: Piece, rotationDegrees: CGFloat)
     func switchCrissCross(piece: Piece)
     func enlargePiece(view: UIView)
     func disableSwipes()
@@ -216,7 +216,7 @@ class Model {
     
     func setUpLevelDefaults() {
         setUpRandomPieces()
-        setupNextPieces()
+//        setupNextPieces()
 //        setupBalls()
     }
     
@@ -259,7 +259,7 @@ class Model {
         print("setupNextView called")
         
 //        var pieces = [Piece]()
-        let piece1 = Piece(indexes: Indexes(x: 1, y: 2), shape: .blank, colors: [UIColor.red, UIColor.cyan], version: 1, isLocked: false, doesPivot: false)
+        let piece1 = Piece(indexes: Indexes(x: 1, y: 2), colors: [UIColor.red, UIColor.cyan], version: 1, isLocked: false, doesPivot: false)
         
         
         delegate?.setUpNextView(nextPiece: piece1)
@@ -294,14 +294,14 @@ class Model {
             let piece = Piece()
             setPieceIndex(piece: piece)
 
-            piece.shape = setPieceShape(piece: piece)
+//            piece.shape = setPieceShape(piece: piece)
             piece.colors = setPieceColor(piece: piece)
             
 //            setPieceSwitches(piece: piece)
-            piece.setPieceTotalVersions(shape: piece.shape)
-            piece.version = setPieceVersion(piece: piece)
-            piece.setPieceTotalVersions(shape: piece.shape)
-            piece.setPieceSides(shape: piece.shape, version: piece.version, colors: piece.colors)
+//            piece.setPieceTotalVersions(shape: piece.shape)
+//            piece.version = setPieceVersion(piece: piece)
+//            piece.setPieceTotalVersions(shape: piece.shape)
+//            piece.setPieceSides(shape: piece.shape, version: piece.version, colors: piece.colors)
             
             piece.doesPivot = setPivot(piece: piece)
             board.pieces.append(piece)
@@ -332,64 +332,64 @@ class Model {
         }
     }
     
-    func setPieceShape(piece: Piece) -> Shape {
-        
-        var shape: Shape?
-        
-        var randomShapes = [Shape]()
-        
-//        print(piece.pieceMakerPieces)
-        
-        if piece.pieceMakerPieces == nil {
-            randomShapes = board.randomPieceShapes
-            
-        } else {
-            
-            for pieceX in piece.pieceMakerPieces! {
-                randomShapes.append(pieceX.shape)
-            }
-
-            
-        }
-        
-        shape = randomShapes[Int(arc4random_uniform(UInt32(randomShapes.count)))]
-        
-        
-        
-//        if board.randomPieceColors.count == 1 && piece.shape == .stick {
+//    func setPieceShape(piece: Piece) -> Shape {
 //
-//            setPieceShape(piece: piece)
+//        var shape: Shape?
 //
-//        } else if board.randomPieceColors.count == 2 && piece.shape == .stick {
+//        var randomShapes = [Shape]()
 //
-//            if piece.colors[0] == piece.colors[1] {
-//                setPieceShape(piece: piece)
+////        print(piece.pieceMakerPieces)
+//
+//        if piece.pieceMakerPieces == nil {
+//            randomShapes = board.randomPieceShapes
+//
+//        } else {
+//
+//            for pieceX in piece.pieceMakerPieces! {
+//                randomShapes.append(pieceX.shape)
 //            }
+//
+//
 //        }
-        return shape!
-
-    }
+//
+//        shape = randomShapes[Int(arc4random_uniform(UInt32(randomShapes.count)))]
+//
+//
+//
+////        if board.randomPieceColors.count == 1 && piece.shape == .stick {
+////
+////            setPieceShape(piece: piece)
+////
+////        } else if board.randomPieceColors.count == 2 && piece.shape == .stick {
+////
+////            if piece.colors[0] == piece.colors[1] {
+////                setPieceShape(piece: piece)
+////            }
+////        }
+//        return shape!
+//
+//    }
     
-    func setPieceVersion(piece: Piece) -> Int{
-        
-//        var int = Int()
-        
-        var maxVersions = 4
-
-        
-        if piece.shape == .doubleElbow {
-            maxVersions = 8
-        }
-        
-        
-        let version = Int(arc4random_uniform(UInt32(maxVersions))) + 1
-        
-        piece.version = version
-        
-        
-        
-        return version
-    }
+//    func setPieceVersion(piece: Piece) -> Int{
+//
+////        var int = Int()
+//
+//        var maxVersions = 4
+//
+//
+//        if piece.shape == .doubleElbow {
+//            maxVersions = 8
+//        }
+//
+//
+//        let version = Int(arc4random_uniform(UInt32(maxVersions))) + 1
+//
+//        piece.version = version
+//
+//
+//
+//        return version
+//    }
     
     func setPieceColor(piece: Piece) -> [UIColor] {
         
@@ -592,51 +592,51 @@ class Model {
 //        return bool
 //    }
     
-    func setupNextPieces() {
-        
-        for piece in board.pieces {
-            
-            if piece.shape == .pieceMaker {
-                
-//                print("PIECEMAKER FOUND")
-                
-                resetPieceMaker(piece: piece)
-                
-                
-//                createNextPiece(piece: piece, direction: nil)
-            }
-        }
-        
-    }
+//    func setupNextPieces() {
+//
+//        for piece in board.pieces {
+//
+//            if piece.shape == .pieceMaker {
+//
+////                print("PIECEMAKER FOUND")
+//
+//                resetPieceMaker(piece: piece)
+//
+//
+////                createNextPiece(piece: piece, direction: nil)
+//            }
+//        }
+//
+//    }
     
-    func resetPieceMaker(piece: Piece) {
-                
-        let nextPiece = Piece()
-        nextPiece.indexes = piece.indexes
-        
-        nextPiece.colors = setPieceColor(piece: piece)
-        nextPiece.shape = setPieceShape(piece: piece)
-        nextPiece.setPieceTotalVersions(shape: nextPiece.shape)
-        nextPiece.version = setPieceVersion(piece: nextPiece)
-
-        nextPiece.setPieceSides(shape: nextPiece.shape, version: nextPiece.version, colors: nextPiece.colors)
-        
-        nextPiece.doesPivot = setPivot(piece: piece)
-        nextPiece.isLocked = false
-        piece.nextPiece = nextPiece
-        
-        //Add the view here
-        
-        
-        
-
-//        board.pieces.append(piece.nextPiece!)
-        
-//        print("NEXT PIECE VERSION = \(nextPiece.version)")
-        
-        
-//        delegate?.resetPieceMakerView(piece: piece)
-    }
+//    func resetPieceMaker(piece: Piece) {
+//
+//        let nextPiece = Piece()
+//        nextPiece.indexes = piece.indexes
+//
+//        nextPiece.colors = setPieceColor(piece: piece)
+//        nextPiece.shape = setPieceShape(piece: piece)
+//        nextPiece.setPieceTotalVersions(shape: nextPiece.shape)
+//        nextPiece.version = setPieceVersion(piece: nextPiece)
+//
+//        nextPiece.setPieceSides(shape: nextPiece.shape, version: nextPiece.version, colors: nextPiece.colors)
+//
+//        nextPiece.doesPivot = setPivot(piece: piece)
+//        nextPiece.isLocked = false
+//        piece.nextPiece = nextPiece
+//
+//        //Add the view here
+//
+//
+//
+//
+////        board.pieces.append(piece.nextPiece!)
+//
+////        print("NEXT PIECE VERSION = \(nextPiece.version)")
+//
+//
+////        delegate?.resetPieceMakerView(piece: piece)
+//    }
     
     func setPivot(piece: Piece) -> Bool {
         
@@ -709,7 +709,7 @@ class Model {
             
             if spaceIsntBlocked {
                 
-                if piece.shape != .pieceMaker {
+//                if piece.shape != .pieceMaker {
                     
                     updateMovesLeft()
                     
@@ -717,7 +717,7 @@ class Model {
                         piece.indexes?.y = (indexes.y)! - 1
                     }
                     
-                }
+//                }
                 
                 
             } else {
@@ -767,7 +767,7 @@ class Model {
             
             if spaceIsntBlocked {
                 
-                if piece.shape != .pieceMaker {
+//                if piece.shape != .pieceMaker {
                     
                     updateMovesLeft()
                     
@@ -776,7 +776,7 @@ class Model {
                     }
                     
                     
-                }
+//                }
                 
             } else {
                 return
@@ -1247,7 +1247,7 @@ class Model {
             } completion: { (true) in
 
                 
-                self.resetPieceMaker(piece: piece)
+//                self.resetPieceMaker(piece: piece)
                 self.delegate?.resetPieceMakerView(piece: piece)
                 
                 
@@ -2054,50 +2054,50 @@ class Model {
         }
     }
     
-    func check4GameOver() {
-        
-//        guard !board.pieces.contains(where: { (piece) in
-//            piece.shape == .pieceMaker
-//        }) else {
-//            return
-//        }
-        
-        var message = ""
-        var bool = false
-        var moveablePieceCount = 0
-        
-        
-//        var originalEntrancePieces = 0
+//    func check4GameOver() {
 //
-//        for piece in level.board.pieces {
-//            if piece.shape == .entrance{
-//                originalEntrancePieces += 1
+////        guard !board.pieces.contains(where: { (piece) in
+////            piece.shape == .pieceMaker
+////        }) else {
+////            return
+////        }
+//
+//        var message = ""
+//        var bool = false
+//        var moveablePieceCount = 0
+//
+//
+////        var originalEntrancePieces = 0
+////
+////        for piece in level.board.pieces {
+////            if piece.shape == .entrance{
+////                originalEntrancePieces += 1
+////            }
+////        }
+//
+//
+//        for piece in board.pieces {
+//            if piece.isLocked == false {
+//                moveablePieceCount += 1
 //            }
 //        }
-        
-        
-        for piece in board.pieces {
-            if piece.isLocked == false {
-                moveablePieceCount += 1
-            }
-        }
-        
-        if moveablePieceCount == 0 {
-            
-            if !board.pieces.contains(where: { (piece) in
-                piece.shape == .pieceMaker
-            }) {
-                bool = true
-                message = "No more pieces to move!"
-            }
-        }
-        
-        if bool == true {
-            delegate?.runPopUpView(title: message, message: "TRY AGAIN?")
-            gameOver = false
-            return
-        }
-    }
+//
+//        if moveablePieceCount == 0 {
+//
+//            if !board.pieces.contains(where: { (piece) in
+//                piece.shape == .pieceMaker
+//            }) {
+//                bool = true
+//                message = "No more pieces to move!"
+//            }
+//        }
+//
+//        if bool == true {
+//            delegate?.runPopUpView(title: message, message: "TRY AGAIN?")
+//            gameOver = false
+//            return
+//        }
+//    }
     
 //    func addToFakePiecesPassed(ball: Ball, piece: Piece) {
 //
@@ -2722,194 +2722,24 @@ class Model {
         return bool
     }
     
-    func switchPieceAfterBall(piece: Piece, ball: Ball) {
-        
-        
-        piece.view.subviews[0].backgroundColor = .white
-        
-        let delayedTime = DispatchTime.now() + .milliseconds(Int(250))
-
-        DispatchQueue.main.asyncAfter(deadline: delayedTime) {
-            
-            
-            
-            
-            
-            switch piece.shape {
-
-            case .cross:
-                
-                switch piece.version {
-                    
-                case 1:
-                    piece.version = 3
-                case 2:
-                    piece.version = 4
-                case 3:
-                    piece.version = 1
-                case 4:
-                    piece.version = 2
-                default:
-                    break
-                }
-                
-                piece.setPieceSides(shape: piece.shape, version: piece.version, colors: piece.colors)
-                self.delegate?.switchCrissCross(piece: piece)
-                
-            case .doubleElbow:
-                  
-                    switch piece.version {
-
-                    case 1:
-                        piece.version = 5
-                    case 2:
-                        piece.version = 6
-                    case 3:
-                        piece.version = 7
-                    case 4:
-                        piece.version = 8
-                    case 5:
-                        piece.version = 1
-                    case 6:
-                        piece.version = 2
-                    case 7:
-                        piece.version = 3
-                    case 8:
-                        piece.version = 4
-
-                    default:
-                        break
-                    }
-
-                    piece.setPieceSides(shape: piece.shape, version: piece.version, colors: piece.colors)
-                self.delegate?.switchCrissCross(piece: piece)
-                
-            case .stick:
-                break
-            case .diagElbow:
-                break
-            case .elbow:
-                break
-            default:
-                break
-            }
-            
-            
-            
-        }
-        
-      
-    }
-    
-    func switchVersions(piece: Piece) {
-        
-        if piece.shape == .blank && piece.version == 2 { //MARK: CHANGED THIS TO VERSION FROM CURRENT SWITCH
-            return
-        }
-        
-        switch piece.shape {
-            
-//        case .pieceMaker:
+//    func switchPieceAfterBall(piece: Piece, ball: Ball) {
+//
+//
+//        piece.view.subviews[0].backgroundColor = .white
+//
+//        let delayedTime = DispatchTime.now() + .milliseconds(Int(250))
+//
+//        DispatchQueue.main.asyncAfter(deadline: delayedTime) {
 //
 //
 //
 //
-//            if piece.nextPiece?.version != piece.nextPiece?.totalVersions {
-//                piece.nextPiece?.version += 1
-//            } else {
-//                piece.nextPiece?.version = 1
-//            }
 //
+//            switch piece.shape {
 //
+//            case .cross:
 //
-//            if piece.version != piece.totalVersions {
-//                piece.version += 1
-//            } else {
-//                piece.version = 1
-//            }
-            
-//        case .doubleElbow:
-            
-//            switch piece.version{
-//
-//            case 1:
-//                piece.version = 5
-//            case 2:
-//                piece.version = 6
-//            case 3:
-//                piece.version = 7
-//            case 4:
-//                piece.version = 8
-//            case 5:
-//                piece.version = 1
-//            case 6:
-//                piece.version = 2
-//            case 7:
-//                piece.version = 3
-//            case 8:
-//                piece.version = 4
-//            default:
-//                break
-//            }
-            
-            
-//        case .elbow:
-//
-//            let originalLeft = piece.side.left
-//            let originalRight = piece.side.right
-//            let originalTop = piece.side.top
-//            let originalBottom = piece.side.bottom
-//
-//            piece.side.top.color = originalLeft.color
-////            piece.side.top.opening = originalLeft.opening
-////            piece.side.top.exitSide = originalLeft.exitSide
-////            piece.side.top.closing = originalLeft.closing
-//
-//            piece.side.right.color = originalTop.color
-////            piece.side.right.opening = originalTop.opening
-////            piece.side.right.exitSide = originalTop.exitSide
-////            piece.side.right.closing = originalTop.closing
-//
-//            piece.side.bottom.color = originalRight.color
-////            piece.side.bottom.opening = originalRight.opening
-////            piece.side.bottom.exitSide = originalRight.exitSide
-////            piece.side.bottom.closing = originalRight.closing
-//
-//            piece.side.left.color = originalBottom.color
-////            piece.side.left.opening = originalBottom.opening
-////            piece.side.left.exitSide = originalBottom.exitSide
-////            piece.side.left.closing = originalBottom.closing
-//
-            
-        case .cross:
-            
-            if piece.colors[0] == piece.colors[1] {
-                
-                print("Colors are the same")
-                
-                switch piece.version{
-                    
-                case 1:
-                    piece.version = 2
-                case 2:
-                    piece.version = 1
-                case 3:
-                    piece.version = 4
-                case 4:
-                    piece.version = 3
-                default:
-                    break
-                }
-            } else {
-                
-                //MARK: WHY DOESNT THIS HAVE TO BE LIKE THE OTHERS? (SEE LINE 1134)
-                //MARK: SOMETHING DEFINITELY STILL WRONG WITH CROSS
-                
-//                print("Colors are diff")
-//
-//
-//
-//                switch piece.version{
+//                switch piece.version {
 //
 //                case 1:
 //                    piece.version = 3
@@ -2922,32 +2752,202 @@ class Model {
 //                default:
 //                    break
 //                }
-                
-                
-                
-                
-                
-//                print("colors are diff")
-
-                if piece.version != piece.totalVersions {
-                    piece.version += 1
-                } else {
-                    piece.version = 1
-                }
-            }
-            
-        default:
-            
-            if piece.version != piece.totalVersions {
-                
-                piece.version += 1
-                
-            } else {
-                
-                piece.version = 1
-            }
-        }
-    }
+//
+//                piece.setPieceSides(shape: piece.shape, version: piece.version, colors: piece.colors)
+//                self.delegate?.switchCrissCross(piece: piece)
+//
+//            case .doubleElbow:
+//
+//                    switch piece.version {
+//
+//                    case 1:
+//                        piece.version = 5
+//                    case 2:
+//                        piece.version = 6
+//                    case 3:
+//                        piece.version = 7
+//                    case 4:
+//                        piece.version = 8
+//                    case 5:
+//                        piece.version = 1
+//                    case 6:
+//                        piece.version = 2
+//                    case 7:
+//                        piece.version = 3
+//                    case 8:
+//                        piece.version = 4
+//
+//                    default:
+//                        break
+//                    }
+//
+//                    piece.setPieceSides(shape: piece.shape, version: piece.version, colors: piece.colors)
+//                self.delegate?.switchCrissCross(piece: piece)
+//
+//            case .stick:
+//                break
+//            case .diagElbow:
+//                break
+//            case .elbow:
+//                break
+//            default:
+//                break
+//            }
+//
+//
+//
+//        }
+//
+//
+//    }
+    
+//    func switchVersions(piece: Piece) {
+//        
+//        if piece.shape == .blank && piece.version == 2 { //MARK: CHANGED THIS TO VERSION FROM CURRENT SWITCH
+//            return
+//        }
+//        
+//        switch piece.shape {
+//            
+////        case .pieceMaker:
+////
+////
+////
+////
+////            if piece.nextPiece?.version != piece.nextPiece?.totalVersions {
+////                piece.nextPiece?.version += 1
+////            } else {
+////                piece.nextPiece?.version = 1
+////            }
+////
+////
+////
+////            if piece.version != piece.totalVersions {
+////                piece.version += 1
+////            } else {
+////                piece.version = 1
+////            }
+//            
+////        case .doubleElbow:
+//            
+////            switch piece.version{
+////
+////            case 1:
+////                piece.version = 5
+////            case 2:
+////                piece.version = 6
+////            case 3:
+////                piece.version = 7
+////            case 4:
+////                piece.version = 8
+////            case 5:
+////                piece.version = 1
+////            case 6:
+////                piece.version = 2
+////            case 7:
+////                piece.version = 3
+////            case 8:
+////                piece.version = 4
+////            default:
+////                break
+////            }
+//            
+//            
+////        case .elbow:
+////
+////            let originalLeft = piece.side.left
+////            let originalRight = piece.side.right
+////            let originalTop = piece.side.top
+////            let originalBottom = piece.side.bottom
+////
+////            piece.side.top.color = originalLeft.color
+//////            piece.side.top.opening = originalLeft.opening
+//////            piece.side.top.exitSide = originalLeft.exitSide
+//////            piece.side.top.closing = originalLeft.closing
+////
+////            piece.side.right.color = originalTop.color
+//////            piece.side.right.opening = originalTop.opening
+//////            piece.side.right.exitSide = originalTop.exitSide
+//////            piece.side.right.closing = originalTop.closing
+////
+////            piece.side.bottom.color = originalRight.color
+//////            piece.side.bottom.opening = originalRight.opening
+//////            piece.side.bottom.exitSide = originalRight.exitSide
+//////            piece.side.bottom.closing = originalRight.closing
+////
+////            piece.side.left.color = originalBottom.color
+//////            piece.side.left.opening = originalBottom.opening
+//////            piece.side.left.exitSide = originalBottom.exitSide
+//////            piece.side.left.closing = originalBottom.closing
+////
+//            
+//        case .cross:
+//            
+//            if piece.colors[0] == piece.colors[1] {
+//                
+//                print("Colors are the same")
+//                
+//                switch piece.version{
+//                    
+//                case 1:
+//                    piece.version = 2
+//                case 2:
+//                    piece.version = 1
+//                case 3:
+//                    piece.version = 4
+//                case 4:
+//                    piece.version = 3
+//                default:
+//                    break
+//                }
+//            } else {
+//                
+//                //MARK: WHY DOESNT THIS HAVE TO BE LIKE THE OTHERS? (SEE LINE 1134)
+//                //MARK: SOMETHING DEFINITELY STILL WRONG WITH CROSS
+//                
+////                print("Colors are diff")
+////
+////
+////
+////                switch piece.version{
+////
+////                case 1:
+////                    piece.version = 3
+////                case 2:
+////                    piece.version = 4
+////                case 3:
+////                    piece.version = 1
+////                case 4:
+////                    piece.version = 2
+////                default:
+////                    break
+////                }
+//                
+//                
+//                
+//                
+//                
+////                print("colors are diff")
+//
+//                if piece.version != piece.totalVersions {
+//                    piece.version += 1
+//                } else {
+//                    piece.version = 1
+//                }
+//            }
+//            
+//        default:
+//            
+//            if piece.version != piece.totalVersions {
+//                
+//                piece.version += 1
+//                
+//            } else {
+//                
+//                piece.version = 1
+//            }
+//        }
+//    }
  
     func updateUserDefaults() {
         
