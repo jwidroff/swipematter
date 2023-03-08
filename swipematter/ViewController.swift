@@ -682,6 +682,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: ModelDelegate {
+
+    
     
     
     func setupInstructionsView(instructions: Instructions) {
@@ -1181,31 +1183,31 @@ extension ViewController: ModelDelegate {
 //        }
 //    }
     
-    func resetPieceMakerView(piece: Piece) {
- 
-        let w = piece.view.frame.width// / 2
-        let h = piece.view.frame.height// / 2
-        let x = piece.view.center.x
-        let y = piece.view.center.y
-        let frame = CGRect(x: x, y: y, width: w, height: h)
-        let nextPieceView = ShapeView(frame: frame, piece: piece.nextPiece!, groups: nil)
-        
-        nextPieceView.center = CGPoint(x: x, y: y)
-        addTapGestureRecognizer(view: nextPieceView)
-        
-        self.boardView.addSubview(nextPieceView)
-        
-        
-        piece.nextPiece?.view = nextPieceView
-        
-        
-        
-        let scale2 = CGAffineTransform(scaleX: 0.5, y: 0.5)
-        piece.nextPiece!.view.transform = scale2
-
-        
-        
-    }
+//    func resetPieceMakerView(piece: Piece) {
+//
+//        let w = piece.view.frame.width// / 2
+//        let h = piece.view.frame.height// / 2
+//        let x = piece.view.center.x
+//        let y = piece.view.center.y
+//        let frame = CGRect(x: x, y: y, width: w, height: h)
+//        let nextPieceView = ShapeView(frame: frame, piece: piece.nextPiece!, groups: nil)
+//
+//        nextPieceView.center = CGPoint(x: x, y: y)
+//        addTapGestureRecognizer(view: nextPieceView)
+//
+//        self.boardView.addSubview(nextPieceView)
+//
+//
+//        piece.nextPiece?.view = nextPieceView
+//
+//
+//
+//        let scale2 = CGAffineTransform(scaleX: 0.5, y: 0.5)
+//        piece.nextPiece!.view.transform = scale2
+//
+//
+//
+//    }
     
     func addPieceView(piece: Piece) {
         

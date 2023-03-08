@@ -19,7 +19,7 @@ class Piece {
     var side = Side()
 //    var version = Int()
 //    var isLocked = false
-    var nextPiece: Piece?
+//    var nextPiece: Piece?
 //    var doesPivot = true
     var center = CGPoint()
     var totalVersions = Int()

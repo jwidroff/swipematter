@@ -34,9 +34,9 @@ class ShapeView : UIView {
 
         super.init(frame: frame)
 
-        if let nextPieceX = piece.nextPiece {
-            self.nextPiece = nextPieceX
-        }
+//        if let nextPieceX = piece.nextPiece {
+//            self.nextPiece = nextPieceX
+//        }
         
 //        isLocked = piece.isLocked
 //        doesPivot = piece.doesPivot
@@ -478,9 +478,9 @@ class ShapeViewTopView: UIView {
 //        self.isLocked = piece.isLocked
 //        self.doesPivot = piece.doesPivot
         
-        if let nextPieceX = piece.nextPiece {
-            self.nextPiece = nextPieceX
-        }
+//        if let nextPieceX = piece.nextPiece {
+//            self.nextPiece = nextPieceX
+//        }
         
         
         

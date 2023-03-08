@@ -103,7 +103,7 @@ protocol ModelDelegate {
     func movePieceView(piece: Piece)
     func moveBallView(ball: Ball, piece: Piece, startSide: String, endSide: String)
     func addPieceView(piece: Piece)
-    func resetPieceMakerView(piece: Piece)
+//    func resetPieceMakerView(piece: Piece)
     func removeView(view: UIView)
     func runPopUpView(title: String, message: String)
     func clearPiecesAnimation(view: UIView)
@@ -1227,33 +1227,33 @@ class Model {
     }
 
     
-    func createNextPiece(piece: Piece, direction: Direction?) {
-
-        self.board.pieces.append(piece.nextPiece!)
-    
-        self.delegate?.addPieceView(piece: piece.nextPiece!)
-
-        if let direction = direction {
-
-            UIView.animate(withDuration: 0.25) {
-
-                let scale2 = CGAffineTransform(scaleX: 1, y: 1)
-                piece.nextPiece!.view.transform = scale2
-                
-                self.movePiecesHelper(piece: piece.nextPiece!, direction: direction)
-                self.delegate?.movePieceView(piece: piece.nextPiece!)
-                
-                
-            } completion: { (true) in
-
-                
-//                self.resetPieceMaker(piece: piece)
-                self.delegate?.resetPieceMakerView(piece: piece)
-                
-                
-            }
-        }
-    }
+//    func createNextPiece(piece: Piece, direction: Direction?) {
+//
+//        self.board.pieces.append(piece.nextPiece!)
+//    
+//        self.delegate?.addPieceView(piece: piece.nextPiece!)
+//
+//        if let direction = direction {
+//
+//            UIView.animate(withDuration: 0.25) {
+//
+//                let scale2 = CGAffineTransform(scaleX: 1, y: 1)
+//                piece.nextPiece!.view.transform = scale2
+//                
+//                self.movePiecesHelper(piece: piece.nextPiece!, direction: direction)
+//                self.delegate?.movePieceView(piece: piece.nextPiece!)
+//                
+//                
+//            } completion: { (true) in
+//
+//                
+////                self.resetPieceMaker(piece: piece)
+//                self.delegate?.resetPieceMakerView(piece: piece)
+//                
+//                
+//            }
+//        }
+//    }
     
     func changeNextPiece() {
         
