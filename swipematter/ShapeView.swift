@@ -10,8 +10,9 @@ import UIKit
 
 class ShapeView : UIView {
     
-    var colors = [CGColor]()
+//    var colors = [CGColor]()
     var context : CGContext?
+    var color = UIColor()
     
     private var colorTheme = ColorTheme()
     
@@ -26,7 +27,7 @@ class ShapeView : UIView {
     init(frame: CGRect, piece: Piece, groups: [Group]?) {
 
         super.init(frame: frame)
-        
+        color = piece.color
         makeSoft()
                 
         if let groups = groups {
@@ -41,7 +42,6 @@ class ShapeView : UIView {
                 }
             }
         }
-        addTopView(piece: piece, groups: groups)
     }
     
     func setViewForGroupedPiece(group: Group, piece: Piece) {
@@ -71,7 +71,6 @@ class ShapeView : UIView {
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
                     Indexes(x: (pieceXXX.indexes?.x!)! + 1, y: pieceXXX.indexes?.y) == piece.indexes
                 }) {
-                    print("A")
                     
                     if subLayer0Width != 0 {
                         subLayer0Width = 1
@@ -88,7 +87,6 @@ class ShapeView : UIView {
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
                     Indexes(x: (pieceXXX.indexes?.x!)! - 1, y: pieceXXX.indexes?.y) == piece.indexes
                 }) {
-                    print("B")
                     
                     subLayer0Width = 0
                     
@@ -116,7 +114,6 @@ class ShapeView : UIView {
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
                     Indexes(x: (pieceXXX.indexes?.x!)! + 1, y: pieceXXX.indexes?.y) == piece.indexes
                 }) {
-                    print("C")
                     
                     if subLayer0Width != 0 {
                         subLayer0Width = 1
@@ -133,7 +130,6 @@ class ShapeView : UIView {
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
                     Indexes(x: (pieceXXX.indexes?.x!)! - 1, y: pieceXXX.indexes?.y) == piece.indexes
                 }) {
-                    print("D")
                     
                     subLayer0Width = 0
                     
@@ -161,7 +157,6 @@ class ShapeView : UIView {
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
                     Indexes(x: pieceXXX.indexes?.x, y: (pieceXXX.indexes?.y!)! - 1) == piece.indexes
                 }) {
-                    print("E")
                     
                     subLayer0Height = 0
                     
@@ -178,7 +173,6 @@ class ShapeView : UIView {
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
                     Indexes(x: pieceXXX.indexes?.x, y: (pieceXXX.indexes?.y!)! + 1) == piece.indexes
                 }) {
-                    print("F")
                     
                     if subLayer0Height != 0 {
                         subLayer0Height = 1
@@ -206,7 +200,6 @@ class ShapeView : UIView {
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
                     Indexes(x: pieceXXX.indexes?.x, y: (pieceXXX.indexes?.y!)! - 1) == piece.indexes
                 }) {
-                    print("G")
                     
                     if subLayer0Width != 0 {
                         subLayer0Width = 1
@@ -222,7 +215,6 @@ class ShapeView : UIView {
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
                     Indexes(x: pieceXXX.indexes?.x, y: (pieceXXX.indexes?.y!)! + 1) == piece.indexes
                 }) {
-                    print("H")
                     
                     if subLayer0Width != 0 {
                         subLayer0Width = 1
@@ -244,45 +236,15 @@ class ShapeView : UIView {
         }
     }
     
-    var groupBackgroundColors = [UIColor.systemTeal, UIColor.red, UIColor.yellow, UIColor.green, UIColor.blue, UIColor.purple, UIColor.orange, UIColor.magenta, UIColor.systemIndigo, UIColor.cyan, UIColor.darkGray, UIColor.lightGray, UIColor.gray, UIColor.brown, UIColor.systemPink, UIColor.white, UIColor.black]
-    
-    func addTopView(piece: Piece, groups: [Group]?) {
-        
-        var topViewBackgroundColor = ColorTheme.pieceBackground
-        
-        var frameX = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
-        
-        var indexX = 0
-        
-        if let groups = groups {
-            
-            for group in groups {
-                
-                if group.pieces.contains(where: { (pieceX) -> Bool in
-                    pieceX.indexes == piece.indexes
-                }) {
-                    
-                    frameX = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
-                    setViewForGroupedPiece(group: group, piece: piece)
-                    topViewBackgroundColor = groupBackgroundColors[indexX]
-                    
-                }
-                indexX += 1
-            }
-        }
-        
-        let topView = ShapeViewTopView(frame: frameX, piece: piece, backgroundColor: topViewBackgroundColor)
-        self.addSubview(topView)
-    }
-    
     func makeSoft() {
+        
         self.layer.masksToBounds = false
         let frame = self.bounds
         
         let shadowRadius: CGFloat = 1
         let darkShadow = CALayer()
         darkShadow.frame = frame
-        darkShadow.backgroundColor = ColorTheme.pieceBackground.cgColor
+        darkShadow.backgroundColor = color.cgColor
         darkShadow.shadowColor = UIColor.black.cgColor
         darkShadow.shadowOffset = CGSize(width: shadowRadius, height: shadowRadius)
         darkShadow.shadowOpacity = 1
@@ -291,39 +253,12 @@ class ShapeView : UIView {
 
         let lightShadow = CALayer()
         lightShadow.frame = frame
-        lightShadow.backgroundColor = ColorTheme.pieceBackground.cgColor
+        lightShadow.backgroundColor = color.cgColor
         lightShadow.shadowColor = UIColor.white.cgColor
         lightShadow.shadowOffset = CGSize(width: -shadowRadius, height: -shadowRadius)
         lightShadow.shadowOpacity = 1
         lightShadow.shadowRadius = shadowRadius
         self.layer.insertSublayer(lightShadow, at: 1)
-    }
-}
-
-class ShapeViewTopView: UIView {
-    
-    var version = Int()
-    var colors = [CGColor]()
-    var switches = Int()
-    var isLocked = false
-    var doesPivot = true
-    var nextPiece: Piece?
-    
-    private var colorTheme = ColorTheme()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    init(frame: CGRect, piece: Piece, backgroundColor: UIColor) {
-        
-        super.init(frame: frame)
-        self.clipsToBounds = true
-        self.backgroundColor = backgroundColor
     }
 }
 

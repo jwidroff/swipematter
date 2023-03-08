@@ -211,16 +211,16 @@ class ViewController: UIViewController {
         switch sender.direction {
             
         case .up:
-            model.movePiece(direction: .up, pieces: model.board.pieces)
+            model.movePieces(direction: .up, pieces: model.board.pieces)
             
         case .down:
-            model.movePiece(direction: .down, pieces: model.board.pieces)
+            model.movePieces(direction: .down, pieces: model.board.pieces)
             
         case .right:
-            model.movePiece(direction: .right, pieces: model.board.pieces)
+            model.movePieces(direction: .right, pieces: model.board.pieces)
             
         case .left:
-            model.movePiece(direction: .left, pieces: model.board.pieces)
+            model.movePieces(direction: .left, pieces: model.board.pieces)
             
         default:
             break
@@ -307,7 +307,7 @@ extension ViewController: ModelDelegate {
             view.transform = scale
             
         } completion: { (true) in
-            print()
+            
         }
     }
     
@@ -519,7 +519,7 @@ extension ViewController: ModelDelegate {
             view.transform = transform
             
         } completion: { (true) in
-            print()
+            
         }
     }
 }

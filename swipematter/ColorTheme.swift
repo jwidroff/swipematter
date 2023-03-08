@@ -41,10 +41,31 @@ class ColorTheme { //TODO: Make all of these into static vars
 
 struct PieceColors {
     
-    static var red = UIColor.init(red: 0.8, green: 0.4, blue: 0.0, alpha: 0.8)
-    static var blue = UIColor.init(red: 0.0, green: 0.8, blue: 0.8, alpha: 0.8)
-    static var green = UIColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.8)
+    var colors = [
+        "red" : UIColor.init(red: 0.9, green: 0.0, blue: 0.0, alpha: 1.0),
+     "blue" : UIColor.init(red: 0.0, green: 0.0, blue: 0.9, alpha: 0.8),
+    "green" : UIColor.init(red: 0.0, green: 9.0, blue: 0.4, alpha: 0.8)]
+//    static var teal = UIColor.systemTeal
+////    static var red = UIColor.red
+//    static var yellow = UIColor.systemTeal
+////    static var green = UIColor.systemTeal
+////    static var blue = UIColor.systemTeal
+//    static var purple = UIColor.systemTeal
+//    static var orange = UIColor.systemTeal
+//    static var magenta = UIColor.systemTeal
+//    static var indigo = UIColor.systemTeal
+//    static var cyan = UIColor.systemTeal
+    
+    
+    //    var groupBackgroundColors = [UIColor.systemTeal, UIColor.red, UIColor.yellow, UIColor.green, UIColor.blue, UIColor.purple, UIColor.orange, UIColor.magenta, UIColor.systemIndigo, UIColor.cyan, UIColor.darkGray, UIColor.lightGray, UIColor.gray, UIColor.brown, UIColor.systemPink, UIColor.white, UIColor.black]
+    
 }
+
+
+
+
+
+
 
 
 
