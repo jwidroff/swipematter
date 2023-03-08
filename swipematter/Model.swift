@@ -259,7 +259,7 @@ class Model {
         print("setupNextView called")
         
 //        var pieces = [Piece]()
-        let piece1 = Piece(indexes: Indexes(x: 1, y: 2), colors: [UIColor.red, UIColor.cyan], version: 1, isLocked: false, doesPivot: false)
+        let piece1 = Piece(indexes: Indexes(x: 1, y: 2), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
         
         
         delegate?.setUpNextView(nextPiece: piece1)

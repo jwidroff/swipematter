@@ -17,7 +17,7 @@ class Piece {
     var view = ShapeView()
     var colors = [UIColor()]
     var side = Side()
-    var version = Int()
+//    var version = Int()
     var isLocked = false
     var nextPiece: Piece?
     var doesPivot = true
@@ -30,12 +30,12 @@ class Piece {
         
     }
     
-    init(indexes: Indexes?, colors: [UIColor], version: Int, isLocked: Bool, doesPivot: Bool) {
+    init(indexes: Indexes?, colors: [UIColor], isLocked: Bool, doesPivot: Bool) {
         
         self.indexes = indexes
 //        self.shape = shape
         self.colors = colors
-        self.version = version
+//        self.version = version
         self.isLocked = isLocked
         self.doesPivot = doesPivot
         if colors.count == 1 {
