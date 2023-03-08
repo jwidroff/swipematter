@@ -1097,49 +1097,49 @@ class LevelModel {
 //            addBorderAroundBoardOf(.wall, exceptionIndexes: [])
 
 //
-            let piece1 = Piece(indexes: Indexes(x: 6, y: 1), colors: [UIColor.red, UIColor.cyan])
+            let piece1 = Piece(indexes: Indexes(x: 6, y: 1), color: UIColor.red)
             board.pieces.append(piece1)
 
 
 
-            let piece2 = Piece(indexes: Indexes(x: 7, y: 1), colors: [UIColor.cyan, UIColor.red])
+            let piece2 = Piece(indexes: Indexes(x: 7, y: 1), color: UIColor.red)
             board.pieces.append(piece2)
 
-            let piece3 = Piece(indexes: Indexes(x: 7, y: 2), colors: [UIColor.red, UIColor.cyan])
+            let piece3 = Piece(indexes: Indexes(x: 7, y: 2), color: UIColor.red)
             board.pieces.append(piece3)
 
 
             let group = Group(pieces: [piece1, piece2, piece3])//, piece4])
 
 
-            let piece4 = Piece(indexes: Indexes(x: 5, y: 2), colors: [UIColor.red, UIColor.cyan])
+            let piece4 = Piece(indexes: Indexes(x: 5, y: 2), color: UIColor.red)
             board.pieces.append(piece4)
 
 
 
-            let piece5 = Piece(indexes: Indexes(x: 5, y: 3), colors: [UIColor.cyan, UIColor.red])
+            let piece5 = Piece(indexes: Indexes(x: 5, y: 3), color: UIColor.cyan)
             board.pieces.append(piece5)
 
-            let piece6 = Piece(indexes: Indexes(x: 6, y: 3), colors: [UIColor.red, UIColor.cyan])
+            let piece6 = Piece(indexes: Indexes(x: 6, y: 3), color: UIColor.red)
             board.pieces.append(piece6)
 
-            let piece7 = Piece(indexes: Indexes(x: 6, y: 4), colors: [UIColor.red, UIColor.cyan])
+            let piece7 = Piece(indexes: Indexes(x: 6, y: 4), color: UIColor.red)
             board.pieces.append(piece7)
 
 
             let group2 = Group(pieces: [piece4, piece5, piece6, piece7])
 
 
-            let piece8 = Piece(indexes: Indexes(x: 3, y: 3), colors: [UIColor.cyan, UIColor.red])
+            let piece8 = Piece(indexes: Indexes(x: 3, y: 3), color: UIColor.cyan)
             board.pieces.append(piece8)
 
-            let piece9 = Piece(indexes: Indexes(x: 3, y: 2), colors: [UIColor.red, UIColor.cyan])
+            let piece9 = Piece(indexes: Indexes(x: 3, y: 2), color: UIColor.red)
             board.pieces.append(piece9)
 
-            let piece10 = Piece(indexes: Indexes(x: 2, y: 3), colors: [UIColor.red, UIColor.cyan])
+            let piece10 = Piece(indexes: Indexes(x: 2, y: 3), color: UIColor.red)
             board.pieces.append(piece10)
 
-            let piece11 = Piece(indexes: Indexes(x: 2, y: 2), colors: [UIColor.red, UIColor.cyan])
+            let piece11 = Piece(indexes: Indexes(x: 2, y: 2), color: UIColor.red)
             board.pieces.append(piece11)
 
 
@@ -1156,76 +1156,76 @@ class LevelModel {
 //            board.pieces.append(piece14)
 
 
-            let piece12 = Piece(indexes: Indexes(x: 8, y: 0), colors: [UIColor.cyan, UIColor.red])
+            let piece12 = Piece(indexes: Indexes(x: 8, y: 0), color: UIColor.cyan)
             board.pieces.append(piece12)
 
-            let piece13 = Piece(indexes: Indexes(x: 8, y: 1), colors: [UIColor.red, UIColor.cyan])
+            let piece13 = Piece(indexes: Indexes(x: 8, y: 1), color: UIColor.red)
             board.pieces.append(piece13)
 
-            let piece14 = Piece(indexes: Indexes(x: 8, y: 2), colors: [UIColor.red, UIColor.cyan])
+            let piece14 = Piece(indexes: Indexes(x: 8, y: 2), color: UIColor.red)
             board.pieces.append(piece14)
 
-            let piece15 = Piece(indexes: Indexes(x: 8, y: 3), colors: [UIColor.red, UIColor.cyan])
+            let piece15 = Piece(indexes: Indexes(x: 8, y: 3), color: UIColor.red)
             board.pieces.append(piece15)
 
 
             let group4 = Group(pieces: [piece12, piece13, piece14, piece15])
 
 
-            let piece16 = Piece(indexes: Indexes(x: 6, y: 8), colors: [UIColor.cyan, UIColor.red])
+            let piece16 = Piece(indexes: Indexes(x: 6, y: 8), color: UIColor.cyan)
             board.pieces.append(piece16)
 
-            let piece17 = Piece(indexes: Indexes(x: 7, y: 8), colors: [UIColor.red, UIColor.cyan])
+            let piece17 = Piece(indexes: Indexes(x: 7, y: 8), color: UIColor.red)
             board.pieces.append(piece17)
 
-            let piece18 = Piece(indexes: Indexes(x: 8, y: 8), colors: [UIColor.red, UIColor.cyan])
+            let piece18 = Piece(indexes: Indexes(x: 8, y: 8), color: UIColor.red)
             board.pieces.append(piece18)
 
-            let piece19 = Piece(indexes: Indexes(x: 7, y: 7), colors: [UIColor.red, UIColor.cyan])
+            let piece19 = Piece(indexes: Indexes(x: 7, y: 7), color: UIColor.red)
             board.pieces.append(piece19)
 
 
             let group5 = Group(pieces: [piece16, piece17, piece18, piece19])
 
 
-            let piece20 = Piece(indexes: Indexes(x: 6, y: 6), colors: [UIColor.red, UIColor.cyan])
+            let piece20 = Piece(indexes: Indexes(x: 6, y: 6), color: UIColor.red)
             board.pieces.append(piece20)
 
-            let piece21 = Piece(indexes: Indexes(x: 6, y: 5), colors: [UIColor.red, UIColor.cyan])
+            let piece21 = Piece(indexes: Indexes(x: 6, y: 5), color: UIColor.red)
             board.pieces.append(piece21)
 
 
             let group6 = Group(pieces: [piece20, piece21])
 
 
-            let piece22 = Piece(indexes: Indexes(x: 1, y: 6), colors: [UIColor.red, UIColor.cyan])
+            let piece22 = Piece(indexes: Indexes(x: 1, y: 6), color: UIColor.red)
             board.pieces.append(piece22)
 
-            let piece23 = Piece(indexes: Indexes(x: 2, y: 6), colors: [UIColor.red, UIColor.cyan])
+            let piece23 = Piece(indexes: Indexes(x: 2, y: 6), color: UIColor.red)
             board.pieces.append(piece23)
 
 
-            let piece24 = Piece(indexes: Indexes(x: 2, y: 7), colors: [UIColor.red, UIColor.cyan])
+            let piece24 = Piece(indexes: Indexes(x: 2, y: 7), color: UIColor.red)
             board.pieces.append(piece24)
 
-            let piece25 = Piece(indexes: Indexes(x: 3, y: 7), colors: [UIColor.red, UIColor.cyan])
+            let piece25 = Piece(indexes: Indexes(x: 3, y: 7), color: UIColor.red)
             board.pieces.append(piece25)
 
-            let piece26 = Piece(indexes: Indexes(x: 3, y: 8), colors: [UIColor.red, UIColor.cyan])
+            let piece26 = Piece(indexes: Indexes(x: 3, y: 8), color: UIColor.red)
             board.pieces.append(piece26)
 
             let group7 = Group(pieces: [piece22, piece23, piece24, piece25, piece26])
 
-            let piece27 = Piece(indexes: Indexes(x: 4, y: 6), colors: [UIColor.red, UIColor.cyan])
+            let piece27 = Piece(indexes: Indexes(x: 4, y: 6), color: UIColor.red)
             board.pieces.append(piece27)
 
             let group8 = Group(pieces: [piece27])
 
 
-            let piece28 = Piece(indexes: Indexes(x: 0, y: 0), colors: [UIColor.red, UIColor.cyan])
+            let piece28 = Piece(indexes: Indexes(x: 0, y: 0), color: UIColor.red)
             board.pieces.append(piece28)
 
-            let piece29 = Piece(indexes: Indexes(x: 0, y: 1), colors: [UIColor.red, UIColor.cyan])
+            let piece29 = Piece(indexes: Indexes(x: 0, y: 1), color: UIColor.red)
             board.pieces.append(piece29)
 
 
@@ -1629,22 +1629,22 @@ class LevelModel {
     
     
     
-    private func setPieceColor(piece: Piece) {
-        
-        if board.randomPieceColors != [UIColor]() {
-            
-            let randomColor1 = board.randomPieceColors[Int(arc4random_uniform(UInt32(board.randomPieceColors.count)))]
-            let randomColor2 = board.randomPieceColors[Int(arc4random_uniform(UInt32(board.randomPieceColors.count)))]
-            piece.colors = [randomColor1, randomColor2]
-            
-        } else {
-            
-            let randomColors:[UIColor] = [UIColor.red, UIColor.yellow, UIColor.green, UIColor.cyan]
-            let randomColor1 = randomColors[Int(arc4random_uniform(UInt32(randomColors.count)))]
-            let randomColor2 = randomColors[Int(arc4random_uniform(UInt32(randomColors.count)))]
-            piece.colors = [randomColor1, randomColor2]
-        }
-    }
+//    private func setPieceColor(piece: Piece) {
+//
+//        if board.randomPieceColors != [UIColor]() {
+//
+//            let randomColor1 = board.randomPieceColors[Int(arc4random_uniform(UInt32(board.randomPieceColors.count)))]
+//            let randomColor2 = board.randomPieceColors[Int(arc4random_uniform(UInt32(board.randomPieceColors.count)))]
+//            piece.colors = [randomColor1, randomColor2]
+//
+//        } else {
+//
+//            let randomColors:[UIColor] = [UIColor.red, UIColor.yellow, UIColor.green, UIColor.cyan]
+//            let randomColor1 = randomColors[Int(arc4random_uniform(UInt32(randomColors.count)))]
+//            let randomColor2 = randomColors[Int(arc4random_uniform(UInt32(randomColors.count)))]
+//            piece.colors = [randomColor1, randomColor2]
+//        }
+//    }
     
 //    private func setPieceSwitches(piece: Piece) {
 //
@@ -2453,7 +2453,7 @@ class LevelModel {
             setPieceIndex(piece: piece)
 
 //            setPieceShape(piece: piece)
-            setPieceColor(piece: piece)
+//            setPieceColor(piece: piece)
             
 //            setPieceSwitches(piece: piece)
 //            piece.setPieceTotalVersions(shape: piece.shape)

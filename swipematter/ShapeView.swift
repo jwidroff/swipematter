@@ -467,10 +467,10 @@ class ShapeViewTopView: UIView {
     
     init(frame: CGRect, piece: Piece, backgroundColor: UIColor) {
         
-        for color in piece.colors {
-            
-            self.colors.append(color.cgColor)
-        }
+//        for color in piece.colors {
+//            
+//            self.colors.append(color.cgColor)
+//        }
         
         super.init(frame: frame)
 //        self.shape = piece.shape

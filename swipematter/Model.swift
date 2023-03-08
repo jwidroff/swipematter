@@ -259,7 +259,7 @@ class Model {
         print("setupNextView called")
         
 //        var pieces = [Piece]()
-        let piece1 = Piece(indexes: Indexes(x: 1, y: 2), colors: [UIColor.red, UIColor.cyan])
+        let piece1 = Piece(indexes: Indexes(x: 1, y: 2), color: UIColor.red)
         
         
         delegate?.setUpNextView(nextPiece: piece1)
@@ -295,7 +295,7 @@ class Model {
             setPieceIndex(piece: piece)
 
 //            piece.shape = setPieceShape(piece: piece)
-            piece.colors = setPieceColor(piece: piece)
+//            piece.colors = setPieceColor(piece: piece)
             
 //            setPieceSwitches(piece: piece)
 //            piece.setPieceTotalVersions(shape: piece.shape)
@@ -390,44 +390,44 @@ class Model {
 //
 //        return version
 //    }
-    
-    func setPieceColor(piece: Piece) -> [UIColor] {
-        
-        //TODO: Make it that the pieceMakers can have the option to have specific pieces that come out
-        
-        var randomColors = [UIColor]()
-        var randomColor1 = UIColor()
-        var randomColor2 = UIColor()
-        
-        
-        if piece.pieceMakerPieces == nil {
-            randomColors = board.randomPieceColors
-            randomColor1 = randomColors[Int(arc4random_uniform(UInt32(randomColors.count - 1)))]
-            randomColor2 = randomColors[Int(arc4random_uniform(UInt32(randomColors.count)))]
-            
-//            piece.colors = [randomColor1, randomColor2]
-            
-        } else {
-            
-            for pieceX in piece.pieceMakerPieces! {
-                for color in pieceX.colors {
-                    randomColors.append(color)
-                }
-            }
-            
-            randomColor1 = randomColors[Int(arc4random_uniform(UInt32(randomColors.count - 1)))]
-            randomColor2 = randomColors[Int(arc4random_uniform(UInt32(randomColors.count)))]
-
-//            piece.colors = randomColors
-            
-        }
-        
-        
-        
-        
-        
-        return [randomColor1, randomColor2]
-    }
+//    
+//    func setPieceColor(piece: Piece) -> [UIColor] {
+//        
+//        //TODO: Make it that the pieceMakers can have the option to have specific pieces that come out
+//        
+//        var randomColors = [UIColor]()
+//        var randomColor1 = UIColor()
+//        var randomColor2 = UIColor()
+//        
+//        
+//        if piece.pieceMakerPieces == nil {
+//            randomColors = board.randomPieceColors
+//            randomColor1 = randomColors[Int(arc4random_uniform(UInt32(randomColors.count - 1)))]
+//            randomColor2 = randomColors[Int(arc4random_uniform(UInt32(randomColors.count)))]
+//            
+////            piece.colors = [randomColor1, randomColor2]
+//            
+//        } else {
+//            
+//            for pieceX in piece.pieceMakerPieces! {
+//                for color in pieceX.colors {
+//                    randomColors.append(color)
+//                }
+//            }
+//            
+//            randomColor1 = randomColors[Int(arc4random_uniform(UInt32(randomColors.count - 1)))]
+//            randomColor2 = randomColors[Int(arc4random_uniform(UInt32(randomColors.count)))]
+//
+////            piece.colors = randomColors
+//            
+//        }
+//        
+//        
+//        
+//        
+//        
+//        return [randomColor1, randomColor2]
+//    }
     
 //    func fallsOffBoard(piece: Piece, direction: Direction) -> Bool {
 //        

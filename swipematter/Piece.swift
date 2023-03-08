@@ -15,7 +15,7 @@ class Piece {
     var indexes: Indexes?
 //    var shape: Shape = .blank
     var view = ShapeView()
-    var colors = [UIColor()]
+    var color = UIColor()
     var side = Side()
 //    var version = Int()
 //    var isLocked = false
@@ -30,18 +30,18 @@ class Piece {
         
     }
     
-    init(indexes: Indexes?, colors: [UIColor]) {
+    init(indexes: Indexes?, color: UIColor) {
         
         self.indexes = indexes
 //        self.shape = shape
-        self.colors = colors
+        self.color = color
 //        self.version = version
 //        self.isLocked = isLocked
 //        self.doesPivot = doesPivot
-        if colors.count == 1 {
-            
-            self.colors.append(colors[0])
-        }
+//        if colors.count == 1 {
+//            
+//            self.colors.append(colors[0])
+//        }
 //        setPieceTotalVersions(shape: shape)
 //        setPieceSides(shape: shape, version: version, colors: self.colors)
     }
