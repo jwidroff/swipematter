@@ -2431,19 +2431,19 @@ class LevelModel {
         }
     }
     
-    private func setupBalls() {
-        
-        for piece in board.pieces {
-            
-            if piece.shape == .entrance {
-                
-                let ball = Ball()
-                ball.indexes = piece.indexes
-                ball.onColor = piece.colors[0]
-                board.balls.append(ball)
-            }
-        }
-    }
+//    private func setupBalls() {
+//        
+//        for piece in board.pieces {
+//            
+//            if piece.shape == .entrance {
+//                
+//                let ball = Ball()
+//                ball.indexes = piece.indexes
+//                ball.onColor = piece.colors[0]
+//                board.balls.append(ball)
+//            }
+//        }
+//    }
     
     private func setupRandomPieces() {
         

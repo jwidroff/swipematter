@@ -22,22 +22,14 @@ class NextView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        
         print("FRAME \(frame)")
         
         
         backgroundColor = UIColor.systemPink
+//        grid.dictionary = GridPoints(frame: self.frame, height: 4, width: 4).getGrid()
+//        print("GRID DICTIONARY \(grid.dictionary)")
+//        addGrid()
         
-        
-        
-        
-        grid.dictionary = GridPoints(frame: self.frame, height: 4, width: 4).getGrid()
-
-
-        print("GRID DICTIONARY \(grid.dictionary)")
-
-
-        addGrid()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,6 +39,8 @@ class NextView: UIView {
     
     
     private func addGrid() {
+        
+        
         
         for point in grid.dictionary.values {
                         
@@ -115,6 +109,9 @@ class NextView: UIView {
 
 
 class NextPiece {
+    
+    
+    
     
     var pieces = [Piece]()
     

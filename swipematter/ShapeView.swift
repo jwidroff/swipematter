@@ -171,7 +171,7 @@ class ShapeView : UIView {
             //If theres a piece below
             if group.pieces.contains(where: { (pieceXX) in
                 
-                Indexes(x: pieceXX.indexes.x, y: pieceXX.indexes.y! - 1) == piece.indexes
+                Indexes(x: pieceXX.indexes?.x, y: (pieceXX.indexes?.y!)! - 1) == piece.indexes
             }) {
                 
                 layerMaxXMaxYCorner = []
@@ -182,7 +182,7 @@ class ShapeView : UIView {
                 
                 //And a piece to the left
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
-                    Indexes(x: pieceXXX.indexes.x! + 1, y: pieceXXX.indexes.y) == piece.indexes
+                    Indexes(x: (pieceXXX.indexes?.x!)! + 1, y: pieceXXX.indexes?.y) == piece.indexes
                 }) {
                     print("A")
                     
@@ -199,7 +199,7 @@ class ShapeView : UIView {
                 
                 //And a piece to the right
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
-                    Indexes(x: pieceXXX.indexes.x! - 1, y: pieceXXX.indexes.y) == piece.indexes
+                    Indexes(x: (pieceXXX.indexes?.x!)! - 1, y: pieceXXX.indexes?.y) == piece.indexes
                 }) {
                     print("B")
                     
@@ -218,7 +218,7 @@ class ShapeView : UIView {
             //If theres a piece above
             if group.pieces.contains(where: { (pieceXX) in
                 
-                Indexes(x: pieceXX.indexes.x, y: pieceXX.indexes.y! + 1) == piece.indexes
+                Indexes(x: pieceXX.indexes?.x, y: (pieceXX.indexes?.y!)! + 1) == piece.indexes
             }) {
                 
                 
@@ -229,7 +229,7 @@ class ShapeView : UIView {
                 
                 //And a piece to the left
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
-                    Indexes(x: pieceXXX.indexes.x! + 1, y: pieceXXX.indexes.y) == piece.indexes
+                    Indexes(x: (pieceXXX.indexes?.x!)! + 1, y: pieceXXX.indexes?.y) == piece.indexes
                 }) {
                     print("C")
                     
@@ -246,7 +246,7 @@ class ShapeView : UIView {
                 
                 //And a piece to the right
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
-                    Indexes(x: pieceXXX.indexes.x! - 1, y: pieceXXX.indexes.y) == piece.indexes
+                    Indexes(x: (pieceXXX.indexes?.x!)! - 1, y: pieceXXX.indexes?.y) == piece.indexes
                 }) {
                     print("D")
                     
@@ -265,7 +265,7 @@ class ShapeView : UIView {
             //If theres a piece to the right
             if group.pieces.contains(where: { (pieceXX) in
                 
-                Indexes(x: (pieceXX.indexes.x! - 1), y: pieceXX.indexes.y) == piece.indexes
+                Indexes(x: ((pieceXX.indexes?.x!)! - 1), y: pieceXX.indexes?.y) == piece.indexes
             }) {
                 
                 layerMaxXMinYCorner = []
@@ -275,7 +275,7 @@ class ShapeView : UIView {
                 
                 //And a piece on bottom
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
-                    Indexes(x: pieceXXX.indexes.x, y: pieceXXX.indexes.y! - 1) == piece.indexes
+                    Indexes(x: pieceXXX.indexes?.x, y: (pieceXXX.indexes?.y!)! - 1) == piece.indexes
                 }) {
                     print("E")
                     
@@ -292,7 +292,7 @@ class ShapeView : UIView {
                 
                 //And a piece on top
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
-                    Indexes(x: pieceXXX.indexes.x, y: pieceXXX.indexes.y! + 1) == piece.indexes
+                    Indexes(x: pieceXXX.indexes?.x, y: (pieceXXX.indexes?.y!)! + 1) == piece.indexes
                 }) {
                     print("F")
                     
@@ -310,7 +310,7 @@ class ShapeView : UIView {
             //If theres a piece to the left
             if group.pieces.contains(where: { (pieceXX) in
                 
-                Indexes(x: (pieceXX.indexes.x! + 1), y: pieceXX.indexes.y) == piece.indexes
+                Indexes(x: ((pieceXX.indexes?.x!)! + 1), y: pieceXX.indexes?.y) == piece.indexes
             }) {
                 
                 layerMinXMinYCorner = []
@@ -322,7 +322,7 @@ class ShapeView : UIView {
                 
                 //And a piece on bottom
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
-                    Indexes(x: pieceXXX.indexes.x, y: pieceXXX.indexes.y! - 1) == piece.indexes
+                    Indexes(x: pieceXXX.indexes?.x, y: (pieceXXX.indexes?.y!)! - 1) == piece.indexes
                 }) {
                     print("G")
                     
@@ -338,7 +338,7 @@ class ShapeView : UIView {
                 
                 //And a piece on top
                 if group.pieces.contains(where: { (pieceXXX) -> Bool in
-                    Indexes(x: pieceXXX.indexes.x, y: pieceXXX.indexes.y! + 1) == piece.indexes
+                    Indexes(x: pieceXXX.indexes?.x, y: (pieceXXX.indexes?.y!)! + 1) == piece.indexes
                 }) {
                     print("H")
                     

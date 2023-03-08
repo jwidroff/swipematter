@@ -34,6 +34,8 @@ class ViewController: UIViewController {
     var instructionsShown = false
 //    var nextView = NextView()
     
+    var nextPiece = NextPiece()
+    
 
 
     override func viewDidLoad() {
@@ -526,7 +528,7 @@ class ViewController: UIViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: delayedTime) {
                     
-                    self.model.check4AutoBallMove()
+//                    self.model.check4AutoBallMove()
                     self.model.check4GameOver()
                 }
             }
@@ -536,7 +538,7 @@ class ViewController: UIViewController {
     @objc func handleTap(sender:UITapGestureRecognizer) {
         
         let pieceCenter = sender.view?.center
-        model.handleTap(center: pieceCenter!)
+//        model.handleTap(center: pieceCenter!)
     }
     
     @objc func handleTap4Retry(sender: UITapGestureRecognizer) {
@@ -621,51 +623,51 @@ class ViewController: UIViewController {
         return bool
     }
     
-    func animateMove(ball: Ball, endSide: String) {
-                
-        CATransaction.begin()
-        
-        CATransaction.setCompletionBlock {
-                     
-            CATransaction.begin()
-            
-            CATransaction.setCompletionBlock {
-                
-                ball.path = UIBezierPath()
-                                
-                switch endSide {
-                
-                case "top":
-                    
-                    self.model.moveBall(ball: ball, startSide: "bottom")
-                    
-                case "bottom":
-                    
-                    self.model.moveBall(ball: ball, startSide: "top")
-                    
-                case "left":
-                    
-                    self.model.moveBall(ball: ball, startSide: "right")
-                    
-                case "right":
-                    
-                    self.model.moveBall(ball: ball, startSide: "left")
-                    
-                default:
-                    
-                    break
-                }
-            }
-            
-            ball.view.center = ball.center
-            
-            CATransaction.commit()
-        }
-        
-        setAnimation(ball: ball)
-        
-        CATransaction.commit()
-    }
+//    func animateMove(ball: Ball, endSide: String) {
+//
+//        CATransaction.begin()
+//
+//        CATransaction.setCompletionBlock {
+//
+//            CATransaction.begin()
+//
+//            CATransaction.setCompletionBlock {
+//
+//                ball.path = UIBezierPath()
+//
+//                switch endSide {
+//
+//                case "top":
+//
+//                    self.model.moveBall(ball: ball, startSide: "bottom")
+//
+//                case "bottom":
+//
+//                    self.model.moveBall(ball: ball, startSide: "top")
+//
+//                case "left":
+//
+//                    self.model.moveBall(ball: ball, startSide: "right")
+//
+//                case "right":
+//
+//                    self.model.moveBall(ball: ball, startSide: "left")
+//
+//                default:
+//
+//                    break
+//                }
+//            }
+//
+//            ball.view.center = ball.center
+//
+//            CATransaction.commit()
+//        }
+//
+//        setAnimation(ball: ball)
+//
+//        CATransaction.commit()
+//    }
     
     func setAnimation(ball: Ball) {
         
@@ -793,54 +795,54 @@ extension ViewController: ModelDelegate {
         }
     }
     
-    func changeViewColor(piece: Piece, ball: Ball) {
-        
-        var backgroundColor = UIColor.clear
-        
-        if ball.loopedIndexes[piece.indexes] == 1 {
-            
-            backgroundColor = UIColor.orange
-            
-        } else if ball.loopedIndexes[piece.indexes] == 2 {
-            
-            backgroundColor = UIColor.red
-
-        } else if ball.loopedIndexes[piece.indexes] == 3 {
-            
-            backgroundColor = UIColor.purple
-
-        } else if ball.loopedIndexes[piece.indexes] == 4 {
-            
-            backgroundColor = UIColor.systemIndigo
-        } else if ball.loopedIndexes[piece.indexes] == 5 {
-            
-            backgroundColor = UIColor.orange
-        } else if ball.loopedIndexes[piece.indexes] == 6 {
-            
-            backgroundColor = UIColor.red
-        } else if ball.loopedIndexes[piece.indexes] == 7 {
-            
-            backgroundColor = UIColor.purple
-        } else if ball.loopedIndexes[piece.indexes] == 8 {
-            
-            backgroundColor = UIColor.systemIndigo
-        } else if ball.loopedIndexes[piece.indexes] == 9 {
-            
-            backgroundColor = UIColor.orange
-        } else if ball.loopedIndexes[piece.indexes] == 10 {
-            
-            backgroundColor = UIColor.systemIndigo
-        }
-        
-        piece.view.backgroundColor = backgroundColor
-        
-        let delayedTime = DispatchTime.now() + .milliseconds(Int(250))
-
-        DispatchQueue.main.asyncAfter(deadline: delayedTime) {
-            
-            piece.view.backgroundColor = .clear
-        }
-    }
+//    func changeViewColor(piece: Piece, ball: Ball) {
+//
+//        var backgroundColor = UIColor.clear
+//
+//        if ball.loopedIndexes[piece.indexes] == 1 {
+//
+//            backgroundColor = UIColor.orange
+//
+//        } else if ball.loopedIndexes[piece.indexes] == 2 {
+//
+//            backgroundColor = UIColor.red
+//
+//        } else if ball.loopedIndexes[piece.indexes] == 3 {
+//
+//            backgroundColor = UIColor.purple
+//
+//        } else if ball.loopedIndexes[piece.indexes] == 4 {
+//
+//            backgroundColor = UIColor.systemIndigo
+//        } else if ball.loopedIndexes[piece.indexes] == 5 {
+//
+//            backgroundColor = UIColor.orange
+//        } else if ball.loopedIndexes[piece.indexes] == 6 {
+//
+//            backgroundColor = UIColor.red
+//        } else if ball.loopedIndexes[piece.indexes] == 7 {
+//
+//            backgroundColor = UIColor.purple
+//        } else if ball.loopedIndexes[piece.indexes] == 8 {
+//
+//            backgroundColor = UIColor.systemIndigo
+//        } else if ball.loopedIndexes[piece.indexes] == 9 {
+//
+//            backgroundColor = UIColor.orange
+//        } else if ball.loopedIndexes[piece.indexes] == 10 {
+//
+//            backgroundColor = UIColor.systemIndigo
+//        }
+//
+//        piece.view.backgroundColor = backgroundColor
+//
+//        let delayedTime = DispatchTime.now() + .milliseconds(Int(250))
+//
+//        DispatchQueue.main.asyncAfter(deadline: delayedTime) {
+//
+//            piece.view.backgroundColor = .clear
+//        }
+//    }
     
     func replacePieceView(piece: Piece) {
         
@@ -1096,65 +1098,65 @@ extension ViewController: ModelDelegate {
     }
     
     
-    func removeHole(piece: Piece) {
-        
- 
-        
-        let x = (self.model.board.grid[piece.indexes]?.x)! //- self.pieceWidth / 2
-        
-        let y = (self.model.board.grid[piece.indexes]?.y)! //- self.pieceHeight / 2
-                    
-        let newView = UIView(frame: CGRect(x: x - ((self.pieceWidth / 9 * 10) / 2), y: y - ((self.pieceHeight / 9 * 10) / 2), width: pieceWidth / 9 * 10, height: pieceHeight / 9 * 10))
-                    
-        newView.backgroundColor = ColorTheme.boardBackground
-        
-        
-        let shadowRadius: CGFloat = 1
-        let darkShadow = CALayer()
-
-
-        darkShadow.frame = newView.bounds
-        darkShadow.backgroundColor = ColorTheme.boardBackground.cgColor
-        darkShadow.shadowColor = UIColor.black.cgColor
-        darkShadow.shadowOffset = CGSize(width: shadowRadius, height: shadowRadius)
-        darkShadow.shadowOpacity = 1
-//        darkShadow.cornerRadius = 5
-        newView.layer.insertSublayer(darkShadow, at: 1)
-        
-        
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut) {
-            self.removeView(view: piece.view)
-            
-            self.model.board.view.addSubview(newView)
-            
-            let scale = CGAffineTransform(scaleX: 0.01, y: 0.01)
-            
-
-            newView.transform = scale
-            
-        } completion: { (true) in
-            
-            UIView.animate(withDuration: 0.25) {
-                
-                
-                let scale2 = CGAffineTransform(scaleX: 1, y: 1)
-                
-
-                newView.transform = scale2
-                
-               
-                
-                self.model.board.view.sendSubviewToBack(newView)
-            }
-            
-            
-            
-        }
-
-        
-        
-        
-    }
+//    func removeHole(piece: Piece) {
+//        
+// 
+//        
+//        let x = (self.model.board.grid[piece.indexes]?.x)! //- self.pieceWidth / 2
+//        
+//        let y = (self.model.board.grid[piece.indexes]?.y)! //- self.pieceHeight / 2
+//                    
+//        let newView = UIView(frame: CGRect(x: x - ((self.pieceWidth / 9 * 10) / 2), y: y - ((self.pieceHeight / 9 * 10) / 2), width: pieceWidth / 9 * 10, height: pieceHeight / 9 * 10))
+//                    
+//        newView.backgroundColor = ColorTheme.boardBackground
+//        
+//        
+//        let shadowRadius: CGFloat = 1
+//        let darkShadow = CALayer()
+//
+//
+//        darkShadow.frame = newView.bounds
+//        darkShadow.backgroundColor = ColorTheme.boardBackground.cgColor
+//        darkShadow.shadowColor = UIColor.black.cgColor
+//        darkShadow.shadowOffset = CGSize(width: shadowRadius, height: shadowRadius)
+//        darkShadow.shadowOpacity = 1
+////        darkShadow.cornerRadius = 5
+//        newView.layer.insertSublayer(darkShadow, at: 1)
+//        
+//        
+//        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut) {
+//            self.removeView(view: piece.view)
+//            
+//            self.model.board.view.addSubview(newView)
+//            
+//            let scale = CGAffineTransform(scaleX: 0.01, y: 0.01)
+//            
+//
+//            newView.transform = scale
+//            
+//        } completion: { (true) in
+//            
+//            UIView.animate(withDuration: 0.25) {
+//                
+//                
+//                let scale2 = CGAffineTransform(scaleX: 1, y: 1)
+//                
+//
+//                newView.transform = scale2
+//                
+//               
+//                
+//                self.model.board.view.sendSubviewToBack(newView)
+//            }
+//            
+//            
+//            
+//        }
+//
+//        
+//        
+//        
+//    }
     
     
     
@@ -1206,19 +1208,27 @@ extension ViewController: ModelDelegate {
     
     func addPieceView(piece: Piece) {
         
-        piece.center = self.model.board.grid[piece.indexes]!
-        piece.view.center = piece.center
-        
-        if piece.shape != .pieceMaker {
+        if let indexes = piece.indexes {
             
-            addTapGestureRecognizer(view: piece.view)
+            
+            piece.center = self.model.board.grid[indexes]!
+            piece.view.center = piece.center
+            
+            if piece.shape != .pieceMaker {
+                
+                addTapGestureRecognizer(view: piece.view)
+            }
+            
+            UIView.animate(withDuration: 0.25) {
+    //            let rect = CGRect(x: piece.view.frame.minX, y: piece.view.frame.minY, width: self.pieceWidth, height: self.pieceHeight)
+    //            piece.view.frame = rect
+                self.model.board.view.addSubview(piece.view)
+            }
+            
         }
         
-        UIView.animate(withDuration: 0.25) {
-//            let rect = CGRect(x: piece.view.frame.minX, y: piece.view.frame.minY, width: self.pieceWidth, height: self.pieceHeight)
-//            piece.view.frame = rect
-            self.model.board.view.addSubview(piece.view)
-        }
+        
+        
     }
 
     func moveBallView(ball: Ball, piece: Piece, startSide: String, endSide: String) {
@@ -1365,86 +1375,93 @@ extension ViewController: ModelDelegate {
         ball.path.move(to: CGPoint(x: beginPoint.x, y: beginPoint.y))
         ball.path.addQuadCurve(to: endPoint, controlPoint: controlPoint)
         ball.center = endPoint
-        animateMove(ball: ball, endSide: endSide)
+//        animateMove(ball: ball, endSide: endSide)
     }
     
     func movePieceView(piece: Piece) {
 
         
-        if piece.indexes.x! < 0 {
+        if let indexes = piece.indexes {
             
-            UIView.animate(withDuration: 0.25) {
-                piece.center = CGPoint(x: piece.center.x - (self.distanceFromPieceCenter * 2), y: piece.center.y)
-                piece.view.center = piece.center
-            }
             
-            self.model.deletePiece(piece: piece)
             
-        } else if piece.indexes.x! > self.model.board.widthSpaces - 1 {
-            
-            UIView.animate(withDuration: 0.25) {
-                piece.center = CGPoint(x: piece.center.x + (self.distanceFromPieceCenter * 2), y: piece.center.y)
-                piece.view.center = piece.center
-
-            }
-            
-            self.model.deletePiece(piece: piece)
-            
-        } else if piece.indexes.y! < 0 {
-            
-            UIView.animate(withDuration: 0.25) {
-                piece.center = CGPoint(x: piece.center.x, y: piece.center.y - (self.distanceFromPieceCenter * 2))
-                piece.view.center = piece.center
-
-            }
-            
-            self.model.deletePiece(piece: piece)
-            
-        } else if piece.indexes.y! > self.model.board.heightSpaces - 1 {
-            
-            UIView.animate(withDuration: 0.25) {
-                piece.center = CGPoint(x: piece.center.x, y: piece.center.y + (self.distanceFromPieceCenter * 2))
-                piece.view.center = piece.center
-
-            }
-            
-            self.model.deletePiece(piece: piece)
-            
-        } else {
-            
-            //Piece is on the board and therefore execute move regularly
-            UIView.animate(withDuration: 0.25) {
-                piece.center = self.model.board.grid[piece.indexes]!
-                piece.view.center = piece.center
+            if indexes.x! < 0 {
                 
-                for ball in self.model.board.balls {
+                UIView.animate(withDuration: 0.25) {
+                    piece.center = CGPoint(x: piece.center.x - (self.distanceFromPieceCenter * 2), y: piece.center.y)
+                    piece.view.center = piece.center
+                }
+                
+//                self.model.deletePiece(piece: piece)
+                
+            } else if indexes.x! > self.model.board.widthSpaces - 1 {
+                
+                UIView.animate(withDuration: 0.25) {
+                    piece.center = CGPoint(x: piece.center.x + (self.distanceFromPieceCenter * 2), y: piece.center.y)
+                    piece.view.center = piece.center
+
+                }
+                
+//                self.model.deletePiece(piece: piece)
+                
+            } else if indexes.y! < 0 {
+                
+                UIView.animate(withDuration: 0.25) {
+                    piece.center = CGPoint(x: piece.center.x, y: piece.center.y - (self.distanceFromPieceCenter * 2))
+                    piece.view.center = piece.center
+
+                }
+                
+//                self.model.deletePiece(piece: piece)
+                
+            } else if indexes.y! > self.model.board.heightSpaces - 1 {
+                
+                UIView.animate(withDuration: 0.25) {
+                    piece.center = CGPoint(x: piece.center.x, y: piece.center.y + (self.distanceFromPieceCenter * 2))
+                    piece.view.center = piece.center
+
+                }
+                
+//                self.model.deletePiece(piece: piece)
+                
+            } else {
+                
+                //Piece is on the board and therefore execute move regularly
+                UIView.animate(withDuration: 0.25) {
+                    piece.center = self.model.board.grid[indexes]!
+                    piece.view.center = piece.center
+                    
+                    for ball in self.model.board.balls {
+                        if ball.indexes == piece.indexes {
+                            
+                            ball.view.center = self.model.board.grid[ball.indexes]!
+                        }
+                    }
+                }
+            }
+            
+            if piece.shape == .entrance {
+                
+                for ball in model.board.balls {
+                    
                     if ball.indexes == piece.indexes {
                         
-                        ball.view.center = self.model.board.grid[ball.indexes]!
+                        UIView.animate(withDuration: 0.25) {
+                            
+                            ball.center = piece.center
+                            ball.view.center = ball.center
+
+                            self.model.deleteBall(ball: ball)
+                            
+                        } completion: { (true) in
+                            print()
+                        }
                     }
                 }
             }
+            
         }
         
-        if piece.shape == .entrance {
-            
-            for ball in model.board.balls {
-                
-                if ball.indexes == piece.indexes {
-                    
-                    UIView.animate(withDuration: 0.25) {
-                        
-                        ball.center = piece.center
-                        ball.view.center = ball.center
-
-                        self.model.deleteBall(ball: ball)
-                        
-                    } completion: { (true) in
-                        print()
-                    }
-                }
-            }
-        }
     }
     
     func setUpPiecesView() {
@@ -1477,11 +1494,17 @@ extension ViewController: ModelDelegate {
                     }
                     
                 }
-                piece.view = ShapeView(frame: frame, piece: piece, groups: self.model.board.pieceGroups)
-                piece.center = CGPoint(x: self.model.board.grid[piece.indexes]?.x ?? piece.center.x, y: self.model.board.grid[piece.indexes]?.y ?? piece.center.y)
-                piece.view.center = piece.center
-                self.addTapGestureRecognizer(view: piece.view)
-                self.model.board.view.addSubview(piece.view)
+                
+                if let indexes = piece.indexes {
+                    
+                    
+                    piece.view = ShapeView(frame: frame, piece: piece, groups: self.model.board.pieceGroups)
+                    piece.center = CGPoint(x: self.model.board.grid[indexes]?.x ?? piece.center.x, y: self.model.board.grid[indexes]?.y ?? piece.center.y)
+                    piece.view.center = piece.center
+                    self.addTapGestureRecognizer(view: piece.view)
+                    self.model.board.view.addSubview(piece.view)
+                }
+                
                 
             } completion: { (true) in
                 
@@ -1625,15 +1648,33 @@ extension ViewController: ModelDelegate {
         
     }
     
-    func setUpNextView(nextPiece: NextPiece) {
+    
+    
+    
+    
+    
+    func setUpNextView(nextPiece: Piece) {
         
         
+        
+        
+        
+        
+        
+        
+        
+//        self.nextPiece = nextPiece
 //        let controlHeight = retryButton.frame.height
         
-        let nextViewHeight = topBarView.frame.height / 2
-        let nextViewWidth = nextViewHeight
+        let nextViewHeight = pieceHeight
+        let nextViewWidth = pieceWidth
         let nextViewYFloat = topBarView.frame.height / 2
         let nextViewXFloat = view.center.x - (nextViewWidth / 2)
+        
+//        let nextViewHeight = topBarView.frame.height / 2
+//        let nextViewWidth = nextViewHeight
+//        let nextViewYFloat = topBarView.frame.height / 2
+//        let nextViewXFloat = view.center.x - (nextViewWidth / 2)
         
         
         
@@ -1646,7 +1687,9 @@ extension ViewController: ModelDelegate {
         
         
         
-        let nextView = NextView(frame: frame)
+//        let nextView = NextView(frame: frame)
+        
+        let nextView = ShapeView(frame: frame, piece: nextPiece, groups: nil)
         
         print("FRAME \(nextView.frame)")
         
@@ -1657,13 +1700,16 @@ extension ViewController: ModelDelegate {
 //        nextView.center = CGPoint(x: view.center.x, y: y)
         view.addSubview(nextView)
         
+        makeSoft(view: nextView)
         
         
-        for piece in nextPiece.pieces {
+        
+        
+//        for piece in self.nextPiece.pieces {
             
             
-            setNextPieceView(nextView: nextView, nextPiece: piece)
-        }
+//            setNextPieceView(nextView: nextView, nextPiece: piece)
+//        }
         
         
         
@@ -1683,40 +1729,67 @@ extension ViewController: ModelDelegate {
         
     }
     
+    private func makeSoft(view: UIView) {
+        
+//        view.backgroundColor = view.backgroundColor
+        let shadowRadius: CGFloat = 1
+        let darkShadow = CALayer()
+        let lightShadow = CALayer()
+        
+        lightShadow.frame = view.layer.bounds
+        lightShadow.backgroundColor = view.backgroundColor?.cgColor
+        lightShadow.shadowColor = UIColor.white.cgColor
+        lightShadow.shadowOffset = CGSize(width: -shadowRadius, height: -shadowRadius)
+        lightShadow.shadowOpacity = 1
+//        lightShadow.cornerRadius = 5
+        view.layer.insertSublayer(lightShadow, at: 0)
+
+        darkShadow.frame = view.layer.bounds
+        darkShadow.backgroundColor = view.backgroundColor?.cgColor
+        darkShadow.shadowColor = UIColor.black.cgColor
+        darkShadow.shadowOffset = CGSize(width: shadowRadius, height: shadowRadius)
+        darkShadow.shadowOpacity = 1
+//        darkShadow.cornerRadius = 5
+        view.layer.insertSublayer(darkShadow, at: 1)
+    }
+    
     func setNextPieceView(nextView: NextView, nextPiece: Piece) {
         
+        if let indexes = nextPiece.indexes {
+            
+            let grid = nextView.grid.dictionary
+            let x = (grid[indexes]!.x) - (nextView.frame.width / 8)
+            let y = (grid[indexes]!.y) - (nextView.frame.height / 8)
+            let width = nextView.frame.width / 4
+            let height = width
+            
+            let frame = CGRect(x: x, y: y, width: width, height: height)
+            
+            
+            
+            
+            
+            let viewX = ShapeView(frame: frame, piece: nextPiece, groups: nil)
+                    
+            nextView.addSubview(viewX)
+           
+            
+            
+    //        viewX.subviews[0].layer.backgroundColor = UIColor.white.cgColor
+            viewX.subviews[0].backgroundColor = UIColor.blue
+            
+            
+            
+            
+            
+    //        viewX.layer.sublayers![1].backgroundColor = UIColor.white.cgColor
+    //        viewX.layer.sublayers![0].backgroundColor = UIColor.white.cgColor
+            
+            
+            
+        }
         
-        let grid = nextView.grid.dictionary
-        
-        
-        
-        
-        let x = (grid[nextPiece.indexes]!.x) - (nextView.frame.width / 8)
-        let y = (grid[nextPiece.indexes]!.y) - (nextView.frame.height / 8)
-        let width = nextView.frame.width / 4
-        let height = width
-        
-        let frame = CGRect(x: x, y: y, width: width, height: height)
-        
-        
-        
-        
-        
-        let viewX = ShapeView(frame: frame, piece: nextPiece, groups: nil)
-                
-        nextView.addSubview(viewX)
-       
-        
-        
-        viewX.subviews[0].layer.backgroundColor = UIColor.white.cgColor
-        viewX.subviews[0].backgroundColor = UIColor.blue
-        
-        
-        
-//        viewX.layer.sublayers![1].backgroundColor = UIColor.white.cgColor
-//        viewX.layer.sublayers![0].backgroundColor = UIColor.white.cgColor
-        
-        
+
     }
     
     

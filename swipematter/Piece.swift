@@ -12,7 +12,7 @@ import UIKit
 
 class Piece {
     
-    var indexes = Indexes()
+    var indexes: Indexes?
     var shape: Shape = .blank
     var view = ShapeView()
     var colors = [UIColor()]
@@ -30,7 +30,7 @@ class Piece {
         
     }
     
-    init(indexes: Indexes, shape: Shape, colors: [UIColor], version: Int, isLocked: Bool, doesPivot: Bool) {
+    init(indexes: Indexes?, shape: Shape, colors: [UIColor], version: Int, isLocked: Bool, doesPivot: Bool) {
         
         self.indexes = indexes
         self.shape = shape
