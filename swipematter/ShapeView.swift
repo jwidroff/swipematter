@@ -1104,47 +1104,6 @@ class ShapeViewTopView: UIView {
     }
 }
 
-
-class BallView : UIView {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .clear
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func draw(_ rect: CGRect) {
-        
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-        
-        let shadowColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.5)
-
-        context.saveGState()
-
-        context.setShadow(offset: CGSize(width: 0, height: 6), blur: 3.0, color: shadowColor.cgColor)
-        context.setFillColor(UIColor.black.cgColor)
-//
-//        context.fill(frame)
-
-        let eclipseHeight1 = frame.height / 4
-        let eclipseWidth1 = frame.width / 4
-        let rect1 = CGRect(x: (frame.width / 2) - (eclipseWidth1 / 2), y: (frame.height / 2) - (eclipseHeight1 / 2), width: eclipseWidth1, height: eclipseHeight1)
-        context.addEllipse(in: rect1)
-        context.setFillColor(UIColor.black.cgColor)
-        context.fillEllipse(in: rect1)
-        
-        let eclipseHeight2 = frame.height / 5
-        let eclipseWidth2 = frame.width / 5
-        let rect2 = CGRect(x: (frame.width / 2) - (eclipseWidth2 / 2), y: (frame.height / 2) - (eclipseHeight2 / 2), width: eclipseWidth2, height: eclipseHeight2)
-        context.addEllipse(in: rect2)
-        context.setFillColor(UIColor.white.cgColor)
-        context.fillEllipse(in: rect2)
-    }
-}
-
 enum Shape {
     
     case elbow

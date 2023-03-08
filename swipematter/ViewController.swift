@@ -260,17 +260,6 @@ class ViewController: UIViewController {
         
         return CGFloat(degrees * .pi / degrees)
     }
-    
-    func setAnimation(ball: Ball) {
-        
-        let animation = CAKeyframeAnimation(keyPath: "position")
-        animation.path = ball.path.cgPath
-        animation.repeatCount = 0
-        animation.duration = duration4Animation
-        animation.fillMode = CAMediaTimingFillMode.forwards
-        animation.isRemovedOnCompletion = false
-        ball.view.layer.add(animation, forKey: "animate along path")
-    }
 }
 
 extension ViewController: ModelDelegate {
@@ -384,12 +373,6 @@ extension ViewController: ModelDelegate {
                     piece.center = self.model.board.grid[indexes]!
                     piece.view.center = piece.center
                     
-                    for ball in self.model.board.balls {
-                        if ball.indexes == piece.indexes {
-                            
-                            ball.view.center = self.model.board.grid[ball.indexes]!
-                        }
-                    }
                 }
             }
         }

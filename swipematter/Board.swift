@@ -19,7 +19,7 @@ class Board {
     var randomPieceColors = [UIColor]()
     var randomPieceShapes = [Shape]()
     var amountOfRandomPieces = Int()
-    var balls = [Ball]()
+//    var balls = [Ball]()
     var pieces = [Piece]()
     var heightSpaces = Int()
     var widthSpaces = Int()

@@ -681,16 +681,5 @@ class Model {
         
         board.pieces.removeAll()
         
-        for ball in board.balls {
-            ball.piecesPassed = [Piece]()
-            delegate?.clearPiecesAnimation(view: ball.view)
-        }
-        
-        for ball in board.balls {
-            
-            delegate?.removeView(view: ball.view)
-        }
-                
-        board.balls.removeAll()
     }
 }

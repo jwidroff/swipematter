@@ -770,20 +770,20 @@ class Closing {
     var isOpen = true
 }
 
-class Ball {
-    
-    var view = BallView()
-    var indexes = Indexes()
-    var startSide = "unmoved"
-    var onColor = UIColor()
-    var exited = Bool()
-    var piecesPassed = [Piece]()
-    var loopedIndexes = [Indexes : Int]()
-    var loopedPieces = [Piece]()
-    var center = CGPoint()
-    var path = UIBezierPath()
-    
-}
+//class Ball {
+//    
+//    var view = BallView()
+//    var indexes = Indexes()
+//    var startSide = "unmoved"
+//    var onColor = UIColor()
+//    var exited = Bool()
+//    var piecesPassed = [Piece]()
+//    var loopedIndexes = [Indexes : Int]()
+//    var loopedPieces = [Piece]()
+//    var center = CGPoint()
+//    var path = UIBezierPath()
+//    
+//}
 
 enum Direction {
     
