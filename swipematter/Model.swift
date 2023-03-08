@@ -124,6 +124,8 @@ class Model {
 //    var levelModel = LevelModel()
     let defaults = UserDefaults.standard
     
+    var piecesMoved = false
+    
     init(){
         
     }
@@ -464,6 +466,7 @@ class Model {
                     piecesToRetry.append(piece)
                 } else {
                     pieceDidMove = true
+                    piecesMoved = true
                 }
             }
         }
@@ -528,6 +531,7 @@ class Model {
                             if beforeIndexes != afterIndexes {
                                 groupDidMove = true
                                 pieceDidMove = true
+                                piecesMoved = true
                             }
                         }
                     }
@@ -580,6 +584,7 @@ class Model {
                             if beforeIndexes != afterIndexes {
                                 groupDidMove = true
                                 pieceDidMove = true
+                                piecesMoved = true
                             }
                         }
                     }
@@ -634,6 +639,7 @@ class Model {
                             if beforeIndexes != afterIndexes {
                                 groupDidMove = true
                                 pieceDidMove = true
+                                piecesMoved = true
                             }
                         }
                     }
@@ -687,6 +693,7 @@ class Model {
                             if beforeIndexes != afterIndexes {
                                 groupDidMove = true
                                 pieceDidMove = true
+                                piecesMoved = true
                             }
                         }
                     }
@@ -707,12 +714,21 @@ class Model {
     
     func movePiece(direction: Direction, pieces: [Piece]) {
         
-        movePiece2(direction: direction, pieces: pieces)
-        //Adding the next pieces last in order to make sure that there are no pieces blocking the pieceMaker
+        piecesMoved = true
         
-        for group in board.pieceGroups {
-            group.didMove = false
+        while piecesMoved == true {
+            
+            piecesMoved = false
+            
+            movePiece2(direction: direction, pieces: pieces)
+            //Adding the next pieces last in order to make sure that there are no pieces blocking the pieceMaker
+            
+            for group in board.pieceGroups {
+                group.didMove = false
+            }
         }
+        
+        
     }
     
     func sortPieces(direction: Direction) {
