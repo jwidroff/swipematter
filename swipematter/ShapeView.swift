@@ -38,8 +38,8 @@ class ShapeView : UIView {
             self.nextPiece = nextPieceX
         }
         
-        isLocked = piece.isLocked
-        doesPivot = piece.doesPivot
+//        isLocked = piece.isLocked
+//        doesPivot = piece.doesPivot
 
         makeSoft()
                 
@@ -408,19 +408,19 @@ class ShapeView : UIView {
         var cornerRadius: CGFloat = 1
         var frame = CGRect.zero
         
-        if doesPivot == false {
+//        if doesPivot == false {
             
             cornerRadius = 5
             frame = self.bounds
             
-        } else {
-
-//            if shape != .blank {
-                cornerRadius = self.frame.width / 2
-                frame = self.layer.bounds
-//            }
-            
-        }
+//        } else {
+//
+////            if shape != .blank {
+//                cornerRadius = self.frame.width / 2
+//                frame = self.layer.bounds
+////            }
+//            
+//        }
         
         let shadowRadius: CGFloat = 1
         let darkShadow = CALayer()
@@ -475,8 +475,8 @@ class ShapeViewTopView: UIView {
         super.init(frame: frame)
 //        self.shape = piece.shape
 //        self.version = piece.version
-        self.isLocked = piece.isLocked
-        self.doesPivot = piece.doesPivot
+//        self.isLocked = piece.isLocked
+//        self.doesPivot = piece.doesPivot
         
         if let nextPieceX = piece.nextPiece {
             self.nextPiece = nextPieceX
@@ -506,13 +506,13 @@ class ShapeViewTopView: UIView {
     
     override func layoutSubviews() {
         
-        if doesPivot == true {
-            
-            self.layer.cornerRadius = self.frame.width / 2
-
-        } else {
+//        if doesPivot == true {
+//
+//            self.layer.cornerRadius = self.frame.width / 2
+//
+//        } else {
             self.layer.cornerRadius = 5
-        }
+//        }
         
     }
     

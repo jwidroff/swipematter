@@ -18,9 +18,9 @@ class Piece {
     var colors = [UIColor()]
     var side = Side()
 //    var version = Int()
-    var isLocked = false
+//    var isLocked = false
     var nextPiece: Piece?
-    var doesPivot = true
+//    var doesPivot = true
     var center = CGPoint()
     var totalVersions = Int()
     var pieceMakerPieces: [Piece]?
@@ -30,14 +30,14 @@ class Piece {
         
     }
     
-    init(indexes: Indexes?, colors: [UIColor], isLocked: Bool, doesPivot: Bool) {
+    init(indexes: Indexes?, colors: [UIColor]) {
         
         self.indexes = indexes
 //        self.shape = shape
         self.colors = colors
 //        self.version = version
-        self.isLocked = isLocked
-        self.doesPivot = doesPivot
+//        self.isLocked = isLocked
+//        self.doesPivot = doesPivot
         if colors.count == 1 {
             
             self.colors.append(colors[0])

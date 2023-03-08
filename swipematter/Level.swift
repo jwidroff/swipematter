@@ -1097,49 +1097,49 @@ class LevelModel {
 //            addBorderAroundBoardOf(.wall, exceptionIndexes: [])
 
 //
-            let piece1 = Piece(indexes: Indexes(x: 6, y: 1), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece1 = Piece(indexes: Indexes(x: 6, y: 1), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece1)
 
 
 
-            let piece2 = Piece(indexes: Indexes(x: 7, y: 1), colors: [UIColor.cyan, UIColor.red], isLocked: false, doesPivot: false)
+            let piece2 = Piece(indexes: Indexes(x: 7, y: 1), colors: [UIColor.cyan, UIColor.red])
             board.pieces.append(piece2)
 
-            let piece3 = Piece(indexes: Indexes(x: 7, y: 2), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece3 = Piece(indexes: Indexes(x: 7, y: 2), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece3)
 
 
             let group = Group(pieces: [piece1, piece2, piece3])//, piece4])
 
 
-            let piece4 = Piece(indexes: Indexes(x: 5, y: 2), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece4 = Piece(indexes: Indexes(x: 5, y: 2), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece4)
 
 
 
-            let piece5 = Piece(indexes: Indexes(x: 5, y: 3), colors: [UIColor.cyan, UIColor.red], isLocked: false, doesPivot: false)
+            let piece5 = Piece(indexes: Indexes(x: 5, y: 3), colors: [UIColor.cyan, UIColor.red])
             board.pieces.append(piece5)
 
-            let piece6 = Piece(indexes: Indexes(x: 6, y: 3), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece6 = Piece(indexes: Indexes(x: 6, y: 3), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece6)
 
-            let piece7 = Piece(indexes: Indexes(x: 6, y: 4), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece7 = Piece(indexes: Indexes(x: 6, y: 4), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece7)
 
 
             let group2 = Group(pieces: [piece4, piece5, piece6, piece7])
 
 
-            let piece8 = Piece(indexes: Indexes(x: 3, y: 3), colors: [UIColor.cyan, UIColor.red], isLocked: false, doesPivot: false)
+            let piece8 = Piece(indexes: Indexes(x: 3, y: 3), colors: [UIColor.cyan, UIColor.red])
             board.pieces.append(piece8)
 
-            let piece9 = Piece(indexes: Indexes(x: 3, y: 2), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece9 = Piece(indexes: Indexes(x: 3, y: 2), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece9)
 
-            let piece10 = Piece(indexes: Indexes(x: 2, y: 3), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece10 = Piece(indexes: Indexes(x: 2, y: 3), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece10)
 
-            let piece11 = Piece(indexes: Indexes(x: 2, y: 2), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece11 = Piece(indexes: Indexes(x: 2, y: 2), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece11)
 
 
@@ -1156,76 +1156,76 @@ class LevelModel {
 //            board.pieces.append(piece14)
 
 
-            let piece12 = Piece(indexes: Indexes(x: 8, y: 0), colors: [UIColor.cyan, UIColor.red], isLocked: false, doesPivot: false)
+            let piece12 = Piece(indexes: Indexes(x: 8, y: 0), colors: [UIColor.cyan, UIColor.red])
             board.pieces.append(piece12)
 
-            let piece13 = Piece(indexes: Indexes(x: 8, y: 1), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece13 = Piece(indexes: Indexes(x: 8, y: 1), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece13)
 
-            let piece14 = Piece(indexes: Indexes(x: 8, y: 2), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece14 = Piece(indexes: Indexes(x: 8, y: 2), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece14)
 
-            let piece15 = Piece(indexes: Indexes(x: 8, y: 3), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece15 = Piece(indexes: Indexes(x: 8, y: 3), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece15)
 
 
             let group4 = Group(pieces: [piece12, piece13, piece14, piece15])
 
 
-            let piece16 = Piece(indexes: Indexes(x: 6, y: 8), colors: [UIColor.cyan, UIColor.red], isLocked: false, doesPivot: false)
+            let piece16 = Piece(indexes: Indexes(x: 6, y: 8), colors: [UIColor.cyan, UIColor.red])
             board.pieces.append(piece16)
 
-            let piece17 = Piece(indexes: Indexes(x: 7, y: 8), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece17 = Piece(indexes: Indexes(x: 7, y: 8), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece17)
 
-            let piece18 = Piece(indexes: Indexes(x: 8, y: 8), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece18 = Piece(indexes: Indexes(x: 8, y: 8), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece18)
 
-            let piece19 = Piece(indexes: Indexes(x: 7, y: 7), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece19 = Piece(indexes: Indexes(x: 7, y: 7), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece19)
 
 
             let group5 = Group(pieces: [piece16, piece17, piece18, piece19])
 
 
-            let piece20 = Piece(indexes: Indexes(x: 6, y: 6), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece20 = Piece(indexes: Indexes(x: 6, y: 6), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece20)
 
-            let piece21 = Piece(indexes: Indexes(x: 6, y: 5), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece21 = Piece(indexes: Indexes(x: 6, y: 5), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece21)
 
 
             let group6 = Group(pieces: [piece20, piece21])
 
 
-            let piece22 = Piece(indexes: Indexes(x: 1, y: 6), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece22 = Piece(indexes: Indexes(x: 1, y: 6), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece22)
 
-            let piece23 = Piece(indexes: Indexes(x: 2, y: 6), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece23 = Piece(indexes: Indexes(x: 2, y: 6), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece23)
 
 
-            let piece24 = Piece(indexes: Indexes(x: 2, y: 7), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece24 = Piece(indexes: Indexes(x: 2, y: 7), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece24)
 
-            let piece25 = Piece(indexes: Indexes(x: 3, y: 7), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece25 = Piece(indexes: Indexes(x: 3, y: 7), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece25)
 
-            let piece26 = Piece(indexes: Indexes(x: 3, y: 8), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece26 = Piece(indexes: Indexes(x: 3, y: 8), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece26)
 
             let group7 = Group(pieces: [piece22, piece23, piece24, piece25, piece26])
 
-            let piece27 = Piece(indexes: Indexes(x: 4, y: 6), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece27 = Piece(indexes: Indexes(x: 4, y: 6), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece27)
 
             let group8 = Group(pieces: [piece27])
 
 
-            let piece28 = Piece(indexes: Indexes(x: 0, y: 0), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece28 = Piece(indexes: Indexes(x: 0, y: 0), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece28)
 
-            let piece29 = Piece(indexes: Indexes(x: 0, y: 1), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+            let piece29 = Piece(indexes: Indexes(x: 0, y: 1), colors: [UIColor.red, UIColor.cyan])
             board.pieces.append(piece29)
 
 
@@ -1506,22 +1506,22 @@ class LevelModel {
     
 
     
-    private func setupLocks() {
-        
-        for piece in self.board.pieces {
-            
-            if piece.isLocked {
-                
-                let w = piece.view.frame.width / 10 * 9
-                let h = piece.view.frame.height / 10 * 9
-                let x = piece.view.frame.minX + ((piece.view.frame.width - w) / 2)
-                let y = piece.view.frame.minY + ((piece.view.frame.height - h) / 2)
-                let frame = CGRect(x: x, y: y, width: w, height: h)
-                let lockView = UIView(frame: frame)
-                lockView.backgroundColor = .black
-            }
-        }
-    }
+//    private func setupLocks() {
+//        
+//        for piece in self.board.pieces {
+//            
+//            if piece.isLocked {
+//                
+//                let w = piece.view.frame.width / 10 * 9
+//                let h = piece.view.frame.height / 10 * 9
+//                let x = piece.view.frame.minX + ((piece.view.frame.width - w) / 2)
+//                let y = piece.view.frame.minY + ((piece.view.frame.height - h) / 2)
+//                let frame = CGRect(x: x, y: y, width: w, height: h)
+//                let lockView = UIView(frame: frame)
+//                lockView.backgroundColor = .black
+//            }
+//        }
+//    }
     
 //    private func setupNextPieces() { //TODO: Need to do for this like was done in the Model in order to get the pieceMaker to be able to choose the shape/version/color of the piece
 //

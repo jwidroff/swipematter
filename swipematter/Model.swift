@@ -259,7 +259,7 @@ class Model {
         print("setupNextView called")
         
 //        var pieces = [Piece]()
-        let piece1 = Piece(indexes: Indexes(x: 1, y: 2), colors: [UIColor.red, UIColor.cyan], isLocked: false, doesPivot: false)
+        let piece1 = Piece(indexes: Indexes(x: 1, y: 2), colors: [UIColor.red, UIColor.cyan])
         
         
         delegate?.setUpNextView(nextPiece: piece1)
@@ -303,7 +303,7 @@ class Model {
 //            piece.setPieceTotalVersions(shape: piece.shape)
 //            piece.setPieceSides(shape: piece.shape, version: piece.version, colors: piece.colors)
             
-            piece.doesPivot = setPivot(piece: piece)
+//            piece.doesPivot = setPivot(piece: piece)
             board.pieces.append(piece)
             
             
@@ -638,28 +638,28 @@ class Model {
 ////        delegate?.resetPieceMakerView(piece: piece)
 //    }
     
-    func setPivot(piece: Piece) -> Bool {
-        
-        var bool = Bool()
-        
-        var randomBools = [Bool]()
-        
-        if piece.pieceMakerPieces != nil {
-            for pieceX in piece.pieceMakerPieces! {
-                
-                
-                randomBools.append(pieceX.doesPivot)
-            }
-            bool = randomBools[Int(arc4random_uniform(UInt32(randomBools.count)))]
-        } else {
-            bool = true
-        }
-        
-        
-        
-        return bool
-        
-    }
+//    func setPivot(piece: Piece) -> Bool {
+//        
+//        var bool = Bool()
+//        
+//        var randomBools = [Bool]()
+//        
+//        if piece.pieceMakerPieces != nil {
+//            for pieceX in piece.pieceMakerPieces! {
+//                
+//                
+//                randomBools.append(pieceX.doesPivot)
+//            }
+//            bool = randomBools[Int(arc4random_uniform(UInt32(randomBools.count)))]
+//        } else {
+//            bool = true
+//        }
+//        
+//        
+//        
+//        return bool
+//        
+//    }
     
     
     var counterX = 0
@@ -873,7 +873,7 @@ class Model {
                 
         for piece in pieces {
             
-            if piece.isLocked == false {
+//            if piece.isLocked == false {
 
                 if pieceIsPartOfAGroup(piece: piece, groups: board.pieceGroups) == false {
                     
@@ -897,7 +897,7 @@ class Model {
                     }
                     
                 }
-            }
+//            }
         }
         
         
