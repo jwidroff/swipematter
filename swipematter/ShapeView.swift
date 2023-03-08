@@ -11,14 +11,14 @@ import UIKit
 class ShapeView : UIView {
     
     var shape:Shape = .blank
-    var version = Int()
+//    var version = Int()
     var colors = [CGColor]()
-    var switches = Int()
-    var isLocked: Bool?
-    var doesPivot: Bool?
-    var nextPiece: Piece?
+//    var switches = Int()
+//    var isLocked: Bool?
+//    var doesPivot: Bool?
+//    var nextPiece: Piece?
     var context : CGContext?
-    var rotations = 0
+//    var rotations = 0
     
     private var colorTheme = ColorTheme()
     

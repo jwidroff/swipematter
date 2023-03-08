@@ -107,12 +107,12 @@ protocol ModelDelegate {
     func removeView(view: UIView)
     func runPopUpView(title: String, message: String)
     func clearPiecesAnimation(view: UIView)
-    func replacePieceView(piece: Piece)
+//    func replacePieceView(piece: Piece)
 //    func changeViewColor(piece: Piece, ball: Ball)
     func changeAnimationSpeed(slowerOrFaster: String)
     func crashBallViewIntoCross(piece: Piece, ball: Ball)
     func removeViews()
-    func updateLevelInfo(name: String, moves: String)
+//    func updateLevelInfo(name: String, moves: String)
     func updateMovesLeftLabel(moves: String)
     func addSwipeGestureRecognizer(view: UIView)
 //    func removeHole(piece: Piece)
@@ -129,15 +129,15 @@ class Model {
     var board = Board()
     var level = Level()
     var delegate: ModelDelegate?
-    var gameOver = false
-    var possibleLoopPieces = [Piece]()
-    var loadingMode = true
+//    var gameOver = false
+//    var possibleLoopPieces = [Piece]()
+//    var loadingMode = true
     var levelModel = LevelModel()
     let defaults = UserDefaults.standard
-    var moveStarted = false
-    var infiniteMoves = Bool()
-    var gameIsLoading = true
-    var nextPiece = NextPiece()
+//    var moveStarted = false
+//    var infiniteMoves = Bool()
+//    var gameIsLoading = true
+//    var nextPiece = NextPiece()
     
     init(){
         
@@ -160,7 +160,7 @@ class Model {
     func setUpControlsAndInstructions() {
         
         delegate?.setUpControlViews()
-        updateLevelInfo()
+//        updateLevelInfo()
         setupInstructions()
         setupNextView()
         
@@ -173,13 +173,13 @@ class Model {
         
     }
     
-    
-    func updateLevelInfo() {
-        
-        let name = levelModel.levelNames[level.number]
-        let moves = "\(board.moves)"
-        delegate?.updateLevelInfo(name: name, moves: moves)
-    }
+//
+//    func updateLevelInfo() {
+//
+//        let name = levelModel.levelNames[level.number]
+//        let moves = "\(board.moves)"
+//        delegate?.updateLevelInfo(name: name, moves: moves)
+//    }
     
 //    func showLoadingAnimation() { //NOT CALLED
 //
@@ -664,35 +664,35 @@ class Model {
     
     var counterX = 0
     
-    func updateMovesLeft() {
-        
-        counterX += 1
-        
-//        print("count = \(counterX)")
-        
-        var movesX = String()
-        
-        if moveStarted == true {
-            
-            if board.moves != 0 {
-                
-                board.moves -= 1
-                movesX = "\(board.moves)"
-                
-                if board.moves == 0 {
-                    
-                    delegate?.disableSwipes()
-                    
-                }
-                
-            } else {
-                
-                movesX = "∞"
-            }
-            delegate?.updateMovesLeftLabel(moves: movesX)
-            moveStarted = false
-        }
-    }
+//    func updateMovesLeft() {
+//
+//        counterX += 1
+//
+////        print("count = \(counterX)")
+//
+//        var movesX = String()
+//
+//        if moveStarted == true {
+//
+//            if board.moves != 0 {
+//
+//                board.moves -= 1
+//                movesX = "\(board.moves)"
+//
+//                if board.moves == 0 {
+//
+//                    delegate?.disableSwipes()
+//
+//                }
+//
+//            } else {
+//
+//                movesX = "∞"
+//            }
+//            delegate?.updateMovesLeftLabel(moves: movesX)
+//            moveStarted = false
+//        }
+//    }
     
     func movePiecesHelper(piece: Piece, direction: Direction) {
         
@@ -711,7 +711,7 @@ class Model {
                 
 //                if piece.shape != .pieceMaker {
                     
-                    updateMovesLeft()
+//                    updateMovesLeft()
                     
                     if indexes.y != 0 {
                         piece.indexes?.y = (indexes.y)! - 1
@@ -730,7 +730,7 @@ class Model {
             
             if spaceIsntBlocked {
                 
-                    updateMovesLeft()
+//                    updateMovesLeft()
                     
                     if indexes.y != board.heightSpaces - 1 {
                         piece.indexes?.y = indexes.y! + 1
@@ -749,7 +749,7 @@ class Model {
             
             if spaceIsntBlocked {
                 
-                    updateMovesLeft()
+//                    updateMovesLeft()
                     
                     if indexes.x != 0 {
                         piece.indexes?.x = indexes.x! - 1
@@ -769,7 +769,7 @@ class Model {
                 
 //                if piece.shape != .pieceMaker {
                     
-                    updateMovesLeft()
+//                    updateMovesLeft()
                     
                     if indexes.x != board.widthSpaces - 1 {
                         piece.indexes?.x = indexes.x! + 1
@@ -867,7 +867,7 @@ class Model {
 //        var groupsToNotRetry = [Group]()
         var pieceDidMove = false
         
-        moveStarted = true
+//        moveStarted = true
         
         sortPieces(direction: direction)
                 
@@ -2580,7 +2580,7 @@ class Model {
             CATransaction.setCompletionBlock {
                 
                 self.delegate?.addSwipeGestureRecognizer(view: self.board.view)
-                self.check4Winner()
+//                self.check4Winner()
                 
                 let delayedTime = DispatchTime.now() + .milliseconds(Int(250))
                 DispatchQueue.main.asyncAfter(deadline: delayedTime) {
@@ -2613,18 +2613,18 @@ class Model {
         }
     }
     
-    func check4Winner(){
-        
-        if board.balls.isEmpty {
-            
-            self.delegate?.runPopUpView(title: "YOU WIN", message: "Great Job - Next Level?")
-            self.gameOver = true
-            return
-            
-        } else {
-            return
-        }
-    }
+//    func check4Winner(){
+//
+//        if board.balls.isEmpty {
+//
+//            self.delegate?.runPopUpView(title: "YOU WIN", message: "Great Job - Next Level?")
+//            self.gameOver = true
+//            return
+//
+//        } else {
+//            return
+//        }
+//    }
     
 //    func handleTap(center: CGPoint) {
 //        
@@ -2979,6 +2979,6 @@ class Model {
         }
                 
         board.balls.removeAll()
-        gameOver = false
+//        gameOver = false
     }
 }

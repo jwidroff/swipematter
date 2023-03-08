@@ -82,10 +82,10 @@ class MenuView: UIView, UITableViewDataSource, UITableViewDelegate, UINavigation
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        if model.gameOver == true {
-            model.gameOver = false
-            return
-        }
+//        if model.gameOver == true {
+//            model.gameOver = false
+//            return
+//        }
         
         if self.model.defaults.integer(forKey: "highestLevel") >= indexPath.row {
             
@@ -94,7 +94,7 @@ class MenuView: UIView, UITableViewDataSource, UITableViewDelegate, UINavigation
             self.model.delegate?.removeViews()
             self.model.setUpGame()
             self.model.setUpControlsAndInstructions()
-            self.model.updateLevelInfo()
+//            self.model.updateLevelInfo()
             self.removeFromSuperview()
         }
     }

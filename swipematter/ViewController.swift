@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         model.board.view.removeFromSuperview()
         model.setUpGame()
         model.setUpControlsAndInstructions()
-        model.loadingMode = false
+//        model.loadingMode = false
 //        bannerView = GADBannerView(adSize: GADAdSizeBanner)
 //        addBannerViewToView(bannerView)
 
@@ -504,7 +504,7 @@ class ViewController: UIViewController {
 //
 //        concurrentQueue.async { [self] in
             
-            if model.board.moves > 0 || model.infiniteMoves == true {
+//            if model.board.moves > 0 || model.infiniteMoves == true {
                 
                 switch sender.direction {
                     
@@ -531,7 +531,7 @@ class ViewController: UIViewController {
 //                    self.model.check4AutoBallMove()
 //                    self.model.check4GameOver()
                 }
-            }
+//            }
 //        }
     }
     
@@ -684,6 +684,10 @@ class ViewController: UIViewController {
 extension ViewController: ModelDelegate {
 
     
+
+    
+
+    
     
     
     func setupInstructionsView(instructions: Instructions) {
@@ -759,24 +763,24 @@ extension ViewController: ModelDelegate {
         }
     }
     
-    func updateLevelInfo(name: String, moves: String) {
-        
-        levelNameLabel.text = name.uppercased()
-        
-        var movesX = String()
-        
-        if moves == "0" {
-            
-            movesX = "∞"
-            model.infiniteMoves = true
-        } else {
-            
-            movesX = moves
-            model.infiniteMoves = false
-        }
-        
-        movesLeftNumberLabel.text = "\(movesX)"
-    }
+//    func updateLevelInfo(name: String, moves: String) {
+//        
+//        levelNameLabel.text = name.uppercased()
+//        
+//        var movesX = String()
+//        
+//        if moves == "0" {
+//            
+//            movesX = "∞"
+//            model.infiniteMoves = true
+//        } else {
+//            
+//            movesX = moves
+//            model.infiniteMoves = false
+//        }
+//        
+//        movesLeftNumberLabel.text = "\(movesX)"
+//    }
     
     func changeAnimationSpeed(slowerOrFaster: String) {
         
@@ -847,38 +851,38 @@ extension ViewController: ModelDelegate {
 //        }
 //    }
     
-    func replacePieceView(piece: Piece) {
-        
-        if self.model.board.pieces.contains(where: { (pieceX) -> Bool in
-            pieceX.indexes == piece.indexes
-        }) {
-            
-            var radianDegrees: CGFloat = 0
-            
-//            print("View rotations are \(piece.view.rotations)")
-            
-            switch piece.view.rotations {
-                
-            case 0:
-                radianDegrees = 90
-                piece.view.rotations += 1
-            case 1:
-                radianDegrees = 180
-                piece.view.rotations += 1
-            case 2:
-                radianDegrees = 270
-                piece.view.rotations += 1
-            case 3:
-                radianDegrees = 360
-                piece.view.rotations = 0
-                
-            default:
-                break
-            }
-            
-//            rotateView(piece: piece, rotationDegrees: radianDegrees)
-        }
-    }
+//    func replacePieceView(piece: Piece) {
+//
+//        if self.model.board.pieces.contains(where: { (pieceX) -> Bool in
+//            pieceX.indexes == piece.indexes
+//        }) {
+//
+//            var radianDegrees: CGFloat = 0
+//
+////            print("View rotations are \(piece.view.rotations)")
+//
+//            switch piece.view.rotations {
+//
+//            case 0:
+//                radianDegrees = 90
+//                piece.view.rotations += 1
+//            case 1:
+//                radianDegrees = 180
+//                piece.view.rotations += 1
+//            case 2:
+//                radianDegrees = 270
+//                piece.view.rotations += 1
+//            case 3:
+//                radianDegrees = 360
+//                piece.view.rotations = 0
+//
+//            default:
+//                break
+//            }
+//
+////            rotateView(piece: piece, rotationDegrees: radianDegrees)
+//        }
+//    }
     
 //    func rotateView(piece: Piece, rotationDegrees: CGFloat) {
 //
@@ -1572,11 +1576,11 @@ extension ViewController: ModelDelegate {
             disableGestureRecognizers()
         }
         
-        if model.gameOver == true {
-            
-            model.gameOver = false
-            return
-        }
+//        if model.gameOver == true {
+//
+//            model.gameOver = false
+//            return
+//        }
         
         
         
@@ -1619,7 +1623,7 @@ extension ViewController: ModelDelegate {
                 let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (cancelAction) in
                     alert.dismiss(animated: true) {
                         
-                        self.model.gameOver = false
+//                        self.model.gameOver = false
                     }
                 }
                 alert.addAction(cancelAction)
