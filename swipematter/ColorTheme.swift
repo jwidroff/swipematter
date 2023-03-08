@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-
-
 class ColorTheme { //TODO: Make all of these into static vars
     
     var gameBackground = UIColor()
