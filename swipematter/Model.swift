@@ -129,7 +129,7 @@ class Model {
     var blue = PieceColors().colors["blue"]!
     var green = PieceColors().colors["green"]!
 
-    
+    var groupCount = 0
     
     init(){
         
@@ -157,68 +157,84 @@ class Model {
         board.heightSpaces = 9
         board.widthSpaces = 9
 
-        let piece1 = Piece(indexes: Indexes(x: 6, y: 1), color: red)
+        let piece1 = Piece(indexes: Indexes(x: 3, y: 2), color: green)
         board.pieces.append(piece1)
-
-        let piece2 = Piece(indexes: Indexes(x: 7, y: 1), color: red)
+        
+        let piece2 = Piece(indexes: Indexes(x: 6, y: 2), color: green)
         board.pieces.append(piece2)
+        
 
-        let piece3 = Piece(indexes: Indexes(x: 7, y: 2), color: red)
+//        let piece2 = Piece(indexes: Indexes(x: 7, y: 1), color: green)
+//        board.pieces.append(piece2)
+//
+        let piece3 = Piece(indexes: Indexes(x: 1, y: 0), color: green)
         board.pieces.append(piece3)
+//
+//
+//        let group = Group(pieces: [piece1, piece2, piece3])//, piece4])
+//
+//
+//        let pieceX = Piece(indexes: Indexes(x: 5, y: 1), color: green)
+//        board.pieces.append(pieceX)
+//
+//
+//        let piece4 = Piece(indexes: Indexes(x: 5, y: 2), color: green)
+//        board.pieces.append(piece4)
+//
+//
+//
+//        let piece5 = Piece(indexes: Indexes(x: 5, y: 3), color: green)
+//        board.pieces.append(piece5)
+//
+//        let piece6 = Piece(indexes: Indexes(x: 6, y: 3), color: green)
+//        board.pieces.append(piece6)
+//
+//        let piece7 = Piece(indexes: Indexes(x: 6, y: 4), color: green)
+//        board.pieces.append(piece7)
+//
+//
+//        let group2 = Group(pieces: [piece4, piece5, piece6, piece7, pieceX])
+//
 
-
-        let group = Group(pieces: [piece1, piece2, piece3])//, piece4])
-
-
-        let piece4 = Piece(indexes: Indexes(x: 5, y: 2), color: green)
-        board.pieces.append(piece4)
-
-
-
-        let piece5 = Piece(indexes: Indexes(x: 5, y: 3), color: green)
-        board.pieces.append(piece5)
-
-        let piece6 = Piece(indexes: Indexes(x: 6, y: 3), color: green)
-        board.pieces.append(piece6)
-
-        let piece7 = Piece(indexes: Indexes(x: 6, y: 4), color: green)
-        board.pieces.append(piece7)
-
-
-        let group2 = Group(pieces: [piece4, piece5, piece6, piece7])
-
-
-        let piece8 = Piece(indexes: Indexes(x: 3, y: 3), color: blue)
+        let piece8 = Piece(indexes: Indexes(x: 3, y: 8), color: blue)
         board.pieces.append(piece8)
+//
+//        let piece9 = Piece(indexes: Indexes(x: 3, y: 7), color: blue)
+//        board.pieces.append(piece9)
+//
+//        let piece10 = Piece(indexes: Indexes(x: 2, y: 8), color: blue)
+//        board.pieces.append(piece10)
+//
+//        let piece11 = Piece(indexes: Indexes(x: 2, y: 7), color: blue)
+//        board.pieces.append(piece11)
+//
+//
+//        let group3 = Group(pieces: [piece8, piece9, piece10, piece11])
+////
+//
+//        let piece12 = Piece(indexes: Indexes(x: 8, y: 0), color: red)
+//        board.pieces.append(piece12)
+//
+//        let piece13 = Piece(indexes: Indexes(x: 8, y: 1), color: red)
+//        board.pieces.append(piece13)
+//
+//        let piece14 = Piece(indexes: Indexes(x: 8, y: 2), color: red)
+//        board.pieces.append(piece14)
+//
+//        let piece15 = Piece(indexes: Indexes(x: 8, y: 3), color: red)
+//        board.pieces.append(piece15)
+//
+//
+//        let group4 = Group(pieces: [piece12, piece13, piece14, piece15])
 
-        let piece9 = Piece(indexes: Indexes(x: 3, y: 2), color: blue)
-        board.pieces.append(piece9)
-
-        let piece10 = Piece(indexes: Indexes(x: 2, y: 3), color: blue)
-        board.pieces.append(piece10)
-
-        let piece11 = Piece(indexes: Indexes(x: 2, y: 2), color: blue)
-        board.pieces.append(piece11)
-
-
-        let group3 = Group(pieces: [piece8, piece9, piece10, piece11])
-
-
-        let piece12 = Piece(indexes: Indexes(x: 8, y: 0), color: green)
-        board.pieces.append(piece12)
-
-        let piece13 = Piece(indexes: Indexes(x: 8, y: 1), color: green)
-        board.pieces.append(piece13)
-
-        let piece14 = Piece(indexes: Indexes(x: 8, y: 2), color: green)
-        board.pieces.append(piece14)
-
-        let piece15 = Piece(indexes: Indexes(x: 8, y: 3), color: green)
-        board.pieces.append(piece15)
-
-
-        let group4 = Group(pieces: [piece12, piece13, piece14, piece15])
-
+        
+        
+        
+        
+        
+        
+        
+        
 //
 //        let piece16 = Piece(indexes: Indexes(x: 6, y: 8), color: UIColor.cyan)
 //        board.pieces.append(piece16)
@@ -277,7 +293,11 @@ class Model {
 //        board.pieces.append(piece29)
 //
 //        let group9 = Group(pieces: [piece28 ,piece29])
-        board.pieceGroups = [group, group2, group3, group4]//, group5, group6, group7, group8, group9]
+        
+        
+        
+        
+//        board.pieceGroups = [group]//, group2, group3, group4]//, group5, group6, group7, group8, group9]
 //
     }
     
@@ -455,12 +475,12 @@ class Model {
         var piecesToRetry = [Piece]()
         var pieceDidMove = false
         
-        sortPieces(direction: direction)
+//        sortPieces(direction: direction)
                 
         for piece in pieces {
             
             if pieceIsPartOfAGroup(piece: piece, groups: board.pieceGroups) == false {
-                                
+                         
                 let startIndexes = piece.indexes
                 
                 movePiecesHelper(piece: piece, direction: direction)
@@ -722,6 +742,8 @@ class Model {
     
     func movePieces(direction: Direction, pieces: [Piece]) {
         
+        sortPieces(direction: direction)
+        
         piecesMoved = true
         
         while piecesMoved == true {
@@ -736,47 +758,474 @@ class Model {
             }
         }
         
-        check4NewGroups(direction: direction) //TODO:
+        groupPiecesTogether()
         
         addPieceToBoard() //TODO:
-        
     }
     
-   
-    
-    
-    func check4NewGroups(direction: Direction) {
+    func groupPiecesTogether() {
         
-        switch direction {
-            
-            
-        case .up:
-            
-            print()
-            
-        case .down:
-            
-            print()
-
-            
-        case .left:
-            
-            print()
-
-            
-        case .right:
-            
-            print()
-
-            
-        default:
-            
-            break
-            
-            
+        board.pieceGroups = []
+        
+        var tempBoardPieces = board.pieces //TODO: May want to consider taking pieces out of here after they've been added to a group because of another piece
+        
+        tempBoardPieces.sort { (piece1, piece2) in
+            piece1.indexes!.x! < piece2.indexes!.x!
         }
         
+        tempBoardPieces.sort { (piece1, piece2) in
+            piece1.indexes!.y! < piece2.indexes!.y!
+        }
+        
+        for piece in tempBoardPieces {
+            
+            for pieceX in board.pieces {
+                
+                if piece.indexes!.y! == pieceX.indexes!.y! - 1 && piece.indexes!.x! == pieceX.indexes!.x! && piece.color == pieceX.color{
+                    
+                    if piece.groupNumber == nil && pieceX.groupNumber == nil {
+                        
+//                        print("AA")
+                        piece.groupNumber = groupCount + 1
+                        pieceX.groupNumber = groupCount + 1
+                        groupCount += 1
+                        
+                    } else if pieceX.groupNumber != nil && piece.groupNumber == nil {
+                        
+//                        print("BB")
+                        piece.groupNumber = pieceX.groupNumber
+                        
+                    } else if pieceX.groupNumber == nil && piece.groupNumber != nil {
+                        
+//                        print("CC")
+                        pieceX.groupNumber = piece.groupNumber
+                    }
+                }
+                
+                if piece.indexes!.y! == pieceX.indexes!.y! && piece.indexes!.x! == pieceX.indexes!.x! - 1 && piece.color == pieceX.color{
+                    
+                    if piece.groupNumber == nil && pieceX.groupNumber == nil {
+                        
+//                        print("AA")
+                        piece.groupNumber = groupCount + 1
+                        pieceX.groupNumber = groupCount + 1
+                        groupCount += 1
+                        
+                    } else if pieceX.groupNumber != nil && piece.groupNumber == nil {
+                        
+//                        print("BB")
+                        piece.groupNumber = pieceX.groupNumber
+                        
+                    } else if pieceX.groupNumber == nil && piece.groupNumber != nil {
+                        
+//                        print("CC")
+                        pieceX.groupNumber = piece.groupNumber
+                    }
+                }
+            }
+        }
+        
+        addBoardGroups()
     }
+    
+    func addBoardGroups() {
+        
+        for number in 0..<groupCount {
+            
+            var groupPieces = [Piece]()
+            
+            for piece in board.pieces {
+                
+                if let groupNum = piece.groupNumber {
+                    
+                    if groupNum == number + 1 {
+                        
+                        groupPieces.append(piece)
+                    }
+                }
+            }
+            let group = Group(pieces: groupPieces)
+            board.pieceGroups.append(group)
+        }
+    }
+    
+    
+//    func groupPiecesTogether() {
+//
+//        for pieceX in board.pieces {
+//
+//            if pieceX.groupNumber == nil {
+//
+//                print("PIECE X INDEX = \(pieceX.indexes!)")
+//
+//                for pieceY in board.pieces {
+//
+//                    if pieceX.groupNumber == nil {
+//
+//                        if let indexX = pieceX.indexes {
+//
+//                            if let indexY = pieceY.indexes {
+//
+//                                if indexX != indexY {
+//
+//                                    print("PIECE Y INDEX = \(pieceY.indexes!)")
+//
+//                                    let xX = indexX.x!
+//                                    let xY = indexX.y!
+//                                    let yX = indexY.x!
+//                                    let yY = indexY.y!
+//
+//                                    if yY == xY && yX == xX - 1 && pieceY.color == pieceX.color {
+//
+//                                        print("HERE")
+//
+//                                        if pieceX.groupNumber == nil && pieceY.groupNumber == nil {
+//
+//                                            print("AA")
+//
+//                                            pieceX.groupNumber = groupCount + 1
+//                                            pieceY.groupNumber = groupCount + 1
+//                                            groupCount += 1
+//
+//
+//                                        } else if pieceX.groupNumber != nil && pieceY.groupNumber == nil {
+//
+//                                            print("BB")
+//
+//
+//                                            pieceY.groupNumber = pieceX.groupNumber
+//
+//
+//                                        } else if pieceX.groupNumber == nil && pieceY.groupNumber != nil {
+//
+//                                            print("CC")
+//
+//                                            pieceX.groupNumber = pieceY.groupNumber
+//                                        }
+//                                    }
+//
+//                                    if yY == xY && yX == xX + 1 && pieceY.color == pieceX.color {
+//
+//                                        print("HERE")
+//
+//                                        if pieceX.groupNumber == nil && pieceY.groupNumber == nil {
+//
+//                                            print("AA")
+//
+//                                            pieceX.groupNumber = groupCount + 1
+//                                            pieceY.groupNumber = groupCount + 1
+//                                            groupCount += 1
+//
+//                                        } else if pieceX.groupNumber != nil && pieceY.groupNumber == nil {
+//
+//                                            print("BB")
+//
+//
+//                                            pieceY.groupNumber = pieceX.groupNumber
+//
+//                                        } else if pieceX.groupNumber == nil && pieceY.groupNumber != nil {
+//
+//                                            print("CC")
+//
+//                                            pieceX.groupNumber = pieceY.groupNumber
+//                                        }
+//                                    }
+//
+//                                    if yY == xY - 1 && yX == xX && pieceY.color == pieceX.color {
+//
+//                                        print("HERE")
+//
+//                                        if pieceX.groupNumber == nil && pieceY.groupNumber == nil {
+//
+//                                            print("AA")
+//
+//                                            pieceX.groupNumber = groupCount + 1
+//                                            pieceY.groupNumber = groupCount + 1
+//                                            groupCount += 1
+//
+//                                        } else if pieceX.groupNumber != nil && pieceY.groupNumber == nil {
+//
+//                                            print("BB")
+//
+//
+//                                            pieceY.groupNumber = pieceX.groupNumber
+//
+//                                        } else if pieceX.groupNumber == nil && pieceY.groupNumber != nil {
+//
+//                                            print("CC")
+//
+//                                            pieceX.groupNumber = pieceY.groupNumber
+//                                        }
+//                                    }
+//
+//                                    if yY == xY + 1 && yX == xX && pieceY.color == pieceX.color {
+//
+//                                        print("HERE")
+//
+//                                        if pieceX.groupNumber == nil && pieceY.groupNumber == nil {
+//
+//                                            print("AA")
+//
+//                                            pieceX.groupNumber = groupCount + 1
+//                                            pieceY.groupNumber = groupCount + 1
+//                                            groupCount += 1
+//
+//                                        } else if pieceX.groupNumber != nil && pieceY.groupNumber == nil {
+//
+//                                            print("BB")
+//
+//
+//                                            pieceY.groupNumber = pieceX.groupNumber
+//
+//                                        } else if pieceX.groupNumber == nil && pieceY.groupNumber != nil {
+//
+//                                            print("CC")
+//
+//                                            pieceX.groupNumber = pieceY.groupNumber
+//                                        }
+//                                    }
+//
+//                                }
+//
+//
+//
+//
+//
+//                            }
+//                        }
+//
+//
+//                    }
+//
+//
+//
+//
+//                }
+//            }
+//
+//
+//        }
+//
+//
+//        createGroups()
+//
+//        print(board.pieceGroups.count)
+//    }
+    
+//    func createGroups() {
+//
+//
+//
+//        for number in 0..<groupCount {
+//
+//            var tempGroup = [Piece]()
+//
+//            for piece in board.pieces {
+//
+//                if piece.groupNumber == number {
+//
+//                    tempGroup.append(piece)
+//
+//                }
+//
+//
+//            }
+//
+//            board.pieceGroups.append(Group(pieces: tempGroup))
+//
+//        }
+//
+//
+//
+//
+//    }
+    
+    
+//    func check4NewGroups(direction: Direction) {
+//
+//        board.pieceGroups = []
+//
+//
+//        for piece in board.pieces.sorted(by: { (piece1, piece2) in
+//            piece1.indexes!.x! < piece2.indexes!.x! && piece1.indexes!.y! < piece2.indexes!.y!
+//        }) {
+//
+//
+////            calcNewGroup(piece: piece)
+//            createNewGroups(piece: piece)
+//
+//        }
+//
+//        print(board.pieceGroups.map({$0.pieces}))
+//
+//    }
+//
+//
+//    var tempGroups = [[Piece]]()
+//
+//    func createNewGroups(piece: Piece) {
+//
+//
+//        for group in tempGroups {
+//
+//            for pieceX in group {
+//
+////                if pieceX.indexes ==
+//
+//            }
+//
+//
+//        }
+//
+//
+//
+//
+//
+//
+//
+//        //Check if piece is already part of a group or not
+////        for group in board.pieceGroups {
+//
+////            if group.pieces.contains(where: { (pieceX) in
+////                piece.indexes == pieceX.indexes
+////            }) {
+//
+//                //Since its alreadt part of a group, exit the func
+////                break
+//
+//
+//
+////            } else {
+//
+//                //Since its not part of a group, see if its touching a piece
+//                for pieceX in board.pieces {
+//
+//                    if piece.indexes!.y == pieceX.indexes!.y && piece.indexes!.x == pieceX.indexes!.x! - 1 && piece.color == pieceX.color {
+//
+////                        if !group.pieces.contains(where: { (pieceX) in
+////                            piece.indexes == pieceX.indexes
+////                        }) {
+////                            let group = Group(pieces: [piece, pieceX])
+////                            board.pieceGroups.append(group)
+////                            break
+////                        }
+//                    }
+//
+//                    if piece.indexes!.y == pieceX.indexes!.y && piece.indexes!.x == pieceX.indexes!.x! + 1 && piece.color == pieceX.color {
+//
+////                        if !group.pieces.contains(where: { (pieceX) in
+////                            piece.indexes == pieceX.indexes
+////                        }) {
+////                            let group = Group(pieces: [piece, pieceX])
+////                            board.pieceGroups.append(group)
+////                            break
+////                        }
+//                    }
+//
+//                    if piece.indexes!.y == pieceX.indexes!.y! + 1 && piece.indexes!.x == pieceX.indexes!.x && piece.color == pieceX.color {
+//
+////                        if !group.pieces.contains(where: { (pieceX) in
+////                            piece.indexes == pieceX.indexes
+////                        }) {
+////                            let group = Group(pieces: [piece, pieceX])
+////                            board.pieceGroups.append(group)
+////                            break
+////                        }
+//                    }
+//
+//                    if piece.indexes!.y == pieceX.indexes!.y! - 1 && piece.indexes!.x == pieceX.indexes!.x && piece.color == pieceX.color {
+//
+////                        if !group.pieces.contains(where: { (pieceX) in
+////                            piece.indexes == pieceX.indexes
+////                        }) {
+////                            let group = Group(pieces: [piece, pieceX])
+////                            board.pieceGroups.append(group)
+////                            break
+////                        }
+//                    }
+//
+//
+//                }
+//
+//
+//
+////            }
+//
+//
+//            //Check to see if piece2 is also part of another group
+//
+//            //If it is, add the entire group (piece2's group) to piece's group
+//
+//            //If its not, just add piece2 to piece's group
+//
+////        }
+//
+//
+//    }
+//
+//
+//
+//    func calcNewGroup(piece: Piece) {
+//
+//        var piece1addToGroup = true
+//        var piece2addToGroup = true
+//
+//        for pieceX in board.pieces {
+//
+//            //If they are next to eachother
+//            if piece.indexes!.y == pieceX.indexes!.y && piece.indexes!.x == pieceX.indexes!.x! + 1 {
+//
+//                //And they have the same color
+//                if piece.color == pieceX.color {
+//
+//                    //First run through the grouped pieces
+//                    for group in board.pieceGroups {
+//
+//                        //If the original piece in question is already part of a goup, flag it
+//                        if group.pieces.contains(where: { (pieceXX) in
+//                            pieceXX.indexes == piece.indexes
+//                        }) {
+//
+//                            piece1addToGroup = false
+//                        }
+//
+//                        if group.pieces.contains(where: { (pieceXX) in
+//                            pieceXX.indexes == pieceX.indexes
+//                        }) {
+//
+//                            piece2addToGroup = false
+//                        }
+//
+//
+//                    }
+//                }
+//            }
+//
+//            if piece1addToGroup == true {
+//
+//                for group in board.pieceGroups {
+//
+//                }
+//
+//
+//            } else {
+//
+//                piece1addToGroup = true
+//            }
+//
+//            if piece2addToGroup == true {
+//
+//
+//
+//            } else {
+//
+//                piece2addToGroup = true
+//            }
+//
+//
+//        }
+//    }
+    
     
     
     func addPieceToBoard() {

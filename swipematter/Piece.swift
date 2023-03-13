@@ -16,6 +16,7 @@ class Piece {
     var view = ShapeView()
     var color = UIColor()
     var center = CGPoint()
+    var groupNumber:Int?
 
     init(){
         
